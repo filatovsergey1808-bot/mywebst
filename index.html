@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Studio</title>
+    <title>WebDev Studio — Дизайн и разработка</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,800&display=swap" rel="stylesheet">
@@ -32,8 +32,8 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            pointer-events: none; /* Чтобы не мешать кликать по кнопкам */
-            opacity: 0.15; /* Полупрозрачность, чтобы текст читался */
+            pointer-events: none;
+            opacity: 0.12;
         }
 
         /* Весь контент поверх canvas */
@@ -43,7 +43,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(255, 255, 255, 0.7); /* Легкое матовое стекло */
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(2px);
             min-height: 100vh;
             box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
@@ -67,7 +67,7 @@
         }
 
         .logo span {
-            color: #16a34a; /* Матричный зеленый */
+            color: #16a34a;
         }
 
         .cta-btn {
@@ -83,6 +83,7 @@
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: inline-block;
         }
 
         .cta-btn:hover {
@@ -150,8 +151,15 @@
         .hero p {
             font-size: 20px;
             color: #475569;
-            max-width: 640px;
-            margin: 0 auto 35px;
+            max-width: 680px;
+            margin: 0 auto 15px;
+        }
+
+        .hero .sub-text {
+            font-size: 18px;
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 35px;
         }
 
         .hero-actions {
@@ -180,7 +188,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
@@ -215,6 +223,67 @@
         .service-card p {
             color: #475569;
             font-size: 15px;
+        }
+
+        .service-card .feature-list {
+            list-style: none;
+            margin-top: 15px;
+            padding: 0;
+        }
+
+        .service-card .feature-list li {
+            color: #64748b;
+            font-size: 14px;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-card .feature-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: 800;
+        }
+
+        /* ===== ПРЕИМУЩЕСТВА ===== */
+        .advantages {
+            background: #ffffff;
+            padding: 40px 35px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            margin: 40px 0 30px;
+            text-align: center;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .advantage-item {
+            text-align: center;
+        }
+
+        .advantage-item .icon {
+            font-size: 32px;
+            font-weight: 300;
+            color: #16a34a;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .advantage-item h4 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .advantage-item p {
+            color: #64748b;
+            font-size: 14px;
         }
 
         /* ===== КАЛЬКУЛЯТОР ===== */
@@ -290,63 +359,6 @@
             color: #94a3b8;
             font-size: 14px;
             margin-top: 12px;
-        }
-
-        /* ===== ПОРТФОЛИО ===== */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 30px 0 20px;
-        }
-
-        .portfolio-item {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid #e2e8f0;
-            transition: 0.3s;
-        }
-
-        .portfolio-item:hover {
-            border-color: #16a34a;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .portfolio-item .tag {
-            background: #f1f5f9;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #475569;
-            display: inline-block;
-            margin: 10px 0 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .portfolio-item h4 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .portfolio-item p {
-            color: #475569;
-            font-size: 14px;
-        }
-
-        .link-arrow {
-            color: #16a34a;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 12px;
-            transition: 0.3s;
-        }
-
-        .link-arrow:hover {
-            transform: translateX(6px);
         }
 
         /* ===== ЭТАПЫ ===== */
@@ -478,8 +490,8 @@
                 flex-direction: column;
             }
 
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+            .advantages-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             footer {
@@ -499,6 +511,12 @@
 
             .cta-btn-outline {
                 margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .advantages-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -523,37 +541,82 @@
         <section class="hero">
             <div class="hero-badge">Доступно 2 слота на этот месяц</div>
             <h1>
-                Создаем сайты, которые<br>
-                <span class="highlight">приносят результат</span>
+                Создаем дизайн, который<br>
+                <span class="highlight">запоминается надолго</span>
             </h1>
             <p>
-                Разработка лендингов, интернет-магазинов и корпоративных порталов.
-                Полный цикл: от прототипа до поддержки.
+                Разработка сайтов, Telegram-ботов и мобильных приложений.
+                Полный цикл: от идеи до готового продукта.
             </p>
+            <div class="sub-text">
+                Передаем полный код клиенту — вы владеете продуктом на 100%
+            </div>
             <div class="hero-actions">
                 <a href="#contact" class="cta-btn">Обсудить проект</a>
-                <a href="#portfolio" class="cta-btn cta-btn-outline">Смотреть работы</a>
+                <a href="#services" class="cta-btn cta-btn-outline">Наши услуги</a>
             </div>
         </section>
 
         <!-- SERVICES -->
-        <section class="services">
-            <h2 class="section-title">Наши <span class="highlight">услуги</span></h2>
+        <section id="services" class="services">
+            <h2 class="section-title">Что мы <span class="highlight">создаем</span></h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="number">01</div>
-                    <h3>Landing Page</h3>
-                    <p>Одностраничные сайты с высокой конверсией для запуска рекламных кампаний.</p>
+                    <h3>Сайты</h3>
+                    <p>Лендинги, корпоративные порталы, интернет-магазины с уникальным дизайном.</p>
+                    <ul class="feature-list">
+                        <li>Индивидуальный дизайн</li>
+                        <li>Адаптивная верстка</li>
+                        <li>Полный исходный код</li>
+                    </ul>
                 </div>
                 <div class="service-card">
                     <div class="number">02</div>
-                    <h3>Интернет-магазины</h3>
-                    <p>Полнофункциональные платформы с интеграцией платежей и 1С.</p>
+                    <h3>Telegram-боты</h3>
+                    <p>Автоматизация бизнеса через ботов: продажи, уведомления, поддержка.</p>
+                    <ul class="feature-list">
+                        <li>Интеграция с CRM</li>
+                        <li>Платежные системы</li>
+                        <li>Админ-панель</li>
+                    </ul>
                 </div>
                 <div class="service-card">
                     <div class="number">03</div>
-                    <h3>Техподдержка и SEO</h3>
-                    <p>Оптимизация скорости, продвижение в поиске и регулярное обновление.</p>
+                    <h3>Мобильные приложения</h3>
+                    <p>Кроссплатформенные приложения для iOS и Android под ваш бизнес.</p>
+                    <ul class="feature-list">
+                        <li>React Native / Flutter</li>
+                        <li>Интеграция с API</li>
+                        <li>Публикация в магазинах</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGES -->
+        <section class="advantages">
+            <h2 class="section-title">Почему <span class="highlight">мы</span></h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <span class="icon">◈</span>
+                    <h4>Дизайн на годы</h4>
+                    <p>Создаем визуал, который не устаревает и работает на имидж</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="icon">◈</span>
+                    <h4>Честный код</h4>
+                    <p>Передаем исходники без привязки к нашему серверу</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="icon">◈</span>
+                    <h4>Поддержка 24/7</h4>
+                    <p>После запуска остаемся на связи для доработок</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="icon">◈</span>
+                    <h4>Гибкость</h4>
+                    <p>Работаем с любыми задачами — от лендинга до экосистемы</p>
                 </div>
             </div>
         </section>
@@ -564,16 +627,22 @@
             <div class="calculator">
                 <div class="calc-row">
                     <div class="calc-group">
-                        <label>Тип сайта</label>
-                        <select id="siteType">
+                        <label>Тип проекта</label>
+                        <select id="projectType">
                             <option value="landing">Лендинг</option>
-                            <option value="corp">Корпоративный</option>
-                            <option value="shop" selected>Интернет-магазин</option>
+                            <option value="corp">Корпоративный сайт</option>
+                            <option value="shop">Интернет-магазин</option>
+                            <option value="bot">Telegram-бот</option>
+                            <option value="app">Мобильное приложение</option>
                         </select>
                     </div>
                     <div class="calc-group">
-                        <label>Количество страниц</label>
-                        <input type="number" id="pages" value="5" min="1" max="50">
+                        <label>Сложность</label>
+                        <select id="complexity">
+                            <option value="basic">Базовый</option>
+                            <option value="medium" selected>Средний</option>
+                            <option value="advanced">Продвинутый</option>
+                        </select>
                     </div>
                     <div class="calc-group">
                         <label>Дизайн</label>
@@ -587,31 +656,6 @@
                     <span id="priceDisplay">75 000</span> руб.
                 </div>
                 <div class="calc-note">Окончательная цена уточняется после брифинга</div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO -->
-        <section id="portfolio">
-            <h2 class="section-title">Наши <span class="highlight">работы</span></h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="tag">Лендинг</div>
-                    <h4>Студия красоты Aura</h4>
-                    <p>Разработали продающий лендинг с онлайн-записью. Конверсия выросла на 40%.</p>
-                    <a href="#" class="link-arrow">Смотреть проект →</a>
-                </div>
-                <div class="portfolio-item">
-                    <div class="tag">Интернет-магазин</div>
-                    <h4>Мебельный дом Home</h4>
-                    <p>Магазин с фильтрами, корзиной и интеграцией с 1С для автоматизации.</p>
-                    <a href="#" class="link-arrow">Смотреть проект →</a>
-                </div>
-                <div class="portfolio-item">
-                    <div class="tag">Корпоративный</div>
-                    <h4>Юридическая фирма Lex</h4>
-                    <p>Сайт с личным кабинетом клиента и системой документооборота.</p>
-                    <a href="#" class="link-arrow">Смотреть проект →</a>
-                </div>
             </div>
         </section>
 
@@ -631,13 +675,13 @@
                 </div>
                 <div class="step">
                     <div class="step-num">03</div>
-                    <h4>Дизайн и верстка</h4>
-                    <p>Разрабатываем интерфейс и код</p>
+                    <h4>Дизайн и разработка</h4>
+                    <p>Визуал + чистый код под ключ</p>
                 </div>
                 <div class="step">
                     <div class="step-num">04</div>
                     <h4>Запуск</h4>
-                    <p>Публикуем и обучаем команду</p>
+                    <p>Передаем код и обучаем команду</p>
                 </div>
             </div>
         </section>
@@ -646,7 +690,7 @@
         <section id="contact" class="contact-section">
             <h2 class="section-title">Обсудим ваш <span class="highlight">проект</span></h2>
             <p style="color: #475569; max-width: 500px; margin: 0 auto;">
-                Напишите нам — ответим в течение 15 минут. Работаем по всей России.
+                Напишите нам — ответим в течение 15 минут. Работаем с бизнесами любого масштаба.
             </p>
             <div class="contact-buttons">
                 <a href="#" class="cta-btn green">Telegram</a>
@@ -657,7 +701,7 @@
 
         <!-- FOOTER -->
         <footer>
-            <span>2026 WebDev. Все права защищены.</span>
+            <span>2026 WebDev Studio — дизайн и разработка</span>
             <div>
                 <a href="#">Политика</a>
                 <a href="#">GitHub</a>
@@ -676,7 +720,6 @@
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            // Набор символов (цифры, буквы, спецсимволы)
             const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
             const charArray = chars.split('');
 
@@ -685,32 +728,27 @@
             const drops = [];
 
             for (let i = 0; i < columns; i++) {
-                drops[i] = Math.random() * -100; // Начальная позиция с разбросом
+                drops[i] = Math.random() * -100;
             }
 
             function draw() {
-                // Очень легкий слой прозрачности для создания эффекта "хвоста"
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
                 ctx.fillRect(0, 0, width, height);
 
-                // Цвет текста — зеленый
                 ctx.fillStyle = '#16a34a';
                 ctx.font = fontSize + 'px monospace';
                 ctx.textAlign = 'center';
 
                 for (let i = 0; i < drops.length; i++) {
-                    // Случайный символ
                     const char = charArray[Math.floor(Math.random() * charArray.length)];
                     const x = i * fontSize + fontSize / 2;
                     const y = drops[i] * fontSize;
 
-                    // Рисуем символ с небольшим свечением
                     ctx.shadowColor = '#16a34a';
                     ctx.shadowBlur = 6;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
-                    // Если символ ушел за нижнюю границу — сбрасываем наверх со случайным смещением
                     if (y > height && Math.random() > 0.975) {
                         drops[i] = 0;
                     }
@@ -722,7 +760,6 @@
             function resizeCanvas() {
                 width = canvas.width = window.innerWidth;
                 height = canvas.height = window.innerHeight;
-                // Пересчитываем количество столбцов
                 const newColumns = Math.floor(width / fontSize);
                 if (newColumns > drops.length) {
                     for (let i = drops.length; i < newColumns; i++) {
@@ -734,8 +771,6 @@
             }
 
             window.addEventListener('resize', resizeCanvas);
-
-            // Запускаем анимацию (60 кадров в секунду)
             setInterval(draw, 45);
         })();
     </script>
@@ -743,35 +778,37 @@
     <!-- ===== СКРИПТ КАЛЬКУЛЯТОРА ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const typeSelect = document.getElementById('siteType');
-            const pagesInput = document.getElementById('pages');
+            const typeSelect = document.getElementById('projectType');
+            const complexitySelect = document.getElementById('complexity');
             const designSelect = document.getElementById('design');
             const priceDisplay = document.getElementById('priceDisplay');
 
             function calculatePrice() {
                 const type = typeSelect.value;
-                const pages = parseInt(pagesInput.value) || 1;
+                const complexity = complexitySelect.value;
                 const design = designSelect.value;
 
                 let base = 0;
                 if (type === 'landing') base = 25000;
                 else if (type === 'corp') base = 45000;
                 else if (type === 'shop') base = 70000;
+                else if (type === 'bot') base = 30000;
+                else if (type === 'app') base = 120000;
 
-                let extraPages = 0;
-                if (type === 'landing' && pages > 1) extraPages = (pages - 1) * 3000;
-                else if (type === 'corp' && pages > 10) extraPages = (pages - 10) * 2500;
-                else if (type === 'shop' && pages > 5) extraPages = (pages - 5) * 3000;
+                let complexityMultiplier = 1;
+                if (complexity === 'medium') complexityMultiplier = 1.3;
+                else if (complexity === 'advanced') complexityMultiplier = 1.8;
 
                 const designPrice = (design === 'custom') ? 15000 : 0;
-                let total = base + extraPages + designPrice;
+
+                let total = Math.round((base * complexityMultiplier) + designPrice);
                 if (total < 0) total = 0;
 
                 priceDisplay.textContent = total.toLocaleString('ru-RU');
             }
 
             typeSelect.addEventListener('change', calculatePrice);
-            pagesInput.addEventListener('input', calculatePrice);
+            complexitySelect.addEventListener('change', calculatePrice);
             designSelect.addEventListener('change', calculatePrice);
 
             calculatePrice();
