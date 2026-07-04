@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Студия дизайна и разработки</title>
+    <title>Студия разработки сайтов</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.2;
+            opacity: 0.18;
         }
 
         /* Весь контент поверх canvas */
@@ -69,14 +69,14 @@
 
         .logo span {
             font-weight: 500;
-            color: #5bdd8a;
+            color: #e8edf5;
             letter-spacing: 2px;
         }
 
         .cta-btn {
             background: transparent;
             color: #e8edf5;
-            border: 1px solid rgba(91, 221, 138, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 10px 30px;
             border-radius: 50px;
             font-weight: 300;
@@ -90,12 +90,12 @@
         }
 
         .cta-btn:hover {
-            background: rgba(91, 221, 138, 0.05);
-            border-color: #5bdd8a;
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .cta-btn-primary {
-            background: #5bdd8a;
+            background: #e8edf5;
             color: #0a0e1a;
             border: none;
             padding: 12px 36px;
@@ -104,7 +104,7 @@
         }
 
         .cta-btn-primary:hover {
-            background: #4ac97a;
+            background: #ffffff;
             transform: translateY(-1px);
         }
 
@@ -131,23 +131,12 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
+            color: #e8edf5;
         }
 
         .hero h1 .highlight {
             font-weight: 500;
-            color: #5bdd8a;
-            position: relative;
-        }
-
-        .hero h1 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #5bdd8a;
-            opacity: 0.2;
+            color: #e8edf5;
         }
 
         .hero p {
@@ -161,11 +150,10 @@
 
         .hero .sub-text {
             font-size: 17px;
-            color: #5bdd8a;
+            color: rgba(255, 255, 255, 0.6);
             font-weight: 300;
             margin-bottom: 40px;
             letter-spacing: 0.5px;
-            opacity: 0.8;
         }
 
         .hero-actions {
@@ -175,7 +163,7 @@
             flex-wrap: wrap;
         }
 
-        /* ===== УСЛУГИ ===== */
+        /* ===== УСЛУГИ (САЙТЫ — ОСНОВНОЕ) ===== */
         .services {
             padding: 60px 0 30px;
         }
@@ -186,68 +174,118 @@
             text-align: center;
             margin-bottom: 50px;
             letter-spacing: 2px;
+            color: #e8edf5;
         }
 
-        .section-title .highlight {
-            font-weight: 500;
-            color: #5bdd8a;
+        .main-service {
+            max-width: 700px;
+            margin: 0 auto 50px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 35px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .service-card-main {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 50px 45px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
             transition: 0.3s;
         }
 
-        .service-card:hover {
+        .service-card-main:hover {
             transform: translateY(-4px);
-            border-color: rgba(91, 221, 138, 0.15);
-            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
         }
 
-        .service-card h3 {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 12px;
+        .service-card-main h3 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 16px;
             color: #e8edf5;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        .service-card p {
+        .service-card-main p {
             color: rgba(255, 255, 255, 0.45);
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 200;
+            max-width: 500px;
+            margin: 0 auto 20px;
         }
 
-        .service-card .feature-list {
+        .service-card-main .feature-list {
             list-style: none;
-            margin-top: 16px;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 30px;
         }
 
-        .service-card .feature-list li {
+        .service-card-main .feature-list li {
             color: rgba(255, 255, 255, 0.35);
             font-size: 14px;
             font-weight: 200;
-            padding: 4px 0;
             padding-left: 18px;
             position: relative;
         }
 
-        .service-card .feature-list li::before {
+        .service-card-main .feature-list li::before {
             content: '—';
             position: absolute;
             left: 0;
-            color: #5bdd8a;
-            opacity: 0.4;
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
+        .additional {
+            padding: 20px 0 40px;
+        }
+
+        .additional-title {
+            font-size: 18px;
+            font-weight: 200;
+            text-align: center;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .additional-item {
+            background: rgba(255, 255, 255, 0.015);
+            padding: 25px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .additional-item:hover {
+            border-color: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .additional-item h4 {
+            font-size: 17px;
+            font-weight: 300;
+            margin-bottom: 6px;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.5px;
+        }
+
+        .additional-item p {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 13px;
+            font-weight: 200;
         }
 
         /* ===== ПРЕИМУЩЕСТВА ===== */
@@ -334,23 +372,23 @@
 
         .calc-group select:focus,
         .calc-group input:focus {
-            border-color: rgba(91, 221, 138, 0.2);
+            border-color: rgba(255, 255, 255, 0.15);
             background: rgba(255, 255, 255, 0.05);
         }
 
         .calc-result {
             font-size: 38px;
             font-weight: 200;
-            color: #5bdd8a;
+            color: #e8edf5;
             margin-top: 30px;
             text-align: center;
             letter-spacing: 1px;
         }
 
         .calc-result span {
-            background: rgba(91, 221, 138, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             padding: 4px 24px;
-            border: 1px solid rgba(91, 221, 138, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 50px;
         }
 
@@ -402,7 +440,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* Волнистая линия-разделитель между блоками */
         .step-divider {
             flex: 0 0 40px;
             height: 2px;
@@ -419,7 +456,7 @@
         }
 
         .step-divider .wave-line {
-            stroke: rgba(91, 221, 138, 0.15);
+            stroke: rgba(255, 255, 255, 0.06);
             stroke-width: 1.5;
             fill: none;
         }
@@ -541,14 +578,27 @@
             .step-divider svg {
                 height: 12px;
             }
+
+            .service-card-main {
+                padding: 30px 20px;
+            }
+
+            .service-card-main h3 {
+                font-size: 24px;
+            }
+
+            .service-card-main .feature-list {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .additional-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
             .advantages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -577,55 +627,53 @@
                 <span class="highlight">запоминается надолго</span>
             </h1>
             <p>
-                Разработка сайтов, Telegram-ботов и мобильных приложений.
-                Полный цикл: от идеи до готового продукта.
+                Разрабатываем сайты под ключ. От идеи до готового продукта.
+                Полный код передаем клиенту.
             </p>
             <div class="sub-text">
-                Передаем полный код клиенту — вы владеете продуктом на 100%
+                Вы получаете готовый сайт и полные права на него
             </div>
             <div class="hero-actions">
                 <a href="#contact" class="cta-btn cta-btn-primary">Обсудить проект</a>
-                <a href="#services" class="cta-btn cta-btn-outline">Наши услуги</a>
+                <a href="#services" class="cta-btn cta-btn-outline">Подробнее</a>
             </div>
         </section>
 
-        <!-- SERVICES -->
+        <!-- SERVICES (САЙТЫ — ОСНОВНОЕ) -->
         <section id="services" class="services">
-            <h2 class="section-title">Что мы <span class="highlight">создаем</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
+            <h2 class="section-title">Что мы создаем</h2>
+            <div class="main-service">
+                <div class="service-card-main">
                     <h3>Сайты</h3>
                     <p>Лендинги, корпоративные порталы, интернет-магазины с уникальным дизайном.</p>
                     <ul class="feature-list">
                         <li>Индивидуальный дизайн</li>
                         <li>Адаптивная верстка</li>
                         <li>Полный исходный код</li>
+                        <li>Оптимизация скорости</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Telegram-боты</h3>
-                    <p>Автоматизация бизнеса через ботов: продажи, уведомления, поддержка.</p>
-                    <ul class="feature-list">
-                        <li>Интеграция с CRM</li>
-                        <li>Платежные системы</li>
-                        <li>Админ-панель</li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ -->
+        <section class="additional">
+            <div class="additional-title">Дополнительные возможности</div>
+            <div class="additional-grid">
+                <div class="additional-item">
+                    <h4>Telegram-боты</h4>
+                    <p>Автоматизация, продажи, уведомления, поддержка</p>
                 </div>
-                <div class="service-card">
-                    <h3>Мобильные приложения</h3>
-                    <p>Кроссплатформенные приложения для iOS и Android под ваш бизнес.</p>
-                    <ul class="feature-list">
-                        <li>React Native / Flutter</li>
-                        <li>Интеграция с API</li>
-                        <li>Публикация в магазинах</li>
-                    </ul>
+                <div class="additional-item">
+                    <h4>Мобильные приложения</h4>
+                    <p>Кроссплатформенные приложения для iOS и Android</p>
                 </div>
             </div>
         </section>
 
         <!-- ADVANTAGES -->
         <section class="advantages">
-            <h2 class="section-title">Почему <span class="highlight">мы</span></h2>
+            <h2 class="section-title">Почему мы</h2>
             <div class="advantages-grid">
                 <div class="advantage-item">
                     <h4>Дизайн на годы</h4>
@@ -641,24 +689,22 @@
                 </div>
                 <div class="advantage-item">
                     <h4>Гибкость</h4>
-                    <p>Работаем с любыми задачами — от лендинга до экосистемы</p>
+                    <p>Работаем с любыми задачами — от лендинга до крупных порталов</p>
                 </div>
             </div>
         </section>
 
         <!-- CALCULATOR -->
         <section id="calc">
-            <h2 class="section-title">Калькулятор <span class="highlight">стоимости</span></h2>
+            <h2 class="section-title">Калькулятор стоимости</h2>
             <div class="calculator">
                 <div class="calc-row">
                     <div class="calc-group">
-                        <label>Тип проекта</label>
+                        <label>Тип сайта</label>
                         <select id="projectType">
                             <option value="landing">Лендинг</option>
                             <option value="corp">Корпоративный сайт</option>
-                            <option value="shop">Интернет-магазин</option>
-                            <option value="bot">Telegram-бот</option>
-                            <option value="app">Мобильное приложение</option>
+                            <option value="shop" selected>Интернет-магазин</option>
                         </select>
                     </div>
                     <div class="calc-group">
@@ -686,7 +732,7 @@
 
         <!-- STEPS WITH WAVY LINE -->
         <section>
-            <h2 class="section-title">Как мы <span class="highlight">работаем</span></h2>
+            <h2 class="section-title">Как мы работаем</h2>
             <div class="steps-wrapper">
                 <div class="steps">
                     <div class="step">
@@ -732,18 +778,18 @@
 
         <!-- CONTACT -->
         <section id="contact" class="contact-section">
-            <h2 class="section-title">Обсудим ваш <span class="highlight">проект</span></h2>
+            <h2 class="section-title">Обсудим ваш проект</h2>
             <p>Напишите нам — ответим в течение 15 минут. Работаем с бизнесами любого масштаба.</p>
             <div class="contact-buttons">
                 <a href="#" class="cta-btn cta-btn-primary">Telegram</a>
-                <a href="#" class="cta-btn cta-btn-primary" style="background: #25D366; border: none;">WhatsApp</a>
+                <a href="#" class="cta-btn cta-btn-primary" style="background: #e8edf5; border: none;">WhatsApp</a>
                 <a href="#" class="cta-btn cta-btn-outline">Email</a>
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer>
-            <span>2026 Studio — дизайн и разработка</span>
+            <span>2026 Studio — разработка сайтов</span>
         </footer>
 
     </div>
@@ -757,7 +803,7 @@
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
+            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
             const charArray = chars.split('');
 
             const fontSize = 14;
@@ -772,7 +818,7 @@
                 ctx.fillStyle = 'rgba(10, 14, 26, 0.04)';
                 ctx.fillRect(0, 0, width, height);
 
-                ctx.fillStyle = '#5bdd8a';
+                ctx.fillStyle = 'rgba(232, 237, 245, 0.4)';
                 ctx.font = fontSize + 'px monospace';
                 ctx.textAlign = 'center';
 
@@ -782,9 +828,9 @@
                     const y = drops[i] * fontSize;
 
                     const brightness = 0.3 + Math.random() * 0.7;
-                    ctx.shadowColor = `rgba(91, 221, 138, ${brightness * 0.3})`;
+                    ctx.shadowColor = `rgba(232, 237, 245, ${brightness * 0.15})`;
                     ctx.shadowBlur = 8;
-                    ctx.fillStyle = `rgba(91, 221, 138, ${brightness * 0.6})`;
+                    ctx.fillStyle = `rgba(232, 237, 245, ${brightness * 0.25})`;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
@@ -831,8 +877,6 @@
                 if (type === 'landing') base = 25000;
                 else if (type === 'corp') base = 45000;
                 else if (type === 'shop') base = 70000;
-                else if (type === 'bot') base = 30000;
-                else if (type === 'app') base = 120000;
 
                 let complexityMultiplier = 1;
                 if (complexity === 'medium') complexityMultiplier = 1.3;
