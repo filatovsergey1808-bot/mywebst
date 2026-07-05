@@ -17,8 +17,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f1a2e;
-            color: #d4deed;
+            background-color: #e8edf5;
+            color: #1a2744;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.08;
+            opacity: 0.04;
         }
 
         /* Весь контент поверх canvas */
@@ -43,12 +43,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(15, 26, 46, 0.75);
-            backdrop-filter: blur(6px);
+            background: rgba(232, 237, 245, 0.75);
+            backdrop-filter: blur(8px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
-            border-left: 1px solid rgba(255, 255, 255, 0.03);
-            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 0 80px rgba(26, 39, 68, 0.03);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -57,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(26, 39, 68, 0.06);
             flex-wrap: wrap;
         }
 
@@ -65,23 +65,23 @@
             font-size: 20px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #d4deed;
+            color: #1a2744;
             text-transform: uppercase;
         }
 
         .logo span {
             font-weight: 400;
-            color: #d4deed;
+            color: #1a2744;
             letter-spacing: 2px;
         }
 
         .cta-btn {
             background: transparent;
-            color: #d4deed;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #1a2744;
+            border: 1px solid rgba(26, 39, 68, 0.1);
             padding: 10px 30px;
             border-radius: 50px;
-            font-weight: 200;
+            font-weight: 300;
             font-size: 12px;
             cursor: pointer;
             transition: 0.4s;
@@ -92,13 +92,13 @@
         }
 
         .cta-btn:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(26, 39, 68, 0.03);
+            border-color: rgba(26, 39, 68, 0.2);
         }
 
         .cta-btn-primary {
-            background: #d4deed;
-            color: #0f1a2e;
+            background: #1a2744;
+            color: #e8edf5;
             border: none;
             padding: 12px 36px;
             font-weight: 300;
@@ -106,20 +106,20 @@
         }
 
         .cta-btn-primary:hover {
-            background: #ffffff;
+            background: #2a3a5c;
             transform: translateY(-1px);
-            box-shadow: 0 4px 30px rgba(212, 222, 237, 0.1);
+            box-shadow: 0 4px 30px rgba(26, 39, 68, 0.1);
         }
 
         .cta-btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(26, 39, 68, 0.08);
             background: transparent;
-            color: #d4deed;
+            color: #1a2744;
         }
 
         .cta-btn-outline:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(26, 39, 68, 0.2);
+            background: rgba(26, 39, 68, 0.02);
         }
 
         /* ===== ГЕРОЙ ===== */
@@ -134,12 +134,12 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
-            color: #d4deed;
+            color: #1a2744;
         }
 
         .hero h1 .highlight {
             font-weight: 400;
-            color: #d4deed;
+            color: #1a2744;
             position: relative;
         }
 
@@ -149,23 +149,23 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.1);
+            height: 2px;
+            background: rgba(26, 39, 68, 0.08);
         }
 
         .hero p {
             font-size: 18px;
-            color: rgba(212, 222, 237, 0.4);
+            color: rgba(26, 39, 68, 0.5);
             max-width: 680px;
             margin: 0 auto 15px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 0.5px;
         }
 
         .hero .sub-text {
             font-size: 16px;
-            color: rgba(212, 222, 237, 0.5);
-            font-weight: 200;
+            color: rgba(26, 39, 68, 0.4);
+            font-weight: 300;
             margin-bottom: 40px;
             letter-spacing: 1px;
         }
@@ -188,12 +188,12 @@
             text-align: center;
             margin-bottom: 50px;
             letter-spacing: 3px;
-            color: #d4deed;
+            color: #1a2744;
         }
 
         .section-title .highlight {
             font-weight: 300;
-            color: #d4deed;
+            color: #1a2744;
         }
 
         .main-service {
@@ -202,31 +202,32 @@
         }
 
         .service-card-main {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.5);
             padding: 50px 45px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
             text-align: center;
             transition: 0.4s;
+            box-shadow: 0 2px 20px rgba(26, 39, 68, 0.02);
         }
 
         .service-card-main:hover {
-            border-color: rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0 8px 40px rgba(26, 39, 68, 0.04);
+            transform: translateY(-2px);
         }
 
         .service-card-main h3 {
             font-size: 26px;
-            font-weight: 200;
+            font-weight: 300;
             margin-bottom: 16px;
-            color: #d4deed;
+            color: #1a2744;
             letter-spacing: 2px;
         }
 
         .service-card-main p {
-            color: rgba(212, 222, 237, 0.4);
+            color: rgba(26, 39, 68, 0.5);
             font-size: 16px;
-            font-weight: 200;
+            font-weight: 300;
             max-width: 500px;
             margin: 0 auto 20px;
         }
@@ -241,9 +242,9 @@
         }
 
         .service-card-main .feature-list li {
-            color: rgba(212, 222, 237, 0.25);
+            color: rgba(26, 39, 68, 0.35);
             font-size: 13px;
-            font-weight: 200;
+            font-weight: 300;
             padding-left: 18px;
             position: relative;
             letter-spacing: 0.5px;
@@ -253,7 +254,7 @@
             content: '—';
             position: absolute;
             left: 0;
-            color: rgba(255, 255, 255, 0.06);
+            color: rgba(26, 39, 68, 0.1);
         }
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
@@ -263,10 +264,10 @@
 
         .additional-title {
             font-size: 14px;
-            font-weight: 200;
+            font-weight: 300;
             text-align: center;
             letter-spacing: 4px;
-            color: rgba(212, 222, 237, 0.12);
+            color: rgba(26, 39, 68, 0.15);
             margin-bottom: 30px;
             text-transform: uppercase;
         }
@@ -280,40 +281,40 @@
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.01);
+            background: rgba(255, 255, 255, 0.3);
             padding: 24px 20px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
             text-align: center;
             transition: 0.3s;
         }
 
         .additional-item:hover {
-            border-color: rgba(255, 255, 255, 0.06);
-            background: rgba(255, 255, 255, 0.015);
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.8);
         }
 
         .additional-item h4 {
             font-size: 16px;
-            font-weight: 200;
+            font-weight: 300;
             margin-bottom: 6px;
-            color: rgba(212, 222, 237, 0.5);
+            color: rgba(26, 39, 68, 0.6);
             letter-spacing: 1px;
         }
 
         .additional-item p {
-            color: rgba(212, 222, 237, 0.15);
+            color: rgba(26, 39, 68, 0.25);
             font-size: 13px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 0.3px;
         }
 
         /* ===== ПРЕИМУЩЕСТВА ===== */
         .advantages {
-            background: rgba(255, 255, 255, 0.01);
+            background: rgba(255, 255, 255, 0.2);
             padding: 45px 40px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
             margin: 40px 0 30px;
             text-align: center;
         }
@@ -327,25 +328,25 @@
 
         .advantage-item h4 {
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 400;
             margin-bottom: 6px;
-            color: #d4deed;
+            color: #1a2744;
             letter-spacing: 1px;
         }
 
         .advantage-item p {
-            color: rgba(212, 222, 237, 0.25);
+            color: rgba(26, 39, 68, 0.35);
             font-size: 13px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 0.3px;
         }
 
         /* ===== КАЛЬКУЛЯТОР ===== */
         .calculator {
-            background: rgba(255, 255, 255, 0.01);
+            background: rgba(255, 255, 255, 0.2);
             padding: 45px 40px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
             margin: 50px 0 30px;
         }
 
@@ -363,9 +364,9 @@
 
         .calc-group label {
             display: block;
-            font-weight: 200;
+            font-weight: 300;
             margin-bottom: 8px;
-            color: rgba(212, 222, 237, 0.15);
+            color: rgba(26, 39, 68, 0.2);
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 2.5px;
@@ -376,11 +377,11 @@
             width: 100%;
             padding: 14px 18px;
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            color: #d4deed;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            color: #1a2744;
             font-size: 14px;
-            font-weight: 200;
+            font-weight: 300;
             outline: none;
             transition: 0.3s;
             font-family: 'Inter', sans-serif;
@@ -388,38 +389,38 @@
         }
 
         .calc-group select option {
-            background: #0f1a2e;
-            color: #d4deed;
+            background: #e8edf5;
+            color: #1a2744;
         }
 
         .calc-group select:focus,
         .calc-group input:focus {
-            border-color: rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(26, 39, 68, 0.15);
+            background: rgba(255, 255, 255, 0.7);
         }
 
         .calc-result {
             font-size: 36px;
             font-weight: 200;
-            color: #d4deed;
+            color: #1a2744;
             margin-top: 30px;
             text-align: center;
             letter-spacing: 2px;
         }
 
         .calc-result span {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.3);
             padding: 4px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 50px;
         }
 
         .calc-note {
             text-align: center;
-            color: rgba(212, 222, 237, 0.08);
+            color: rgba(26, 39, 68, 0.15);
             font-size: 12px;
             margin-top: 14px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 1px;
         }
 
@@ -444,21 +445,21 @@
             padding: 20px 15px;
             position: relative;
             z-index: 2;
-            background: rgba(15, 26, 46, 0.8);
+            background: rgba(232, 237, 245, 0.5);
         }
 
         .step h4 {
             font-size: 16px;
             font-weight: 300;
             margin-bottom: 6px;
-            color: #d4deed;
+            color: #1a2744;
             letter-spacing: 1px;
         }
 
         .step p {
-            color: rgba(212, 222, 237, 0.2);
+            color: rgba(26, 39, 68, 0.25);
             font-size: 12px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 0.5px;
         }
 
@@ -478,7 +479,7 @@
         }
 
         .step-divider .wave-line {
-            stroke: rgba(255, 255, 255, 0.04);
+            stroke: rgba(26, 39, 68, 0.06);
             stroke-width: 1;
             fill: none;
         }
@@ -490,10 +491,10 @@
         }
 
         .contact-section p {
-            color: rgba(212, 222, 237, 0.25);
+            color: rgba(26, 39, 68, 0.35);
             max-width: 500px;
             margin: 0 auto;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 0.5px;
         }
 
@@ -512,13 +513,13 @@
 
         /* ===== ПОДВАЛ ===== */
         footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(26, 39, 68, 0.04);
             padding: 30px 0 10px;
             margin-top: 40px;
             text-align: center;
-            color: rgba(212, 222, 237, 0.06);
+            color: rgba(26, 39, 68, 0.1);
             font-size: 12px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 2px;
         }
 
@@ -543,7 +544,7 @@
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(15, 26, 46, 0.9);
+                background: rgba(232, 237, 245, 0.85);
             }
 
             header {
@@ -809,7 +810,7 @@
             <p>Напишите нам — ответим в течение 15 минут.</p>
             <div class="contact-buttons">
                 <a href="#" class="cta-btn cta-btn-primary">Telegram</a>
-                <a href="#" class="cta-btn cta-btn-primary" style="background: #d4deed; border: none;">WhatsApp</a>
+                <a href="#" class="cta-btn cta-btn-primary" style="background: #1a2744; border: none;">WhatsApp</a>
                 <a href="#" class="cta-btn cta-btn-outline">Email</a>
             </div>
         </section>
@@ -842,10 +843,10 @@
             }
 
             function draw() {
-                ctx.fillStyle = 'rgba(15, 26, 46, 0.03)';
+                ctx.fillStyle = 'rgba(232, 237, 245, 0.03)';
                 ctx.fillRect(0, 0, width, height);
 
-                ctx.fillStyle = 'rgba(212, 222, 237, 0.15)';
+                ctx.fillStyle = 'rgba(26, 39, 68, 0.06)';
                 ctx.font = fontSize + 'px monospace';
                 ctx.textAlign = 'center';
 
@@ -855,9 +856,9 @@
                     const y = drops[i] * fontSize;
 
                     const brightness = 0.2 + Math.random() * 0.5;
-                    ctx.shadowColor = `rgba(212, 222, 237, ${brightness * 0.05})`;
-                    ctx.shadowBlur = 6;
-                    ctx.fillStyle = `rgba(212, 222, 237, ${brightness * 0.08})`;
+                    ctx.shadowColor = `rgba(26, 39, 68, ${brightness * 0.02})`;
+                    ctx.shadowBlur = 4;
+                    ctx.fillStyle = `rgba(26, 39, 68, ${brightness * 0.04})`;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
