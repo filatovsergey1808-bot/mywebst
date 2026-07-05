@@ -127,7 +127,7 @@
         }
 
         .hero h1 .highlight {
-            font-weight: 300;
+            font-weight: 200;
             color: #2c3e50;
         }
 
@@ -148,10 +148,11 @@
 
         .main-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: minmax(260px, 400px);
             gap: 24px;
             max-width: 650px;
             margin: 0 auto;
+            justify-content: center;
         }
 
         .main-service-item {
@@ -161,6 +162,10 @@
             border: 1px solid rgba(44, 62, 80, 0.08);
             text-align: center;
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
         }
 
         .main-service-item:hover {
@@ -193,7 +198,7 @@
 
         .additional-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
             max-width: 650px;
             margin: 0 auto;
@@ -201,11 +206,17 @@
 
         .additional-item {
             background: rgba(255, 255, 255, 0.6);
-            padding: 32px 28px;
+            padding: 32px 20px;
             border-radius: 16px;
             border: 1px solid rgba(44, 62, 80, 0.08);
             text-align: center;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            aspect-ratio: 1 / 1;
         }
 
         .additional-item:hover {
@@ -294,10 +305,17 @@
 
             .main-services-grid {
                 grid-template-columns: 1fr;
+                max-width: 400px;
             }
 
             .additional-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 400px;
+            }
+
+            .additional-item {
+                min-height: 120px;
+                aspect-ratio: 1 / 1;
             }
 
             .footer-contacts {
@@ -320,6 +338,15 @@
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 28px;
+            }
+
+            .additional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .additional-item {
+                aspect-ratio: auto;
+                min-height: 100px;
             }
         }
     </style>
