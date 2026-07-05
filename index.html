@@ -19,7 +19,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #fdf8f0;
             color: #3d4d5c;
-            line-height: 1.7;
+            line-height: 1.4;
             min-height: 100vh;
             position: relative;
         }
@@ -56,7 +56,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0 30px;
+            padding: 20px 0 25px;
             border-bottom: 1px solid rgba(61, 77, 92, 0.08);
             flex-wrap: wrap;
         }
@@ -124,15 +124,15 @@
 
         /* ===== ГЕРОЙ ===== */
         .hero {
-            padding: 80px 0 50px;
+            padding: 70px 0 40px;
             text-align: center;
         }
 
         .hero h1 {
             font-size: 54px;
             font-weight: 200;
-            line-height: 1.15;
-            margin-bottom: 25px;
+            line-height: 1.1;
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
             color: #3d4d5c;
         }
@@ -146,7 +146,7 @@
             font-size: 22px;
             color: #3d4d5c;
             max-width: 650px;
-            margin: 0 auto 15px;
+            margin: 0 auto 12px;
             font-weight: 300;
             letter-spacing: 0.5px;
             opacity: 0.8;
@@ -156,7 +156,7 @@
             font-size: 18px;
             color: #3d4d5c;
             font-weight: 200;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             letter-spacing: 1px;
             opacity: 0.6;
         }
@@ -170,7 +170,7 @@
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
         .additional {
-            padding: 50px 0 50px;
+            padding: 40px 0 40px;
         }
 
         .additional-title {
@@ -179,7 +179,7 @@
             text-align: center;
             letter-spacing: 5px;
             color: rgba(61, 77, 92, 0.25);
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             text-transform: uppercase;
         }
 
@@ -209,7 +209,7 @@
         .additional-item h4 {
             font-size: 19px;
             font-weight: 300;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #3d4d5c;
             letter-spacing: 1px;
         }
@@ -224,7 +224,7 @@
         /* ===== ЭТАПЫ ===== */
         .steps-wrapper {
             position: relative;
-            padding: 40px 35px 45px;
+            padding: 35px 35px 40px;
             background: rgba(255, 255, 255, 0.35);
             border-radius: 20px;
             border: 1px solid rgba(61, 77, 92, 0.06);
@@ -235,7 +235,7 @@
             font-size: 30px;
             font-weight: 200;
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             letter-spacing: 3px;
             color: #3d4d5c;
         }
@@ -261,7 +261,7 @@
         .step h4 {
             font-size: 19px;
             font-weight: 300;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #3d4d5c;
             letter-spacing: 1px;
         }
@@ -297,7 +297,7 @@
         /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
         footer {
             border-top: 1px solid rgba(61, 77, 92, 0.06);
-            padding: 40px 0 25px;
+            padding: 35px 0 20px;
             margin-top: 30px;
             text-align: center;
         }
@@ -336,14 +336,6 @@
             background: rgba(255, 255, 255, 0.7);
         }
 
-        footer .footer-copy {
-            margin-top: 30px;
-            color: rgba(61, 77, 92, 0.15);
-            font-size: 13px;
-            font-weight: 200;
-            letter-spacing: 2px;
-        }
-
         /* ===== АДАПТИВ ===== */
         @media (max-width: 900px) {
             .steps {
@@ -372,6 +364,10 @@
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
+            }
+
+            .hero {
+                padding: 50px 0 30px;
             }
 
             .hero h1 {
@@ -542,9 +538,6 @@
                 <a href="#">Telegram</a>
                 <a href="#">WhatsApp</a>
                 <a href="#">Email</a>
-            </div>
-            <div class="footer-copy">
-                2026 Studio — графический дизайн и разработка
             </div>
         </footer>
 
