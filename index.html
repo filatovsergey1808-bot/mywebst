@@ -52,14 +52,8 @@
         }
 
         /* ===== ОБЩИЙ СТИЛЬ ТЕКСТА ===== */
-        .text-light {
-            font-weight: 200;
-            letter-spacing: 5px;
-        }
-
-        .text-light-medium {
-            font-weight: 200;
-            letter-spacing: 3px;
+        .text-uppercase {
+            text-transform: uppercase;
         }
 
         /* ===== ХЕДЕР ===== */
@@ -135,6 +129,7 @@
             margin-bottom: 0px;
             letter-spacing: 2px;
             color: #2c3e50;
+            text-transform: uppercase;
         }
 
         .hero h1 .highlight {
@@ -174,6 +169,7 @@
             text-align: center;
             transition: 0.3s;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 120px;
@@ -191,6 +187,16 @@
             font-weight: 200;
             color: #2c3e50;
             letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .main-service-item p {
+            font-size: 15px;
+            font-weight: 200;
+            color: rgba(44, 62, 80, 0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
@@ -243,6 +249,7 @@
             margin-bottom: 6px;
             color: #2c3e50;
             letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
         .additional-item p {
@@ -250,6 +257,7 @@
             font-size: 15px;
             font-weight: 200;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
@@ -267,6 +275,7 @@
             letter-spacing: 5px;
             margin-bottom: 25px;
             opacity: 0.7;
+            text-transform: uppercase;
         }
 
         .footer-contacts {
@@ -287,6 +296,7 @@
             border-radius: 50px;
             border: 1px solid rgba(44, 62, 80, 0.1);
             background: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
         }
 
         .footer-contacts a:hover {
@@ -323,11 +333,17 @@
             .main-service-item {
                 height: 100px;
                 min-height: 100px;
+                padding: 24px 20px;
             }
 
             .main-service-item h3 {
                 font-size: 20px;
                 letter-spacing: 4px;
+            }
+
+            .main-service-item p {
+                font-size: 14px;
+                letter-spacing: 2px;
             }
 
             .additional-grid {
@@ -390,11 +406,17 @@
             .main-service-item {
                 height: 80px;
                 min-height: 80px;
+                padding: 20px 16px;
             }
 
             .main-service-item h3 {
                 font-size: 18px;
                 letter-spacing: 3px;
+            }
+
+            .main-service-item p {
+                font-size: 13px;
+                letter-spacing: 1.5px;
             }
 
             .additional-item {
@@ -424,53 +446,54 @@
 
         <!-- HEADER -->
         <header>
-            <div class="logo"><span>✦</span> Studio</div>
+            <div class="logo"><span>✦</span> STUDIO</div>
             <div>
-                <a href="#contact" class="cta-btn cta-btn-primary">Начать проект</a>
+                <a href="#contact" class="cta-btn cta-btn-primary">НАЧАТЬ ПРОЕКТ</a>
             </div>
         </header>
 
         <!-- HERO -->
         <section class="hero">
             <h1>
-                Создаем дизайн, который<br>
-                <span class="highlight">запоминается надолго</span>
+                СОЗДАЕМ ДИЗАЙН, КОТОРЫЙ<br>
+                <span class="highlight">ЗАПОМИНАЕТСЯ НАДОЛГО</span>
             </h1>
         </section>
 
         <!-- ОСНОВНЫЕ УСЛУГИ -->
         <section class="main-services">
-            <div class="main-services-title">Основное направление</div>
+            <div class="main-services-title">ОСНОВНОЕ НАПРАВЛЕНИЕ</div>
             <div class="main-services-grid">
                 <div class="main-service-item">
-                    <h3>Красивые сайты</h3>
+                    <h3>КРАСИВЫЕ САЙТЫ</h3>
+                    <p>УНИКАЛЬНЫЙ ДИЗАЙН, ПОЛНЫЙ КОД</p>
                 </div>
             </div>
         </section>
 
         <!-- ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ -->
         <section class="additional">
-            <div class="additional-title">Дополнительные возможности</div>
+            <div class="additional-title">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</div>
             <div class="additional-grid">
                 <div class="additional-item">
-                    <h4>Telegram-боты</h4>
-                    <p>Автоматизация, продажи, уведомления</p>
+                    <h4>TELEGRAM-БОТЫ</h4>
+                    <p>АВТОМАТИЗАЦИЯ, ПРОДАЖИ</p>
                 </div>
                 <div class="additional-item">
-                    <h4>Мобильные приложения</h4>
-                    <p>Кроссплатформенные приложения для iOS и Android</p>
+                    <h4>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</h4>
+                    <p>IOS И ANDROID</p>
                 </div>
             </div>
         </section>
 
         <!-- FOOTER WITH CONTACTS -->
         <footer id="contact">
-            <div class="footer-title">Свяжитесь с нами</div>
+            <div class="footer-title">СВЯЖИТЕСЬ С НАМИ</div>
             <div class="footer-contacts">
-                <a href="#">Telegram</a>
-                <a href="#">WhatsApp</a>
+                <a href="#">TELEGRAM</a>
+                <a href="#">WHATSAPP</a>
                 <a href="#">MAX</a>
-                <a href="#">Email</a>
+                <a href="#">EMAIL</a>
             </div>
         </footer>
 
