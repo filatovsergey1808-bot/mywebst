@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.2;
+            opacity: 0.3;
         }
 
         /* Весь контент поверх canvas */
@@ -549,15 +549,16 @@
                     const x = i * fontSize + fontSize / 2;
                     const y = drops[i] * fontSize;
 
-                    const brightness = 0.3 + Math.random() * 0.7;
+                    const brightness = 0.4 + Math.random() * 0.6;
                     
-                    const r = 192 + Math.random() * 40;
-                    const g = 57 + Math.random() * 30;
-                    const b = 43 + Math.random() * 20;
+                    // Яркий терракотово-красный
+                    const r = 200 + Math.random() * 55;
+                    const g = 50 + Math.random() * 40;
+                    const b = 30 + Math.random() * 30;
                     
-                    ctx.shadowColor = `rgba(192, 57, 43, ${brightness * 0.4})`;
-                    ctx.shadowBlur = 20;
-                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${brightness * 0.5})`;
+                    ctx.shadowColor = `rgba(200, 50, 30, ${brightness * 0.5})`;
+                    ctx.shadowBlur = 25;
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.6 + brightness * 0.4})`;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
