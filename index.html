@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIDES — студия графического дизайна</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400&display=swap" rel="stylesheet">
+    <title>Террасная доска | PRINCIP FLOOR</title>
+    <meta name="description" content="Премиальная террасная доска из натурального дерева и ДПК. PRINCIP FLOOR — качество, проверенное временем.">
+    <meta name="keywords" content="террасная доска, декинг, ДПК, лиственница, PRINCIP FLOOR">
+    
+    <!-- Подключаем Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <style>
-        /* ===== СБРОС ===== */
+        /* ================================================================
+           ОСНОВНОЙ ФОН
+           ================================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -16,567 +22,1291 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fdf8f0;
-            color: #2c3e50;
-            line-height: 1.5;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             min-height: 100vh;
+            background: #F0F3F8;
+            color: #1A1A2E;
+            padding: 20px;
             position: relative;
+            overflow-x: hidden;
         }
 
-        /* Холст для анимации "Матрица" — фон */
-        #matrixCanvas {
+        /* Геометрический фон */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(0, 85, 164, 0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 30%, rgba(0, 85, 164, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(0, 85, 165, 0.03) 0%, transparent 50%),
+                linear-gradient(180deg, #F8F9FC 0%, #E8ECF4 100%);
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.3;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent 0px,
+                    transparent 60px,
+                    rgba(0, 85, 164, 0.04) 60px,
+                    rgba(0, 85, 164, 0.07) 61px,
+                    rgba(0, 85, 164, 0.04) 62px,
+                    transparent 63px,
+                    transparent 120px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent 0px,
+                    transparent 200px,
+                    rgba(0, 85, 164, 0.025) 200px,
+                    rgba(0, 85, 164, 0.06) 202px,
+                    rgba(0, 85, 164, 0.025) 204px,
+                    transparent 206px,
+                    transparent 400px
+                ),
+                repeating-linear-gradient(
+                    30deg,
+                    transparent 0px,
+                    transparent 140px,
+                    rgba(0, 85, 164, 0.02) 140px,
+                    rgba(0, 85, 164, 0.05) 141px,
+                    rgba(0, 85, 164, 0.02) 142px,
+                    transparent 143px,
+                    transparent 280px
+                ),
+                repeating-linear-gradient(
+                    -30deg,
+                    transparent 0px,
+                    transparent 90px,
+                    rgba(0, 85, 164, 0.03) 90px,
+                    rgba(0, 85, 164, 0.08) 92px,
+                    rgba(0, 85, 164, 0.03) 94px,
+                    transparent 96px,
+                    transparent 180px
+                );
+            transform: rotate(0deg) scale(1.1);
+            animation: gridFloat 25s ease-in-out infinite alternate;
+            pointer-events: none;
         }
 
-        /* Весь контент поверх canvas */
-        .content {
+        @keyframes gridFloat {
+            0% { transform: rotate(0deg) scale(1.05) translate(0, 0); }
+            20% { transform: rotate(0.5deg) scale(1.08) translate(1%, -1%); }
+            40% { transform: rotate(-0.3deg) scale(1.03) translate(-1%, 1%); }
+            60% { transform: rotate(0.8deg) scale(1.1) translate(1%, 1%); }
+            80% { transform: rotate(-0.5deg) scale(1.06) translate(-1%, -1%); }
+            100% { transform: rotate(0.3deg) scale(1.12) translate(0, 0); }
+        }
+
+        .geo-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .geo-shape {
+            position: absolute;
+            border: 1px solid rgba(0, 85, 164, 0.04);
+            border-radius: 2px;
+            animation: shapeFloat 18s ease-in-out infinite alternate;
+        }
+
+        .geo-shape:nth-child(1) {
+            width: 400px;
+            height: 200px;
+            top: -50px;
+            right: -100px;
+            transform: rotate(25deg);
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.015), rgba(0, 85, 164, 0.05));
+            animation-duration: 22s;
+        }
+
+        .geo-shape:nth-child(2) {
+            width: 150px;
+            height: 300px;
+            bottom: 50px;
+            left: -60px;
+            transform: rotate(-15deg);
+            background: linear-gradient(225deg, rgba(0, 85, 164, 0.01), rgba(0, 85, 164, 0.04));
+            animation-duration: 26s;
+            animation-delay: -6s;
+        }
+
+        .geo-shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 35%;
+            left: 55%;
+            transform: rotate(45deg);
+            background: linear-gradient(45deg, rgba(0, 85, 164, 0.02), rgba(0, 85, 164, 0.06));
+            animation-duration: 30s;
+            animation-delay: -12s;
+        }
+
+        .geo-shape:nth-child(4) {
+            width: 250px;
+            height: 150px;
+            top: 15%;
+            left: 15%;
+            transform: rotate(60deg);
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.01), rgba(0, 85, 164, 0.04));
+            animation-duration: 24s;
+            animation-delay: -4s;
+        }
+
+        .geo-shape:nth-child(5) {
+            width: 180px;
+            height: 180px;
+            bottom: -30px;
+            right: 25%;
+            transform: rotate(-30deg);
+            background: linear-gradient(225deg, rgba(0, 85, 164, 0.015), rgba(0, 85, 164, 0.05));
+            animation-duration: 28s;
+            animation-delay: -9s;
+        }
+
+        @keyframes shapeFloat {
+            0% { transform: rotate(25deg) translate(0, 0) scale(1); opacity: 0.4; }
+            33% { transform: rotate(35deg) translate(12px, -18px) scale(1.06); opacity: 0.9; }
+            66% { transform: rotate(15deg) translate(-12px, 12px) scale(0.94); opacity: 0.5; }
+            100% { transform: rotate(30deg) translate(6px, -6px) scale(1.03); opacity: 0.7; }
+        }
+
+        @keyframes shapeFloat2 {
+            0% { transform: rotate(-15deg) translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: rotate(-25deg) translate(-18px, 12px) scale(1.08); opacity: 0.8; }
+            100% { transform: rotate(-5deg) translate(12px, -12px) scale(0.94); opacity: 0.5; }
+        }
+
+        @keyframes shapeFloat3 {
+            0% { transform: rotate(45deg) translate(0, 0) scale(1); opacity: 0.3; }
+            100% { transform: rotate(55deg) translate(10px, -15px) scale(1.1); opacity: 0.8; }
+        }
+
+        .geo-shape:nth-child(2) { animation-name: shapeFloat2; }
+        .geo-shape:nth-child(3) { animation-name: shapeFloat3; }
+        .geo-shape:nth-child(4) { animation-name: shapeFloat2; }
+        .geo-shape:nth-child(5) { animation-name: shapeFloat3; }
+
+        /* ================================================================
+           ОСНОВНОЙ КОНТЕНТ
+           ================================================================ */
+        #app {
             position: relative;
             z-index: 1;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px 30px 40px;
-            background: rgba(253, 248, 240, 0.92);
-            backdrop-filter: blur(6px);
-            min-height: 100vh;
-            box-shadow: 0 0 80px rgba(44, 62, 80, 0.03);
-            border-left: 1px solid rgba(44, 62, 80, 0.06);
-            border-right: 1px solid rgba(44, 62, 80, 0.06);
         }
 
-        /* ===== ЦВЕТА ===== */
-        .color-accent {
-            color: #c0392b;
-        }
-
-        .color-accent-bright {
-            color: #e74c3c;
-        }
-
-        /* ===== ХЕДЕР ===== */
-        header {
+        /* ================================================================
+           ВЕРХНЯЯ ПАНЕЛЬ — логотип и контакты
+           ================================================================ */
+        .top-bar {
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            padding: 8px 0 16px 0;
+            gap: 20px;
+        }
+
+        .top-bar .social-left {
+            flex: 1;
+            display: flex;
             align-items: center;
-            padding: 20px 0 25px;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
-            flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
+            justify-content: flex-start;
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: 200;
-            letter-spacing: 5px;
-            color: #2c3e50;
-            text-transform: uppercase;
-        }
-
-        .logo span {
-            font-weight: 200;
-            color: #2c3e50;
-            letter-spacing: 3px;
-        }
-
-        .header-phone {
-            color: #2c3e50;
+        .top-bar .social-left .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(0, 85, 164, 0.06);
+            color: #0055A4;
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 200;
-            letter-spacing: 4px;
-            padding: 12px 34px;
-            border-radius: 50px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
-            background: transparent;
-            text-transform: uppercase;
-            display: inline-block;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 85, 164, 0.06);
+            padding: 0;
         }
 
-        .header-phone:hover {
-            transform: translateY(-1px);
-            border-color: rgba(231, 76, 60, 0.2);
-            box-shadow: 
-                0 0 8px rgba(231, 76, 60, 0.06),
-                0 0 16px rgba(231, 76, 60, 0.02);
-            background: rgba(255, 255, 255, 0.3);
+        .top-bar .social-left .social-icon:hover {
+            background: #0055A4;
+            color: #ffffff;
+            border-color: #0055A4;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0, 85, 164, 0.2);
         }
 
-        /* ===== ГЕРОЙ ===== */
-        .hero {
-            padding: 70px 0 40px;
-            text-align: center;
+        .top-bar .social-left .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            display: block;
         }
 
-        .hero h1 {
-            font-size: 54px;
-            font-weight: 200;
-            line-height: 1.2;
-            margin-bottom: 0px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #e74c3c;
+        .top-bar .social-left .social-icon:hover svg {
+            fill: #ffffff;
         }
 
-        /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
-        .main-services {
-            padding: 30px 0 40px;
+        .top-bar .logo-center {
+            flex: 0 0 auto;
         }
 
-        .main-services-title {
-            font-size: 16px;
-            font-weight: 200;
-            text-align: center;
-            letter-spacing: 5px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            color: #c0392b;
+        .top-bar .logo-center img {
+            display: block;
+            width: 220px;
+            height: auto;
+            filter: drop-shadow(0 2px 12px rgba(0, 85, 164, 0.08));
+            transition: filter 0.3s ease;
+            cursor: pointer;
         }
 
-        .main-services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            max-width: 100%;
-            margin: 0 auto;
+        .top-bar .logo-center img:hover {
+            filter: drop-shadow(0 4px 24px rgba(0, 85, 164, 0.16));
         }
 
-        .main-service-item {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 48px 28px;
+        .top-bar .contact-right {
+            flex: 1;
+            text-align: right;
+            font-size: 14px;
+            color: #4A4A5A;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .top-bar .contact-right a {
+            color: #0055A4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        .top-bar .contact-right a:hover {
+            color: #003D7A;
+        }
+
+        /* ================================================================
+           ШАПКА
+           ================================================================ */
+        .header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
             border-radius: 16px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
+            padding: 32px 32px 28px 32px;
+            margin-bottom: 28px;
             text-align: center;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 180px;
-            min-height: 180px;
+            border: 1px solid rgba(0, 85, 164, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .main-service-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(231, 76, 60, 0.2);
-            box-shadow: 
-                0 0 10px rgba(231, 76, 60, 0.06),
-                0 0 20px rgba(231, 76, 60, 0.02);
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: 
+                repeating-linear-gradient(
+                    15deg,
+                    transparent 0px,
+                    transparent 80px,
+                    rgba(0, 85, 164, 0.03) 80px,
+                    rgba(0, 85, 164, 0.06) 81px,
+                    rgba(0, 85, 164, 0.03) 82px,
+                    transparent 83px,
+                    transparent 160px
+                ),
+                repeating-linear-gradient(
+                    -25deg,
+                    transparent 0px,
+                    transparent 120px,
+                    rgba(0, 85, 164, 0.02) 120px,
+                    rgba(0, 85, 164, 0.05) 122px,
+                    rgba(0, 85, 164, 0.02) 124px,
+                    transparent 126px,
+                    transparent 240px
+                );
+            opacity: 0.5;
         }
 
-        .main-service-item h3 {
-            font-size: 24px;
+        .header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 48px;
             font-weight: 200;
-            color: #2c3e50;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
+            color: #000000;
             text-transform: uppercase;
-            margin-bottom: 4px;
+            line-height: 1.05;
         }
 
-        .main-service-item p {
-            font-size: 16px;
-            font-weight: 200;
-            color: rgba(44, 62, 80, 0.5);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
-        .additional {
-            padding: 10px 0 20px;
-        }
-
-        .additional-title {
-            font-size: 16px;
-            font-weight: 200;
-            text-align: center;
-            letter-spacing: 5px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            color: #c0392b;
-        }
-
-        .additional-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .additional-item {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 48px 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
-            text-align: center;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 180px;
-            min-height: 180px;
-        }
-
-        .additional-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(231, 76, 60, 0.2);
-            box-shadow: 
-                0 0 10px rgba(231, 76, 60, 0.06),
-                0 0 20px rgba(231, 76, 60, 0.02);
-        }
-
-        .additional-item h4 {
-            font-size: 20px;
-            font-weight: 200;
-            margin-bottom: 6px;
-            color: #2c3e50;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .additional-item p {
-            color: rgba(44, 62, 80, 0.5);
-            font-size: 15px;
-            font-weight: 200;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
-        footer {
-            padding: 40px 0 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        footer .footer-title {
+        .header .subtitle {
+            position: relative;
+            z-index: 1;
             font-size: 18px;
             font-weight: 200;
-            letter-spacing: 5px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            color: #c0392b;
+            color: #4A4A5A;
+            margin-top: 6px;
+            letter-spacing: 2px;
         }
 
-        .footer-contacts {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .footer-contacts a {
-            color: #2c3e50;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 200;
-            letter-spacing: 4px;
-            padding: 12px 20px;
-            border-radius: 50px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
+        /* ================================================================
+           КАРУСЕЛЬ — SWIPER.JS
+           ================================================================ */
+        .carousel-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: visible;
             background: transparent;
+            backdrop-filter: none;
+            border: none;
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+        }
+
+        .swiper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 16px;
+            height: 100%;
+            width: 100%;
+            overflow: visible;
+        }
+
+        /* ================================================================
+           КАРТОЧКА — 4 ЧЕТВЕРТИ
+           ================================================================ */
+        .card {
+            flex: 0 0 100%;
+            max-width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            border: 1.5px solid transparent;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 85, 164, 0.06);
+            opacity: 0.3;
+            transform: scale(0.85);
+            filter: blur(4px);
+            pointer-events: none;
+            margin: 4px;
+            position: relative;
+        }
+
+        .swiper-slide-active .card {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0px);
+            pointer-events: all;
+            border-color: rgba(0, 85, 164, 0.15);
+            box-shadow: 0 12px 50px rgba(0, 85, 164, 0.12);
+            z-index: 3;
+        }
+
+        .swiper-slide-active .card:hover {
+            transform: scale(1.04);
+            box-shadow: 0 16px 60px rgba(0, 85, 164, 0.15);
+            border-color: rgba(0, 85, 164, 0.25);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .card .image {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            display: block;
+            background: #E8ECF0;
+            flex-shrink: 0;
+        }
+
+        .card .image-placeholder {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            background: #E8ECF0;
+            color: #B0B8C0;
+            flex-shrink: 0;
+        }
+
+        /* ================================================================
+           ИНФОРМАЦИОННАЯ ОБЛАСТЬ — 4 ЧЕТВЕРТИ
+           ================================================================ */
+        .card .info {
+            padding: 14px 18px 16px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 30%;
+            gap: 4px 12px;
+            position: relative;
+        }
+
+        /* 1-я четверть: Название — по центру, занимает всю четверть */
+        .card .info .name {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            font-weight: 300;
+            font-size: clamp(28px, 3.8vw, 44px);
+            letter-spacing: 3px;
+            color: #000000;
             text-transform: uppercase;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             width: 100%;
-            transition: all 0.4s ease;
+            height: 100%;
+            padding: 0 4px;
         }
 
-        .footer-contacts a:hover {
+        /* 2-я и 3-я четверти: Описание — по левому краю, сверху */
+        .card .info .description {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            font-size: clamp(13px, 1.4vw, 17px);
+            font-weight: 300;
+            color: #4A4A5A;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            padding-left: 4px;
+            padding-top: 2px;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 4-я четверть: Цена — по центру, занимает всю четверть, тот же цвет что и название */
+        .card .info .price {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            color: #000000;
+            font-size: clamp(24px, 3.2vw, 38px);
+            font-weight: 300;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 4px;
+        }
+
+        /* ================================================================
+           КНОПКИ НАВИГАЦИИ SWIPER
+           ================================================================ */
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 10;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(0, 85, 164, 0.1);
+            transition: all 0.3s ease;
+            padding: 0;
+            opacity: 0.2;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border-radius: 0;
+            width: 80px;
+            height: 100%;
+            margin: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+            justify-content: flex-start;
+            padding-left: 8px;
+        }
+
+        .swiper-button-next {
+            right: 0;
+            justify-content: flex-end;
+            padding-right: 8px;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            opacity: 0.6;
+            color: #0055A4;
+            background: rgba(0, 85, 164, 0.04);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .swiper-button-prev:active,
+        .swiper-button-next:active {
+            transform: scale(0.95);
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            display: none;
+        }
+
+        .swiper-button-prev svg,
+        .swiper-button-next svg {
+            width: 36px;
+            height: 36px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .swiper-button-prev:hover svg,
+        .swiper-button-next:hover svg {
+            transform: scale(1.15);
+        }
+
+        /* ================================================================
+           ТОЧКИ SWIPER
+           ================================================================ */
+        .swiper-pagination {
+            position: relative;
+            bottom: auto;
+            padding: 16px 0 8px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 85, 164, 0.15);
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 1;
+            margin: 0 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #0055A4;
+            border-color: #0055A4;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(0, 85, 164, 0.15);
+        }
+
+        .swiper-pagination-bullet:hover {
+            border-color: #0055A4;
+            transform: scale(1.1);
+        }
+
+        /* ================================================================
+           ФУТЕР (без копирайта)
+           ================================================================ */
+        .footer {
+            text-align: center;
+            padding: 16px 14px 8px 14px;
+            border-top: 1px solid rgba(0, 85, 164, 0.04);
+            margin-top: 8px;
+        }
+
+        .footer .contacts {
+            font-size: 13px;
+            color: #8A8A9A;
+        }
+
+        .footer .contacts a {
+            color: #0055A4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        .footer .contacts a:hover {
+            color: #003D7A;
+        }
+
+        /* ================================================================
+           МОДАЛЬНОЕ ОКНО
+           ================================================================ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 85, 164, 0.12);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            padding: 32px 28px 28px;
+            box-shadow: 0 20px 80px rgba(0, 85, 164, 0.15);
+            animation: modalFadeIn 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-top: 4px solid #0055A4;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal .modal-close {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #8A8A9A;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0 4px;
+        }
+
+        .modal .modal-close:hover {
+            color: #1A1A2E;
+        }
+
+        .modal h2 {
+            font-size: 22px;
+            font-weight: 200;
+            letter-spacing: 2px;
+            color: #000000;
+            text-transform: uppercase;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+
+        .modal .modal-price {
+            font-size: 20px;
+            color: #000000;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        .modal .modal-desc {
+            font-size: 15px;
+            color: #4A4A5A;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .modal .modal-section {
+            padding: 12px 0;
+            border-top: 1px solid rgba(0, 85, 164, 0.04);
+        }
+
+        .modal .modal-section h4 {
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #8A8A9A;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            font-weight: 400;
+        }
+
+        .modal .modal-section p {
+            font-size: 15px;
+            color: #4A4A5A;
+            font-weight: 300;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .modal .btn-close-modal {
+            width: 100%;
+            padding: 14px;
+            margin-top: 16px;
+            background: #0055A4;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 85, 164, 0.2);
+        }
+
+        .modal .btn-close-modal:hover {
+            background: #003D7A;
+            box-shadow: 0 8px 30px rgba(0, 85, 164, 0.3);
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(231, 76, 60, 0.2);
-            box-shadow: 
-                0 0 8px rgba(231, 76, 60, 0.06),
-                0 0 16px rgba(231, 76, 60, 0.02);
         }
 
-        /* ===== АДАПТИВ ===== */
+        /* ================================================================
+           АДАПТИВНОСТЬ
+           ================================================================ */
         @media (max-width: 768px) {
-            .content {
-                padding: 15px;
-                background: rgba(253, 248, 240, 0.92);
+            body {
+                padding: 12px;
             }
 
-            header {
+            .top-bar {
                 flex-direction: column;
-                gap: 15px;
+                padding: 4px 0 12px 0;
+                gap: 10px;
+            }
+
+            .top-bar .social-left {
+                flex: none;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .top-bar .logo-center img {
+                width: 180px;
+            }
+
+            .top-bar .contact-right {
+                flex: none;
                 text-align: center;
+                font-size: 13px;
+                width: 100%;
             }
 
-            .hero {
-                padding: 50px 0 30px;
+            .header {
+                padding: 24px 20px 20px 20px;
+                margin-bottom: 20px;
             }
 
-            .hero h1 {
-                font-size: 34px;
-                letter-spacing: 2px;
-            }
-
-            .main-service-item {
-                height: 150px;
-                min-height: 150px;
-                padding: 36px 20px;
-            }
-
-            .main-service-item h3 {
-                font-size: 20px;
+            .header h1 {
+                font-size: 32px;
                 letter-spacing: 4px;
             }
 
-            .main-service-item p {
-                font-size: 14px;
-                letter-spacing: 3px;
-            }
-
-            .additional-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .additional-item {
-                height: 150px;
-                min-height: 150px;
-                padding: 36px 16px;
-            }
-
-            .additional-item h4 {
-                font-size: 17px;
-                letter-spacing: 3px;
-            }
-
-            .additional-item p {
-                font-size: 13px;
-                letter-spacing: 2px;
-            }
-
-            .footer-contacts {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .footer-contacts a {
-                font-size: 13px;
-                letter-spacing: 3px;
-                padding: 10px 16px;
-            }
-
-            footer .footer-title {
+            .header .subtitle {
                 font-size: 16px;
-                letter-spacing: 4px;
-                margin-bottom: 25px;
             }
 
-            .header-phone {
-                font-size: 13px;
-                letter-spacing: 3px;
-                padding: 10px 24px;
+            .swiper-slide {
+                padding: 0 12px;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 50px;
+            }
+
+            .swiper-button-prev svg,
+            .swiper-button-next svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .card .info .name {
+                font-size: clamp(22px, 4vw, 32px);
+                letter-spacing: 2px;
+            }
+
+            .card .info .price {
+                font-size: clamp(18px, 3.2vw, 28px);
+            }
+
+            .card .info .description {
+                font-size: clamp(12px, 1.6vw, 15px);
+            }
+
+            .geo-shape:nth-child(1),
+            .geo-shape:nth-child(2),
+            .geo-shape:nth-child(5) {
+                display: none;
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-                letter-spacing: 1.5px;
+            .top-bar .logo-center img {
+                width: 150px;
             }
 
-            .additional-grid {
-                grid-template-columns: 1fr;
+            .top-bar .social-left .social-icon {
+                width: 34px;
+                height: 34px;
             }
 
-            .main-service-item {
-                height: 130px;
-                min-height: 130px;
-                padding: 28px 16px;
+            .top-bar .social-left .social-icon svg {
+                width: 17px;
+                height: 17px;
             }
 
-            .main-service-item h3 {
-                font-size: 18px;
-                letter-spacing: 3px;
-            }
-
-            .main-service-item p {
-                font-size: 13px;
+            .header h1 {
+                font-size: 24px;
                 letter-spacing: 2px;
             }
 
-            .additional-item {
-                height: 130px;
-                min-height: 130px;
-                padding: 28px 16px;
-            }
-
-            .additional-item h4 {
-                font-size: 16px;
-                letter-spacing: 2px;
-            }
-
-            .additional-item p {
-                font-size: 13px;
-                letter-spacing: 1.5px;
-            }
-
-            .footer-contacts {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .footer-contacts a {
+            .header .subtitle {
                 font-size: 14px;
-                letter-spacing: 3px;
-                padding: 12px 20px;
             }
 
-            .header-phone {
-                font-size: 12px;
-                letter-spacing: 2px;
-                padding: 8px 20px;
+            .swiper-slide {
+                padding: 0 8px;
+            }
+
+            .card {
+                border-radius: 14px;
+            }
+
+            .card .image {
+                height: 65%;
+            }
+
+            .card .image-placeholder {
+                height: 65%;
+            }
+
+            .card .info {
+                padding: 10px 12px 12px;
+                gap: 2px 8px;
+            }
+
+            .card .info .name {
+                font-size: clamp(16px, 5vw, 22px);
+                letter-spacing: 1px;
+            }
+
+            .card .info .price {
+                font-size: clamp(14px, 4vw, 18px);
+            }
+
+            .card .info .description {
+                font-size: clamp(10px, 2.5vw, 12px);
+                padding-left: 2px;
+                padding-top: 1px;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 40px;
+            }
+
+            .swiper-button-prev svg,
+            .swiper-button-next svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .geo-shape:nth-child(3),
+            .geo-shape:nth-child(4) {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ХОЛСТ ДЛЯ МАТРИЦЫ ===== -->
-    <canvas id="matrixCanvas"></canvas>
-
-    <!-- ===== КОНТЕНТ ===== -->
-    <div class="content">
-
-        <!-- HEADER -->
-        <header>
-            <div class="logo">FIDES</div>
-            <div>
-                <a href="tel:+79999999999" class="header-phone">+7 999 999-99-99</a>
-            </div>
-        </header>
-
-        <!-- HERO -->
-        <section class="hero">
-            <h1>
-                СОЗДАЕМ ДИЗАЙН, КОТОРЫЙ<br>
-                ЗАПОМИНАЕТСЯ НАДОЛГО
-            </h1>
-        </section>
-
-        <!-- ОСНОВНЫЕ УСЛУГИ -->
-        <section class="main-services">
-            <div class="main-services-title">ОСНОВНОЕ НАПРАВЛЕНИЕ</div>
-            <div class="main-services-grid">
-                <div class="main-service-item">
-                    <h3>КРАСИВЫЕ САЙТЫ</h3>
-                    <p>УНИКАЛЬНЫЙ ДИЗАЙН, ПОЛНЫЙ КОД</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ -->
-        <section class="additional">
-            <div class="additional-title">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</div>
-            <div class="additional-grid">
-                <div class="additional-item">
-                    <h4>TELEGRAM-БОТЫ</h4>
-                    <p>АВТОМАТИЗАЦИЯ, ПРОДАЖИ</p>
-                </div>
-                <div class="additional-item">
-                    <h4>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</h4>
-                    <p>IOS И ANDROID</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FOOTER WITH CONTACTS -->
-        <footer id="contact">
-            <div class="footer-title">СВЯЖИТЕСЬ С НАМИ</div>
-            <div class="footer-contacts">
-                <a href="#">TELEGRAM</a>
-                <a href="#">WHATSAPP</a>
-                <a href="#">MAX</a>
-                <a href="#">EMAIL</a>
-            </div>
-        </footer>
-
+    <!-- ГЕОМЕТРИЧЕСКИЙ ФОН -->
+    <div class="geo-shapes">
+        <div class="geo-shape"></div>
+        <div class="geo-shape"></div>
+        <div class="geo-shape"></div>
+        <div class="geo-shape"></div>
+        <div class="geo-shape"></div>
     </div>
 
-    <!-- ===== СКРИПТ МАТРИЦЫ ===== -->
+    <div id="app">
+        <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+        <div class="top-bar">
+            <div class="social-left">
+                <a href="mailto:sl@principfloor.ru" class="social-icon" title="Email">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+                <a href="https://t.me/principfloor" target="_blank" class="social-icon" title="Telegram">
+                    <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                </a>
+                <a href="https://wa.me/73433282772" target="_blank" class="social-icon" title="WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+                <a href="#" class="social-icon" title="Макс">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </a>
+            </div>
+            <div class="logo-center">
+                <img 
+                    src="https://principfloor.ru/bitrix/templates/dresscodeV2/images/logo.png?v=1601247390" 
+                    alt="PRINCIP FLOOR"
+                    onclick="window.open('https://principfloor.ru/', '_blank')">
+            </div>
+            <div class="contact-right">
+                <a href="tel:+73433282772">+7 (343) 328-27-72</a>
+            </div>
+        </div>
+
+        <!-- ШАПКА -->
+        <div class="header">
+            <h1>Террасная доска</h1>
+            <div class="subtitle">Премиальные материалы под ваши задачи</div>
+        </div>
+
+        <!-- КАРУСЕЛЬ SWIPER -->
+        <div class="carousel-wrapper">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="swiperWrapper">
+                    <!-- Слайды будут добавлены через JavaScript -->
+                </div>
+                <!-- Кнопки навигации -->
+                <div class="swiper-button-prev" id="swiperPrev">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </div>
+                <div class="swiper-button-next" id="swiperNext">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                </div>
+                <!-- Точки -->
+                <div class="swiper-pagination" id="swiperPagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 id="modalName"></h2>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-desc" id="modalDesc"></div>
+            <div class="modal-section">
+                <h4>➕ Плюсы</h4>
+                <p id="modalPros"></p>
+            </div>
+            <div class="modal-section">
+                <h4>➖ Минусы</h4>
+                <p id="modalCons"></p>
+            </div>
+            <div class="modal-section">
+                <h4>🧹 Уход</h4>
+                <p id="modalCare"></p>
+            </div>
+            <div class="modal-section">
+                <h4>📋 Характеристики</h4>
+                <p id="modalSpecs"></p>
+            </div>
+            <button class="btn-close-modal" id="modalCloseBtn">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- ФУТЕР (без копирайта) -->
+    <div class="footer">
+        <div class="contacts">
+            <a href="tel:+73433282772">+7 (343) 328-27-72</a>
+            &nbsp;·&nbsp;
+            <a href="mailto:sl@principfloor.ru">sl@principfloor.ru</a>
+            &nbsp;·&nbsp;
+            <a href="https://principfloor.ru" target="_blank">principfloor.ru</a>
+        </div>
+    </div>
+
     <script>
-        (function matrixRain() {
-            const canvas = document.getElementById('matrixCanvas');
-            const ctx = canvas.getContext('2d');
+        // ================================================================
+        // ДАННЫЕ С ПОДРОБНЫМИ ОПИСАНИЯМИ
+        // ================================================================
+        const categories = [{
+            id: 'larch',
+            name: 'Лиственница',
+            image: 'https://i.pinimg.com/736x/f4/85/f1/f485f13473e78c8fe19022f9c529d084.jpg',
+            price: 'от 4 500 ₽/м²',
+            description: 'Морозостойкая сибирская лиственница. Влагостойкая, прочная, экологичная. Идеальный выбор для террас в регионах с суровым климатом. С годами становится только прочнее и приобретает благородный оттенок.'
+        }, {
+            id: 'ash',
+            name: 'Ясень',
+            image: 'https://i.pinimg.com/736x/fb/7c/eb/fb7ceb406f68979c665a5f324a68e57b.jpg',
+            price: 'от 5 900 ₽/м²',
+            description: 'Термообработанный ясень — натуральная древесина, прошедшая специальную обработку. Устойчив к влаге и перепадам температур. Сохраняет тёплый цвет и естественную текстуру дерева.'
+        }, {
+            id: 'kumaru',
+            name: 'Кумару',
+            image: 'https://i.pinimg.com/736x/37/ea/40/37ea400092963c619c00589fbc7cd146.jpg',
+            price: 'от 8 500 ₽/м²',
+            description: 'Экзотическая порода из Южной Америки. Отличается высокой плотностью и твёрдостью. Устойчива к гниению, не боится насекомых и грибка. Премиальный выбор для самых требовательных проектов.'
+        }, {
+            id: 'ipe',
+            name: 'Ипе',
+            image: 'https://i.pinimg.com/736x/37/ea/40/37ea400092963c619c00589fbc7cd146.jpg',
+            price: 'от 12 000 ₽/м²',
+            description: 'Бразильский орех — одна из самых твёрдых пород в мире. Максимальная устойчивость к гниению и механическим повреждениям. Срок службы до 50 лет. Идеально для террас с высокой нагрузкой.'
+        }, {
+            id: 'decking',
+            name: 'ДПК',
+            image: 'https://i.pinimg.com/1200x/91/f6/a4/91f6a467c6f8ba04366db84b50ab542d.jpg',
+            price: 'от 3 500 ₽/м²',
+            description: 'Древесно-полимерный композит — современное решение для террас. Не требует покраски и пропитки. Устойчив к влаге, не гниёт и не выцветает. Противоскользящая поверхность для безопасности.'
+        }, {
+            id: 'montazh',
+            name: 'Монтаж',
+            image: 'https://i.pinimg.com/736x/3a/ff/75/3aff750d269c307cf95f01c21aedb07a.jpg',
+            price: 'от 2 000 ₽/м²',
+            description: 'Профессиональный монтаж террасной доски любого типа. Работаем с деревом и ДПК. Используем качественные крепёжные системы. Гарантия на все виды работ. Соблюдаем технологию укладки.'
+        }];
 
-            let width = canvas.width = window.innerWidth;
-            let height = canvas.height = window.innerHeight;
-
-            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
-            const charArray = chars.split('');
-
-            const fontSize = 15;
-            const columns = Math.floor(width / fontSize);
-            const drops = [];
-
-            for (let i = 0; i < columns; i++) {
-                drops[i] = Math.random() * -100;
+        // ================================================================
+        // ДЕТАЛЬНЫЕ ДАННЫЕ ДЛЯ МОДАЛЬНОГО ОКНА
+        // ================================================================
+        const details = {
+            'larch': {
+                desc: 'Сибирская лиственница — морозостойкая и влагостойкая древесина. Идеально подходит для террас в регионах с холодным климатом. Со временем становится только прочнее.',
+                pros: '✅ Морозостойкость\n✅ Влагостойкость\n✅ Доступная цена\n✅ Экологичный материал',
+                cons: '❌ Требует ухода (масло/лак)\n❌ Может трескаться\n❌ Со временем темнеет',
+                care: '🧹 Регулярно подметать\n💧 Мыть водой из шланга\n🛡️ Масляная пропитка раз в год',
+                specs: '⏳ Срок службы: 20-30 лет\n📊 Класс: Хвойная древесина\n💧 Водостойкость: Высокая'
+            },
+            'ash': {
+                desc: 'Термообработанный ясень — натуральная древесина, прошедшая термическую обработку. Становится более устойчивой к влаге и перепадам температур.',
+                pros: '✅ Натуральный вид дерева\n✅ Устойчивость к влаге\n✅ Тёплый цвет\n✅ Экологичный материал',
+                cons: '❌ Дороже обычной древесины\n❌ Требует ухода\n❌ Может выцветать на солнце',
+                care: '🧹 Регулярно подметать\n💧 Мыть водой из шланга\n🛡️ Масляная пропитка раз в 2 года',
+                specs: '⏳ Срок службы: 20-25 лет\n📊 Класс: Термодревесина\n💧 Водостойкость: Высокая'
+            },
+            'kumaru': {
+                desc: 'Кумару — экзотическая порода из Южной Америки. Отличается высокой плотностью, твёрдостью и устойчивостью к гниению.',
+                pros: '✅ Экзотический вид\n✅ Высокая плотность\n✅ Устойчивость к гниению\n✅ Не боится насекомых',
+                cons: '❌ Высокая цена\n❌ Тяжёлый материал\n❌ Требует специального крепежа',
+                care: '🧹 Регулярно подметать\n💧 Мыть водой из шланга\n🛡️ Масляная пропитка раз в 2 года',
+                specs: '⏳ Срок службы: 30-40 лет\n📊 Класс: Экзотическая древесина\n💧 Водостойкость: Высокая'
+            },
+            'ipe': {
+                desc: 'Ипе (бразильский орех) — одна из самых твёрдых и долговечных экзотических пород. Почти не гниёт и не поражается насекомыми.',
+                pros: '✅ Максимальная твёрдость\n✅ Устойчивость к гниению\n✅ Долговечность (до 50 лет)\n✅ Не боится насекомых',
+                cons: '❌ Очень высокая цена\n❌ Требует специального крепежа\n❌ Тяжёлый материал',
+                care: '🧹 Регулярно подметать\n💧 Мыть водой из шланга\n🛡️ Масляная пропитка раз в 2-3 года',
+                specs: '⏳ Срок службы: 40-50 лет\n📊 Класс: Экзотическая древесина\n💧 Водостойкость: Максимальная'
+            },
+            'decking': {
+                desc: 'Декинг из ДПК (древесно-полимерного композита) сочетает эстетику дерева и практичность пластика. Не требует ухода, не гниёт.',
+                pros: '✅ Устойчивость к влаге\n✅ Не требует покраски\n✅ Противоскользящая поверхность\n✅ Долговечность (25-30 лет)',
+                cons: '❌ Высокая цена\n❌ Может нагреваться на солнце\n❌ Требует правильного монтажа',
+                care: '🧹 Регулярно подметать\n💧 Мыть водой из шланга\n🧽 Для пятен — мягкие моющие средства',
+                specs: '⏳ Срок службы: 25-30 лет\n📊 Класс: ДПК\n💧 Водостойкость: Высокая'
+            },
+            'montazh': {
+                desc: 'Профессиональный монтаж террасной доски. Работаем с деревом и ДПК. Гарантия качества.',
+                pros: '✅ Опытные мастера\n✅ Гарантия на работы\n✅ Используем качественный крепёж\n✅ Соблюдаем технологию',
+                cons: '❌ Требует предварительного заказа\n❌ Зависит от погодных условий',
+                care: '🔧 Используем нержавеющий крепёж\n📏 Соблюдаем зазоры (5-8 мм)\n🌬️ Обеспечиваем вентиляцию\n🛡️ Обработка защитными составами',
+                specs: '⏳ Срок службы: от 15 лет\n📊 Рекомендации: Уклон 1-2%\n💧 Защита от влаги'
             }
+        };
 
-            function draw() {
-                ctx.fillStyle = 'rgba(253, 248, 240, 0.02)';
-                ctx.fillRect(0, 0, width, height);
+        // ================================================================
+        // ИНИЦИАЛИЗАЦИЯ SWIPER
+        // ================================================================
+        let swiper = null;
 
-                ctx.font = fontSize + 'px monospace';
-                ctx.textAlign = 'center';
+        function initSwiper() {
+            const wrapper = document.getElementById('swiperWrapper');
+            
+            wrapper.innerHTML = '';
+            
+            categories.forEach((cat) => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img class="image" src="${cat.image}" alt="${cat.name}" loading="lazy" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display:none;">📦</div>
+                    <div class="info">
+                        <div class="name">${cat.name}</div>
+                        <div class="description">${cat.description}</div>
+                        <div class="price">${cat.price}</div>
+                    </div>
+                `;
+                card.onclick = () => openModal(cat.id);
+                slide.appendChild(card);
+                wrapper.appendChild(slide);
+            });
 
-                for (let i = 0; i < drops.length; i++) {
-                    const char = charArray[Math.floor(Math.random() * charArray.length)];
-                    const x = i * fontSize + fontSize / 2;
-                    const y = drops[i] * fontSize;
-
-                    const brightness = 0.4 + Math.random() * 0.6;
-                    
-                    const r = 200 + Math.random() * 55;
-                    const g = 50 + Math.random() * 40;
-                    const b = 30 + Math.random() * 30;
-                    
-                    ctx.shadowColor = `rgba(200, 50, 30, ${brightness * 0.5})`;
-                    ctx.shadowBlur = 25;
-                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.6 + brightness * 0.4})`;
-                    ctx.fillText(char, x, y);
-                    ctx.shadowBlur = 0;
-
-                    if (y > height && Math.random() > 0.975) {
-                        drops[i] = 0;
+            swiper = new Swiper('.mySwiper', {
+                loop: true,
+                speed: 1600,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                centeredSlides: true,
+                effect: 'slide',
+                watchSlidesProgress: true,
+                
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    bulletClass: 'swiper-pagination-bullet',
+                    bulletActiveClass: 'swiper-pagination-bullet-active',
+                },
+                
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    waitForTransition: true,
+                    stopOnLastSlide: false,
+                },
+                
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                
+                touchRatio: 1,
+                touchAngle: 45,
+                resistance: true,
+                resistanceRatio: 0.85,
+                loopAdditionalSlides: 1,
+                autoHeight: false,
+                
+                on: {
+                    autoplayStop: function() {
+                        setTimeout(() => {
+                            if (swiper && !swiper.destroyed) {
+                                swiper.autoplay.start();
+                            }
+                        }, 100);
                     }
-
-                    drops[i]++;
                 }
-            }
+            });
 
-            function resizeCanvas() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-                const newColumns = Math.floor(width / fontSize);
-                if (newColumns > drops.length) {
-                    for (let i = drops.length; i < newColumns; i++) {
-                        drops[i] = Math.random() * -100;
-                    }
-                } else if (newColumns < drops.length) {
-                    drops.length = newColumns;
-                }
-            }
+            document.querySelector('.swiper-button-prev').addEventListener('click', () => {
+                swiper.slidePrev();
+            });
+            
+            document.querySelector('.swiper-button-next').addEventListener('click', () => {
+                swiper.slideNext();
+            });
+        }
 
-            window.addEventListener('resize', resizeCanvas);
-            setInterval(draw, 45);
-        })();
+        // ================================================================
+        // МОДАЛЬНОЕ ОКНО
+        // ================================================================
+        function openModal(id) {
+            const data = categories.find(c => c.id === id);
+            const detail = details[id];
+            if (!data || !detail) return;
+
+            document.getElementById('modalName').textContent = data.name;
+            document.getElementById('modalPrice').textContent = data.price;
+            document.getElementById('modalDesc').textContent = detail.desc;
+            document.getElementById('modalPros').textContent = detail.pros;
+            document.getElementById('modalCons').textContent = detail.cons;
+            document.getElementById('modalCare').textContent = detail.care;
+            document.getElementById('modalSpecs').textContent = detail.specs;
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (swiper && !swiper.destroyed) {
+                swiper.autoplay.stop();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            if (swiper && !swiper.destroyed) {
+                swiper.autoplay.start();
+            }
+        }
+
+        // ================================================================
+        // ЗАПУСК
+        // ================================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            initSwiper();
+
+            document.getElementById('modalClose').onclick = closeModal;
+            document.getElementById('modalCloseBtn').onclick = closeModal;
+            document.getElementById('modalOverlay').onclick = (e) => {
+                if (e.target === e.currentTarget) closeModal();
+            };
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+        });
     </script>
-
 </body>
 </html>
