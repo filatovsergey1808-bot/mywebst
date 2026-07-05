@@ -124,7 +124,7 @@
 
         /* ===== ГЕРОЙ ===== */
         .hero {
-            padding: 80px 0 60px;
+            padding: 80px 0 50px;
             text-align: center;
         }
 
@@ -179,88 +179,25 @@
 
         /* ===== УСЛУГИ ===== */
         .services {
-            padding: 60px 0 30px;
+            padding: 40px 0 50px;
+            text-align: center;
         }
 
-        .section-title {
-            font-size: 28px;
+        .services h2 {
+            font-size: 38px;
             font-weight: 200;
-            text-align: center;
-            margin-bottom: 50px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #5a6b7a;
         }
 
-        .section-title .highlight {
-            font-weight: 300;
+        .services h2 .highlight {
+            font-weight: 400;
             color: #2c3e50;
-        }
-
-        .main-service {
-            max-width: 700px;
-            margin: 0 auto 50px;
-        }
-
-        .service-card-main {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 50px 45px;
-            border-radius: 12px;
-            border: 1px solid rgba(90, 107, 122, 0.06);
-            text-align: center;
-            transition: 0.4s;
-            box-shadow: 0 2px 20px rgba(90, 107, 122, 0.02);
-        }
-
-        .service-card-main:hover {
-            box-shadow: 0 8px 40px rgba(90, 107, 122, 0.04);
-            transform: translateY(-2px);
-            border-color: rgba(192, 57, 43, 0.1);
-        }
-
-        .service-card-main h3 {
-            font-size: 26px;
-            font-weight: 300;
-            margin-bottom: 16px;
-            color: #2c3e50;
-            letter-spacing: 2px;
-        }
-
-        .service-card-main p {
-            color: rgba(90, 107, 122, 0.5);
-            font-size: 16px;
-            font-weight: 300;
-            max-width: 500px;
-            margin: 0 auto 20px;
-        }
-
-        .service-card-main .feature-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px 30px;
-        }
-
-        .service-card-main .feature-list li {
-            color: rgba(90, 107, 122, 0.4);
-            font-size: 13px;
-            font-weight: 300;
-            padding-left: 18px;
-            position: relative;
-            letter-spacing: 0.5px;
-        }
-
-        .service-card-main .feature-list li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: rgba(192, 57, 43, 0.15);
         }
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
         .additional {
-            padding: 20px 0 40px;
+            padding: 20px 0 50px;
         }
 
         .additional-title {
@@ -310,38 +247,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* ===== ПРЕИМУЩЕСТВА ===== */
-        .advantages {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 45px 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(90, 107, 122, 0.04);
-            margin: 40px 0 30px;
-            text-align: center;
-        }
-
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .advantage-item h4 {
-            font-size: 16px;
-            font-weight: 400;
-            margin-bottom: 6px;
-            color: #2c3e50;
-            letter-spacing: 1px;
-        }
-
-        .advantage-item p {
-            color: rgba(90, 107, 122, 0.35);
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: 0.3px;
-        }
-
         /* ===== ЭТАПЫ ===== */
         .steps-wrapper {
             position: relative;
@@ -354,7 +259,7 @@
             align-items: flex-start;
             gap: 0;
             position: relative;
-            margin: 40px 0 20px;
+            margin: 20px 0 30px;
         }
 
         .step {
@@ -402,43 +307,44 @@
             fill: none;
         }
 
-        /* ===== КОНТАКТЫ ===== */
-        .contact-section {
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-
-        .contact-section p {
-            color: rgba(90, 107, 122, 0.35);
-            max-width: 500px;
-            margin: 0 auto;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .contact-buttons .cta-btn {
-            min-width: 160px;
-            text-align: center;
-        }
-
-        /* ===== ПОДВАЛ ===== */
+        /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
         footer {
             border-top: 1px solid rgba(90, 107, 122, 0.04);
-            padding: 30px 0 10px;
-            margin-top: 40px;
+            padding: 30px 0 15px;
+            margin-top: 30px;
             text-align: center;
+        }
+
+        footer .footer-text {
             color: rgba(90, 107, 122, 0.1);
             font-size: 12px;
             font-weight: 300;
             letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contacts {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-contacts a {
+            color: #5a6b7a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(90, 107, 122, 0.06);
+        }
+
+        .footer-contacts a:hover {
+            border-color: rgba(90, 107, 122, 0.15);
+            background: rgba(90, 107, 122, 0.02);
         }
 
         /* ===== АДАПТИВ ===== */
@@ -483,17 +389,13 @@
                 font-size: 15px;
             }
 
-            .advantages-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .section-title {
-                font-size: 24px;
+            .services h2 {
+                font-size: 30px;
             }
 
             .step {
@@ -509,27 +411,26 @@
                 height: 12px;
             }
 
-            .service-card-main {
-                padding: 30px 20px;
-            }
-
-            .service-card-main h3 {
-                font-size: 22px;
-            }
-
-            .service-card-main .feature-list {
-                flex-direction: column;
-                gap: 6px;
-            }
-
             .additional-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .footer-contacts {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .footer-contacts a {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
-            .advantages-grid {
-                grid-template-columns: 1fr;
+            .services h2 {
+                font-size: 26px;
             }
         }
     </style>
@@ -571,19 +472,9 @@
 
         <!-- SERVICES -->
         <section id="services" class="services">
-            <h2 class="section-title">Что мы <span class="highlight">создаем</span></h2>
-            <div class="main-service">
-                <div class="service-card-main">
-                    <h3>Сайты</h3>
-                    <p>Лендинги, корпоративные порталы, интернет-магазины с уникальным дизайном.</p>
-                    <ul class="feature-list">
-                        <li>Индивидуальный дизайн</li>
-                        <li>Адаптивная верстка</li>
-                        <li>Полный исходный код</li>
-                        <li>Оптимизация скорости</li>
-                    </ul>
-                </div>
-            </div>
+            <h2>
+                <span class="highlight">Красивые</span> сайты
+            </h2>
         </section>
 
         <!-- ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ -->
@@ -605,32 +496,9 @@
             </div>
         </section>
 
-        <!-- ADVANTAGES -->
-        <section class="advantages">
-            <h2 class="section-title">Почему <span class="highlight">мы</span></h2>
-            <div class="advantages-grid">
-                <div class="advantage-item">
-                    <h4>Дизайн на годы</h4>
-                    <p>Создаем визуал, который не устаревает</p>
-                </div>
-                <div class="advantage-item">
-                    <h4>Честный код</h4>
-                    <p>Передаем исходники без привязки к нам</p>
-                </div>
-                <div class="advantage-item">
-                    <h4>Поддержка</h4>
-                    <p>Остаемся на связи после запуска</p>
-                </div>
-                <div class="advantage-item">
-                    <h4>Гибкость</h4>
-                    <p>Работаем с любыми задачами</p>
-                </div>
-            </div>
-        </section>
-
         <!-- STEPS WITH WAVY LINE -->
         <section>
-            <h2 class="section-title">Как мы <span class="highlight">работаем</span></h2>
+            <h2 class="section-title" style="font-size: 28px; font-weight: 200; text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #5a6b7a;">Как мы <span style="font-weight: 300; color: #2c3e50;">работаем</span></h2>
             <div class="steps-wrapper">
                 <div class="steps">
                     <div class="step">
@@ -674,20 +542,17 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="contact-section">
-            <h2 class="section-title">Обсудим ваш <span class="highlight">проект</span></h2>
-            <p>Напишите нам — ответим в течение 15 минут.</p>
-            <div class="contact-buttons">
-                <a href="#" class="cta-btn cta-btn-primary">Telegram</a>
-                <a href="#" class="cta-btn cta-btn-primary" style="background: #2c3e50; border: none;">WhatsApp</a>
-                <a href="#" class="cta-btn cta-btn-outline">Email</a>
+        <!-- FOOTER WITH CONTACTS -->
+        <footer id="contact">
+            <div class="footer-text">Свяжитесь с нами</div>
+            <div class="footer-contacts">
+                <a href="#">Telegram</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">Email</a>
             </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <span>2026 Studio — графический дизайн и разработка</span>
+            <div class="footer-text" style="margin-top: 25px; font-size: 11px;">
+                2026 Studio — графический дизайн и разработка
+            </div>
         </footer>
 
     </div>
