@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Студия разработки сайтов</title>
+    <title>Студия графического дизайна</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500&display=swap" rel="stylesheet">
     <style>
         /* ===== СБРОС ===== */
         * {
@@ -17,8 +17,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0e1a;
-            color: #e8edf5;
+            background-color: #0f1a2e;
+            color: #d4deed;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.18;
+            opacity: 0.08;
         }
 
         /* Весь контент поверх canvas */
@@ -43,10 +43,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(10, 14, 26, 0.85);
-            backdrop-filter: blur(4px);
+            background: rgba(15, 26, 46, 0.75);
+            backdrop-filter: blur(6px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -55,67 +57,68 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 300;
-            letter-spacing: 3px;
-            color: #e8edf5;
+            font-size: 20px;
+            font-weight: 200;
+            letter-spacing: 4px;
+            color: #d4deed;
             text-transform: uppercase;
         }
 
         .logo span {
-            font-weight: 500;
-            color: #e8edf5;
+            font-weight: 400;
+            color: #d4deed;
             letter-spacing: 2px;
         }
 
         .cta-btn {
             background: transparent;
-            color: #e8edf5;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #d4deed;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 10px 30px;
             border-radius: 50px;
-            font-weight: 300;
-            font-size: 13px;
+            font-weight: 200;
+            font-size: 12px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.4s;
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             display: inline-block;
         }
 
         .cta-btn:hover {
             background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .cta-btn-primary {
-            background: #e8edf5;
-            color: #0a0e1a;
+            background: #d4deed;
+            color: #0f1a2e;
             border: none;
             padding: 12px 36px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
         }
 
         .cta-btn-primary:hover {
             background: #ffffff;
             transform: translateY(-1px);
+            box-shadow: 0 4px 30px rgba(212, 222, 237, 0.1);
         }
 
         .cta-btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             background: transparent;
-            color: #e8edf5;
+            color: #d4deed;
         }
 
         .cta-btn-outline:hover {
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
             background: rgba(255, 255, 255, 0.02);
         }
 
@@ -131,29 +134,40 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
-            color: #e8edf5;
+            color: #d4deed;
         }
 
         .hero h1 .highlight {
-            font-weight: 500;
-            color: #e8edf5;
+            font-weight: 400;
+            color: #d4deed;
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .hero p {
             font-size: 18px;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(212, 222, 237, 0.4);
             max-width: 680px;
             margin: 0 auto 15px;
             font-weight: 200;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
         }
 
         .hero .sub-text {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 300;
+            font-size: 16px;
+            color: rgba(212, 222, 237, 0.5);
+            font-weight: 200;
             margin-bottom: 40px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .hero-actions {
@@ -163,18 +177,23 @@
             flex-wrap: wrap;
         }
 
-        /* ===== УСЛУГИ (САЙТЫ — ОСНОВНОЕ) ===== */
+        /* ===== УСЛУГИ ===== */
         .services {
             padding: 60px 0 30px;
         }
 
         .section-title {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 200;
             text-align: center;
             margin-bottom: 50px;
-            letter-spacing: 2px;
-            color: #e8edf5;
+            letter-spacing: 3px;
+            color: #d4deed;
+        }
+
+        .section-title .highlight {
+            font-weight: 300;
+            color: #d4deed;
         }
 
         .main-service {
@@ -183,31 +202,30 @@
         }
 
         .service-card-main {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             padding: 50px 45px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
-            transition: 0.3s;
+            transition: 0.4s;
         }
 
         .service-card-main:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .service-card-main h3 {
-            font-size: 28px;
-            font-weight: 300;
+            font-size: 26px;
+            font-weight: 200;
             margin-bottom: 16px;
-            color: #e8edf5;
-            letter-spacing: 1px;
+            color: #d4deed;
+            letter-spacing: 2px;
         }
 
         .service-card-main p {
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 17px;
+            color: rgba(212, 222, 237, 0.4);
+            font-size: 16px;
             font-weight: 200;
             max-width: 500px;
             margin: 0 auto 20px;
@@ -223,18 +241,19 @@
         }
 
         .service-card-main .feature-list li {
-            color: rgba(255, 255, 255, 0.35);
-            font-size: 14px;
+            color: rgba(212, 222, 237, 0.25);
+            font-size: 13px;
             font-weight: 200;
             padding-left: 18px;
             position: relative;
+            letter-spacing: 0.5px;
         }
 
         .service-card-main .feature-list li::before {
             content: '—';
             position: absolute;
             left: 0;
-            color: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.06);
         }
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
@@ -243,11 +262,11 @@
         }
 
         .additional-title {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 200;
             text-align: center;
-            letter-spacing: 3px;
-            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 4px;
+            color: rgba(212, 222, 237, 0.12);
             margin-bottom: 30px;
             text-transform: uppercase;
         }
@@ -255,45 +274,46 @@
         .additional-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            gap: 16px;
             max-width: 700px;
             margin: 0 auto;
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.015);
-            padding: 25px 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.01);
+            padding: 24px 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
             transition: 0.3s;
         }
 
         .additional-item:hover {
-            border-color: rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.015);
         }
 
         .additional-item h4 {
-            font-size: 17px;
-            font-weight: 300;
+            font-size: 16px;
+            font-weight: 200;
             margin-bottom: 6px;
-            color: rgba(255, 255, 255, 0.7);
-            letter-spacing: 0.5px;
+            color: rgba(212, 222, 237, 0.5);
+            letter-spacing: 1px;
         }
 
         .additional-item p {
-            color: rgba(255, 255, 255, 0.25);
+            color: rgba(212, 222, 237, 0.15);
             font-size: 13px;
             font-weight: 200;
+            letter-spacing: 0.3px;
         }
 
         /* ===== ПРЕИМУЩЕСТВА ===== */
         .advantages {
-            background: rgba(255, 255, 255, 0.015);
+            background: rgba(255, 255, 255, 0.01);
             padding: 45px 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             margin: 40px 0 30px;
             text-align: center;
         }
@@ -306,25 +326,26 @@
         }
 
         .advantage-item h4 {
-            font-size: 17px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 300;
             margin-bottom: 6px;
-            color: #e8edf5;
-            letter-spacing: 0.5px;
+            color: #d4deed;
+            letter-spacing: 1px;
         }
 
         .advantage-item p {
-            color: rgba(255, 255, 255, 0.35);
-            font-size: 14px;
+            color: rgba(212, 222, 237, 0.25);
+            font-size: 13px;
             font-weight: 200;
+            letter-spacing: 0.3px;
         }
 
         /* ===== КАЛЬКУЛЯТОР ===== */
         .calculator {
-            background: rgba(255, 255, 255, 0.015);
+            background: rgba(255, 255, 255, 0.01);
             padding: 45px 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             margin: 50px 0 30px;
         }
 
@@ -342,12 +363,12 @@
 
         .calc-group label {
             display: block;
-            font-weight: 300;
+            font-weight: 200;
             margin-bottom: 8px;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 11px;
+            color: rgba(212, 222, 237, 0.15);
+            font-size: 10px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
         }
 
         .calc-group select,
@@ -355,53 +376,54 @@
             width: 100%;
             padding: 14px 18px;
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: #e8edf5;
-            font-size: 15px;
-            font-weight: 300;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: #d4deed;
+            font-size: 14px;
+            font-weight: 200;
             outline: none;
             transition: 0.3s;
             font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .calc-group select option {
-            background: #0a0e1a;
-            color: #e8edf5;
+            background: #0f1a2e;
+            color: #d4deed;
         }
 
         .calc-group select:focus,
         .calc-group input:focus {
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .calc-result {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 200;
-            color: #e8edf5;
+            color: #d4deed;
             margin-top: 30px;
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .calc-result span {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             padding: 4px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 50px;
         }
 
         .calc-note {
             text-align: center;
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 13px;
+            color: rgba(212, 222, 237, 0.08);
+            font-size: 12px;
             margin-top: 14px;
             font-weight: 200;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        /* ===== ЭТАПЫ С ВОЛНИСТОЙ ЛИНИЕЙ ===== */
+        /* ===== ЭТАПЫ ===== */
         .steps-wrapper {
             position: relative;
             padding: 20px 0 30px;
@@ -422,22 +444,22 @@
             padding: 20px 15px;
             position: relative;
             z-index: 2;
-            background: rgba(10, 14, 26, 0.8);
+            background: rgba(15, 26, 46, 0.8);
         }
 
         .step h4 {
-            font-size: 17px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 300;
             margin-bottom: 6px;
-            color: #e8edf5;
-            letter-spacing: 0.5px;
+            color: #d4deed;
+            letter-spacing: 1px;
         }
 
         .step p {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 13px;
+            color: rgba(212, 222, 237, 0.2);
+            font-size: 12px;
             font-weight: 200;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
         }
 
         .step-divider {
@@ -456,8 +478,8 @@
         }
 
         .step-divider .wave-line {
-            stroke: rgba(255, 255, 255, 0.06);
-            stroke-width: 1.5;
+            stroke: rgba(255, 255, 255, 0.04);
+            stroke-width: 1;
             fill: none;
         }
 
@@ -468,10 +490,11 @@
         }
 
         .contact-section p {
-            color: rgba(255, 255, 255, 0.35);
+            color: rgba(212, 222, 237, 0.25);
             max-width: 500px;
             margin: 0 auto;
             font-weight: 200;
+            letter-spacing: 0.5px;
         }
 
         .contact-buttons {
@@ -489,14 +512,14 @@
 
         /* ===== ПОДВАЛ ===== */
         footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
             padding: 30px 0 10px;
             margin-top: 40px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.12);
-            font-size: 13px;
+            color: rgba(212, 222, 237, 0.06);
+            font-size: 12px;
             font-weight: 200;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
         }
 
         /* ===== АДАПТИВ ===== */
@@ -520,7 +543,7 @@
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(10, 14, 26, 0.88);
+                background: rgba(15, 26, 46, 0.9);
             }
 
             header {
@@ -538,7 +561,7 @@
             }
 
             .hero .sub-text {
-                font-size: 16px;
+                font-size: 15px;
             }
 
             .calc-row {
@@ -559,11 +582,11 @@
             }
 
             .section-title {
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .calc-result {
-                font-size: 32px;
+                font-size: 30px;
             }
 
             .step {
@@ -584,7 +607,7 @@
             }
 
             .service-card-main h3 {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .service-card-main .feature-list {
@@ -627,11 +650,11 @@
                 <span class="highlight">запоминается надолго</span>
             </h1>
             <p>
-                Разрабатываем сайты под ключ. От идеи до готового продукта.
-                Полный код передаем клиенту.
+                Мы — графические дизайнеры. Разрабатываем красивые сайты,
+                а также другие цифровые продукты по согласованию.
             </p>
             <div class="sub-text">
-                Вы получаете готовый сайт и полные права на него
+                Полный код передаем клиенту. Вы владеете продуктом на 100%
             </div>
             <div class="hero-actions">
                 <a href="#contact" class="cta-btn cta-btn-primary">Обсудить проект</a>
@@ -639,7 +662,7 @@
             </div>
         </section>
 
-        <!-- SERVICES (САЙТЫ — ОСНОВНОЕ) -->
+        <!-- SERVICES -->
         <section id="services" class="services">
             <h2 class="section-title">Что мы создаем</h2>
             <div class="main-service">
@@ -662,11 +685,15 @@
             <div class="additional-grid">
                 <div class="additional-item">
                     <h4>Telegram-боты</h4>
-                    <p>Автоматизация, продажи, уведомления, поддержка</p>
+                    <p>Автоматизация, продажи, уведомления</p>
                 </div>
                 <div class="additional-item">
                     <h4>Мобильные приложения</h4>
                     <p>Кроссплатформенные приложения для iOS и Android</p>
+                </div>
+                <div class="additional-item">
+                    <h4>UI/UX дизайн</h4>
+                    <p>Прототипирование и дизайн интерфейсов</p>
                 </div>
             </div>
         </section>
@@ -677,19 +704,19 @@
             <div class="advantages-grid">
                 <div class="advantage-item">
                     <h4>Дизайн на годы</h4>
-                    <p>Создаем визуал, который не устаревает и работает на имидж</p>
+                    <p>Создаем визуал, который не устаревает</p>
                 </div>
                 <div class="advantage-item">
                     <h4>Честный код</h4>
-                    <p>Передаем исходники без привязки к нашему серверу</p>
+                    <p>Передаем исходники без привязки к нам</p>
                 </div>
                 <div class="advantage-item">
                     <h4>Поддержка</h4>
-                    <p>После запуска остаемся на связи для доработок</p>
+                    <p>Остаемся на связи после запуска</p>
                 </div>
                 <div class="advantage-item">
                     <h4>Гибкость</h4>
-                    <p>Работаем с любыми задачами — от лендинга до крупных порталов</p>
+                    <p>Работаем с любыми задачами</p>
                 </div>
             </div>
         </section>
@@ -737,7 +764,7 @@
                 <div class="steps">
                     <div class="step">
                         <h4>Брифинг</h4>
-                        <p>Анализируем задачи и цели бизнеса</p>
+                        <p>Анализируем задачу</p>
                     </div>
 
                     <div class="step-divider">
@@ -748,7 +775,7 @@
 
                     <div class="step">
                         <h4>Прототип</h4>
-                        <p>Создаем структуру и UX-логику</p>
+                        <p>Создаем структуру</p>
                     </div>
 
                     <div class="step-divider">
@@ -758,8 +785,8 @@
                     </div>
 
                     <div class="step">
-                        <h4>Дизайн и разработка</h4>
-                        <p>Визуал + чистый код под ключ</p>
+                        <h4>Дизайн и код</h4>
+                        <p>Визуал + разработка</p>
                     </div>
 
                     <div class="step-divider">
@@ -770,7 +797,7 @@
 
                     <div class="step">
                         <h4>Запуск</h4>
-                        <p>Передаем код и обучаем команду</p>
+                        <p>Передача кода</p>
                     </div>
                 </div>
             </div>
@@ -779,17 +806,17 @@
         <!-- CONTACT -->
         <section id="contact" class="contact-section">
             <h2 class="section-title">Обсудим ваш проект</h2>
-            <p>Напишите нам — ответим в течение 15 минут. Работаем с бизнесами любого масштаба.</p>
+            <p>Напишите нам — ответим в течение 15 минут.</p>
             <div class="contact-buttons">
                 <a href="#" class="cta-btn cta-btn-primary">Telegram</a>
-                <a href="#" class="cta-btn cta-btn-primary" style="background: #e8edf5; border: none;">WhatsApp</a>
+                <a href="#" class="cta-btn cta-btn-primary" style="background: #d4deed; border: none;">WhatsApp</a>
                 <a href="#" class="cta-btn cta-btn-outline">Email</a>
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer>
-            <span>2026 Studio — разработка сайтов</span>
+            <span>2026 Studio — графический дизайн и разработка</span>
         </footer>
 
     </div>
@@ -806,7 +833,7 @@
             const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
             const charArray = chars.split('');
 
-            const fontSize = 14;
+            const fontSize = 13;
             const columns = Math.floor(width / fontSize);
             const drops = [];
 
@@ -815,10 +842,10 @@
             }
 
             function draw() {
-                ctx.fillStyle = 'rgba(10, 14, 26, 0.04)';
+                ctx.fillStyle = 'rgba(15, 26, 46, 0.03)';
                 ctx.fillRect(0, 0, width, height);
 
-                ctx.fillStyle = 'rgba(232, 237, 245, 0.4)';
+                ctx.fillStyle = 'rgba(212, 222, 237, 0.15)';
                 ctx.font = fontSize + 'px monospace';
                 ctx.textAlign = 'center';
 
@@ -827,10 +854,10 @@
                     const x = i * fontSize + fontSize / 2;
                     const y = drops[i] * fontSize;
 
-                    const brightness = 0.3 + Math.random() * 0.7;
-                    ctx.shadowColor = `rgba(232, 237, 245, ${brightness * 0.15})`;
-                    ctx.shadowBlur = 8;
-                    ctx.fillStyle = `rgba(232, 237, 245, ${brightness * 0.25})`;
+                    const brightness = 0.2 + Math.random() * 0.5;
+                    ctx.shadowColor = `rgba(212, 222, 237, ${brightness * 0.05})`;
+                    ctx.shadowBlur = 6;
+                    ctx.fillStyle = `rgba(212, 222, 237, ${brightness * 0.08})`;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
