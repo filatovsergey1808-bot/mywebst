@@ -18,7 +18,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #fdf8f0;
-            color: #5a6b7a;
+            color: #4a5b6a;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
@@ -43,12 +43,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(253, 248, 240, 0.85);
+            background: rgba(253, 248, 240, 0.88);
             backdrop-filter: blur(6px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(90, 107, 122, 0.02);
-            border-left: 1px solid rgba(90, 107, 122, 0.04);
-            border-right: 1px solid rgba(90, 107, 122, 0.04);
+            box-shadow: 0 0 80px rgba(90, 107, 122, 0.03);
+            border-left: 1px solid rgba(90, 107, 122, 0.08);
+            border-right: 1px solid rgba(90, 107, 122, 0.08);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -57,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 30px;
-            border-bottom: 1px solid rgba(90, 107, 122, 0.06);
+            border-bottom: 1px solid rgba(74, 91, 106, 0.1);
             flex-wrap: wrap;
         }
 
@@ -65,20 +65,20 @@
             font-size: 20px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #5a6b7a;
+            color: #4a5b6a;
             text-transform: uppercase;
         }
 
         .logo span {
             font-weight: 300;
-            color: #5a6b7a;
+            color: #4a5b6a;
             letter-spacing: 2px;
         }
 
         .cta-btn {
             background: transparent;
-            color: #5a6b7a;
-            border: 1px solid rgba(90, 107, 122, 0.12);
+            color: #4a5b6a;
+            border: 1px solid rgba(74, 91, 106, 0.15);
             padding: 10px 30px;
             border-radius: 50px;
             font-weight: 200;
@@ -92,8 +92,8 @@
         }
 
         .cta-btn:hover {
-            background: rgba(90, 107, 122, 0.04);
-            border-color: rgba(90, 107, 122, 0.25);
+            background: rgba(74, 91, 106, 0.05);
+            border-color: rgba(74, 91, 106, 0.25);
         }
 
         .cta-btn-primary {
@@ -112,14 +112,14 @@
         }
 
         .cta-btn-outline {
-            border: 1px solid rgba(90, 107, 122, 0.1);
+            border: 1px solid rgba(74, 91, 106, 0.12);
             background: transparent;
-            color: #5a6b7a;
+            color: #4a5b6a;
         }
 
         .cta-btn-outline:hover {
-            border-color: rgba(90, 107, 122, 0.2);
-            background: rgba(90, 107, 122, 0.02);
+            border-color: rgba(74, 91, 106, 0.25);
+            background: rgba(74, 91, 106, 0.03);
         }
 
         /* ===== ГЕРОЙ ===== */
@@ -134,12 +134,12 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
-            color: #5a6b7a;
+            color: #4a5b6a;
         }
 
         .hero h1 .highlight {
-            font-weight: 300;
-            color: #5a6b7a;
+            font-weight: 200;
+            color: #4a5b6a;
             position: relative;
         }
 
@@ -154,20 +154,22 @@
         }
 
         .hero p {
-            font-size: 18px;
-            color: rgba(90, 107, 122, 0.5);
+            font-size: 20px;
+            color: #4a5b6a;
             max-width: 600px;
             margin: 0 auto 15px;
-            font-weight: 200;
+            font-weight: 300;
             letter-spacing: 0.5px;
+            opacity: 0.85;
         }
 
         .hero .sub-text {
-            font-size: 16px;
-            color: rgba(90, 107, 122, 0.4);
+            font-size: 17px;
+            color: #4a5b6a;
             font-weight: 200;
             margin-bottom: 40px;
             letter-spacing: 1px;
+            opacity: 0.6;
         }
 
         .hero-actions {
@@ -177,24 +179,9 @@
             flex-wrap: wrap;
         }
 
-        /* ===== ОПИСАНИЕ ===== */
-        .description {
-            padding: 40px 0 50px;
-            text-align: center;
-        }
-
-        .description p {
-            font-size: 32px;
-            font-weight: 200;
-            letter-spacing: 2px;
-            color: #5a6b7a;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
         .additional {
-            padding: 20px 0 50px;
+            padding: 40px 0 50px;
         }
 
         .additional-title {
@@ -202,7 +189,7 @@
             font-weight: 200;
             text-align: center;
             letter-spacing: 4px;
-            color: rgba(90, 107, 122, 0.12);
+            color: rgba(74, 91, 106, 0.2);
             margin-bottom: 30px;
             text-transform: uppercase;
         }
@@ -210,36 +197,37 @@
         .additional-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
+            gap: 20px;
             max-width: 600px;
             margin: 0 auto;
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 24px 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(90, 107, 122, 0.04);
+            background: rgba(255, 255, 255, 0.5);
+            padding: 28px 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(74, 91, 106, 0.08);
             text-align: center;
             transition: 0.3s;
         }
 
         .additional-item:hover {
-            background: rgba(255, 255, 255, 0.4);
-            border-color: rgba(192, 57, 43, 0.08);
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(74, 91, 106, 0.15);
+            box-shadow: 0 4px 20px rgba(74, 91, 106, 0.04);
         }
 
         .additional-item h4 {
-            font-size: 16px;
-            font-weight: 200;
+            font-size: 17px;
+            font-weight: 300;
             margin-bottom: 6px;
-            color: rgba(90, 107, 122, 0.6);
-            letter-spacing: 1.5px;
+            color: #4a5b6a;
+            letter-spacing: 1px;
         }
 
         .additional-item p {
-            color: rgba(90, 107, 122, 0.25);
-            font-size: 13px;
+            color: rgba(74, 91, 106, 0.5);
+            font-size: 14px;
             font-weight: 200;
             letter-spacing: 0.3px;
         }
@@ -247,7 +235,11 @@
         /* ===== ЭТАПЫ ===== */
         .steps-wrapper {
             position: relative;
-            padding: 20px 0 30px;
+            padding: 30px 0 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 91, 106, 0.06);
+            margin: 20px 0 30px;
         }
 
         .steps-title {
@@ -256,7 +248,7 @@
             text-align: center;
             margin-bottom: 30px;
             letter-spacing: 3px;
-            color: #5a6b7a;
+            color: #4a5b6a;
         }
 
         .steps {
@@ -265,29 +257,29 @@
             align-items: flex-start;
             gap: 0;
             position: relative;
-            margin: 20px 0 30px;
+            padding: 0 10px;
         }
 
         .step {
             flex: 1;
             text-align: center;
-            padding: 20px 15px;
+            padding: 15px 10px;
             position: relative;
             z-index: 2;
-            background: rgba(253, 248, 240, 0.5);
+            background: transparent;
         }
 
         .step h4 {
-            font-size: 16px;
-            font-weight: 200;
+            font-size: 17px;
+            font-weight: 300;
             margin-bottom: 6px;
-            color: #5a6b7a;
-            letter-spacing: 1.5px;
+            color: #4a5b6a;
+            letter-spacing: 1px;
         }
 
         .step p {
-            color: rgba(90, 107, 122, 0.25);
-            font-size: 12px;
+            color: rgba(74, 91, 106, 0.4);
+            font-size: 13px;
             font-weight: 200;
             letter-spacing: 0.5px;
         }
@@ -298,7 +290,7 @@
             position: relative;
             z-index: 1;
             align-self: center;
-            margin-top: -10px;
+            margin-top: -5px;
         }
 
         .step-divider svg {
@@ -308,21 +300,21 @@
         }
 
         .step-divider .wave-line {
-            stroke: rgba(90, 107, 122, 0.06);
-            stroke-width: 1;
+            stroke: rgba(74, 91, 106, 0.08);
+            stroke-width: 1.5;
             fill: none;
         }
 
         /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
         footer {
-            border-top: 1px solid rgba(90, 107, 122, 0.04);
-            padding: 30px 0 15px;
+            border-top: 1px solid rgba(74, 91, 106, 0.06);
+            padding: 35px 0 20px;
             margin-top: 30px;
             text-align: center;
         }
 
         footer .footer-text {
-            color: rgba(90, 107, 122, 0.1);
+            color: rgba(74, 91, 106, 0.15);
             font-size: 12px;
             font-weight: 200;
             letter-spacing: 2px;
@@ -337,20 +329,21 @@
         }
 
         .footer-contacts a {
-            color: #5a6b7a;
+            color: #4a5b6a;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 200;
             letter-spacing: 1.5px;
             transition: 0.3s;
-            padding: 8px 20px;
+            padding: 10px 28px;
             border-radius: 50px;
-            border: 1px solid rgba(90, 107, 122, 0.06);
+            border: 1px solid rgba(74, 91, 106, 0.08);
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .footer-contacts a:hover {
-            border-color: rgba(90, 107, 122, 0.15);
-            background: rgba(90, 107, 122, 0.02);
+            border-color: rgba(74, 91, 106, 0.2);
+            background: rgba(255, 255, 255, 0.6);
         }
 
         /* ===== АДАПТИВ ===== */
@@ -374,7 +367,7 @@
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(253, 248, 240, 0.88);
+                background: rgba(253, 248, 240, 0.92);
             }
 
             header {
@@ -388,7 +381,7 @@
             }
 
             .hero p {
-                font-size: 16px;
+                font-size: 17px;
             }
 
             .hero .sub-text {
@@ -398,10 +391,6 @@
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .description p {
-                font-size: 24px;
             }
 
             .step {
@@ -436,11 +425,15 @@
             .steps-title {
                 font-size: 22px;
             }
+
+            .steps-wrapper {
+                padding: 20px 15px 30px;
+            }
         }
 
         @media (max-width: 480px) {
-            .description p {
-                font-size: 20px;
+            .hero h1 {
+                font-size: 26px;
             }
         }
     </style>
@@ -548,7 +541,7 @@
                 <a href="#">WhatsApp</a>
                 <a href="#">Email</a>
             </div>
-            <div class="footer-text" style="margin-top: 25px; font-size: 11px;">
+            <div class="footer-text" style="margin-top: 25px; font-size: 11px; opacity: 0.4;">
                 2026 Studio — графический дизайн и разработка
             </div>
         </footer>
@@ -589,7 +582,6 @@
 
                     const brightness = 0.3 + Math.random() * 0.7;
                     
-                    // Насыщенный терракотово-красный — яркий акцент
                     const r = 192 + Math.random() * 40;
                     const g = 57 + Math.random() * 30;
                     const b = 43 + Math.random() * 20;
