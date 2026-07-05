@@ -111,17 +111,6 @@
             box-shadow: 0 4px 30px rgba(44, 62, 80, 0.15);
         }
 
-        .cta-btn-outline {
-            border: 1px solid rgba(44, 62, 80, 0.12);
-            background: transparent;
-            color: #2c3e50;
-        }
-
-        .cta-btn-outline:hover {
-            border-color: rgba(44, 62, 80, 0.25);
-            background: rgba(44, 62, 80, 0.03);
-        }
-
         /* ===== ГЕРОЙ ===== */
         .hero {
             padding: 70px 0 40px;
@@ -132,7 +121,7 @@
             font-size: 54px;
             font-weight: 200;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             letter-spacing: -0.5px;
             color: #2c3e50;
         }
@@ -142,35 +131,54 @@
             color: #2c3e50;
         }
 
-        .hero p {
-            font-size: 24px;
-            color: #2c3e50;
-            max-width: 650px;
-            margin: 0 auto 12px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            opacity: 0.85;
+        /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
+        .main-services {
+            padding: 30px 0 40px;
         }
 
-        .hero .sub-text {
-            font-size: 18px;
-            color: #2c3e50;
+        .main-services-title {
+            font-size: 16px;
             font-weight: 200;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-            opacity: 0.5;
+            text-align: center;
+            letter-spacing: 5px;
+            color: rgba(44, 62, 80, 0.2);
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .main-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .main-service-item {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 32px 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(44, 62, 80, 0.08);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .main-service-item:hover {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(44, 62, 80, 0.15);
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.05);
+        }
+
+        .main-service-item h3 {
+            font-size: 22px;
+            font-weight: 300;
+            color: #2c3e50;
+            letter-spacing: 2px;
         }
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
         .additional {
-            padding: 40px 0 40px;
+            padding: 10px 0 40px;
         }
 
         .additional-title {
@@ -221,84 +229,11 @@
             letter-spacing: 0.3px;
         }
 
-        /* ===== ЭТАПЫ ===== */
-        .steps-wrapper {
-            position: relative;
-            padding: 35px 35px 40px;
-            background: rgba(255, 255, 255, 0.35);
-            border-radius: 20px;
-            border: 1px solid rgba(44, 62, 80, 0.06);
-            margin: 20px 0 30px;
-        }
-
-        .steps-title {
-            font-size: 30px;
-            font-weight: 200;
-            text-align: center;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            color: #2c3e50;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 0;
-            position: relative;
-            padding: 0 10px;
-        }
-
-        .step {
-            flex: 1;
-            text-align: center;
-            padding: 15px 10px;
-            position: relative;
-            z-index: 2;
-            background: transparent;
-        }
-
-        .step h4 {
-            font-size: 19px;
-            font-weight: 300;
-            margin-bottom: 6px;
-            color: #2c3e50;
-            letter-spacing: 1px;
-        }
-
-        .step p {
-            color: rgba(44, 62, 80, 0.4);
-            font-size: 14px;
-            font-weight: 200;
-            letter-spacing: 0.5px;
-        }
-
-        .step-divider {
-            flex: 0 0 45px;
-            height: 2px;
-            position: relative;
-            z-index: 1;
-            align-self: center;
-            margin-top: -5px;
-        }
-
-        .step-divider svg {
-            width: 100%;
-            height: 24px;
-            display: block;
-        }
-
-        .step-divider .wave-line {
-            stroke: rgba(44, 62, 80, 0.08);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
         /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
         footer {
             border-top: 1px solid rgba(44, 62, 80, 0.06);
             padding: 35px 0 20px;
-            margin-top: 30px;
+            margin-top: 10px;
             text-align: center;
         }
 
@@ -337,23 +272,6 @@
         }
 
         /* ===== АДАПТИВ ===== */
-        @media (max-width: 900px) {
-            .steps {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            .step {
-                flex: 0 0 45%;
-                min-width: 200px;
-            }
-
-            .step-divider {
-                flex: 0 0 30px;
-            }
-        }
-
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
@@ -374,30 +292,8 @@
                 font-size: 34px;
             }
 
-            .hero p {
-                font-size: 20px;
-            }
-
-            .hero .sub-text {
-                font-size: 16px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .step {
-                flex: 0 0 100%;
-                min-width: unset;
-            }
-
-            .step-divider {
-                flex: 0 0 20px;
-            }
-
-            .step-divider svg {
-                height: 12px;
+            .main-services-grid {
+                grid-template-columns: 1fr;
             }
 
             .additional-grid {
@@ -416,14 +312,6 @@
                 text-align: center;
             }
 
-            .steps-title {
-                font-size: 24px;
-            }
-
-            .steps-wrapper {
-                padding: 25px 15px 30px;
-            }
-
             footer .footer-title {
                 font-size: 16px;
             }
@@ -432,10 +320,6 @@
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 28px;
-            }
-
-            .hero p {
-                font-size: 17px;
             }
         }
     </style>
@@ -452,7 +336,7 @@
         <header>
             <div class="logo"><span>✦</span> Studio</div>
             <div>
-                <a href="#contact" class="cta-btn">Начать проект</a>
+                <a href="#contact" class="cta-btn cta-btn-primary">Начать проект</a>
             </div>
         </header>
 
@@ -462,15 +346,15 @@
                 Создаем дизайн, который<br>
                 <span class="highlight">запоминается надолго</span>
             </h1>
-            <p>
-                Разрабатываем сайты с уникальным визуалом
-            </p>
-            <div class="sub-text">
-                Полный код передаем клиенту
-            </div>
-            <div class="hero-actions">
-                <a href="#contact" class="cta-btn cta-btn-primary">Обсудить проект</a>
-                <a href="#work" class="cta-btn cta-btn-outline">Как мы работаем</a>
+        </section>
+
+        <!-- ОСНОВНЫЕ УСЛУГИ -->
+        <section class="main-services">
+            <div class="main-services-title">Основное направление</div>
+            <div class="main-services-grid">
+                <div class="main-service-item">
+                    <h3>Красивые сайты</h3>
+                </div>
             </div>
         </section>
 
@@ -485,52 +369,6 @@
                 <div class="additional-item">
                     <h4>Мобильные приложения</h4>
                     <p>Кроссплатформенные приложения для iOS и Android</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- STEPS WITH WAVY LINE -->
-        <section id="work">
-            <div class="steps-title">Как мы работаем</div>
-            <div class="steps-wrapper">
-                <div class="steps">
-                    <div class="step">
-                        <h4>Брифинг</h4>
-                        <p>Анализируем задачу</p>
-                    </div>
-
-                    <div class="step-divider">
-                        <svg viewBox="0 0 45 24" preserveAspectRatio="none">
-                            <path d="M 0 12 Q 11 0, 22 12 T 45 12" class="wave-line" />
-                        </svg>
-                    </div>
-
-                    <div class="step">
-                        <h4>Прототип</h4>
-                        <p>Создаем структуру</p>
-                    </div>
-
-                    <div class="step-divider">
-                        <svg viewBox="0 0 45 24" preserveAspectRatio="none">
-                            <path d="M 0 12 Q 11 0, 22 12 T 45 12" class="wave-line" />
-                        </svg>
-                    </div>
-
-                    <div class="step">
-                        <h4>Дизайн и код</h4>
-                        <p>Визуал + разработка</p>
-                    </div>
-
-                    <div class="step-divider">
-                        <svg viewBox="0 0 45 24" preserveAspectRatio="none">
-                            <path d="M 0 12 Q 11 0, 22 12 T 45 12" class="wave-line" />
-                        </svg>
-                    </div>
-
-                    <div class="step">
-                        <h4>Запуск</h4>
-                        <p>Передача кода</p>
-                    </div>
                 </div>
             </div>
         </section>
