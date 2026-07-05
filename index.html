@@ -6,7 +6,7 @@
     <title>Студия графического дизайна</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500&display=swap" rel="stylesheet">
     <style>
         /* ===== СБРОС ===== */
         * {
@@ -18,7 +18,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #fdf8f0;
-            color: #3d4d5c;
+            color: #2c3e50;
             line-height: 1.4;
             min-height: 100vh;
             position: relative;
@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.25;
+            opacity: 0.2;
         }
 
         /* Весь контент поверх canvas */
@@ -43,12 +43,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(253, 248, 240, 0.90);
+            background: rgba(253, 248, 240, 0.92);
             backdrop-filter: blur(6px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(61, 77, 92, 0.03);
-            border-left: 1px solid rgba(61, 77, 92, 0.06);
-            border-right: 1px solid rgba(61, 77, 92, 0.06);
+            box-shadow: 0 0 80px rgba(44, 62, 80, 0.03);
+            border-left: 1px solid rgba(44, 62, 80, 0.06);
+            border-right: 1px solid rgba(44, 62, 80, 0.06);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -57,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 25px;
-            border-bottom: 1px solid rgba(61, 77, 92, 0.08);
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
             flex-wrap: wrap;
         }
 
@@ -65,20 +65,20 @@
             font-size: 22px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #3d4d5c;
+            color: #2c3e50;
             text-transform: uppercase;
         }
 
         .logo span {
             font-weight: 300;
-            color: #3d4d5c;
+            color: #2c3e50;
             letter-spacing: 2px;
         }
 
         .cta-btn {
             background: transparent;
-            color: #3d4d5c;
-            border: 1px solid rgba(61, 77, 92, 0.15);
+            color: #2c3e50;
+            border: 1px solid rgba(44, 62, 80, 0.15);
             padding: 12px 34px;
             border-radius: 50px;
             font-weight: 300;
@@ -92,8 +92,8 @@
         }
 
         .cta-btn:hover {
-            background: rgba(61, 77, 92, 0.05);
-            border-color: rgba(61, 77, 92, 0.25);
+            background: rgba(44, 62, 80, 0.05);
+            border-color: rgba(44, 62, 80, 0.25);
         }
 
         .cta-btn-primary {
@@ -112,14 +112,14 @@
         }
 
         .cta-btn-outline {
-            border: 1px solid rgba(61, 77, 92, 0.12);
+            border: 1px solid rgba(44, 62, 80, 0.12);
             background: transparent;
-            color: #3d4d5c;
+            color: #2c3e50;
         }
 
         .cta-btn-outline:hover {
-            border-color: rgba(61, 77, 92, 0.25);
-            background: rgba(61, 77, 92, 0.03);
+            border-color: rgba(44, 62, 80, 0.25);
+            background: rgba(44, 62, 80, 0.03);
         }
 
         /* ===== ГЕРОЙ ===== */
@@ -134,31 +134,31 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
-            color: #3d4d5c;
+            color: #2c3e50;
         }
 
         .hero h1 .highlight {
-            font-weight: 200;
-            color: #3d4d5c;
+            font-weight: 300;
+            color: #2c3e50;
         }
 
         .hero p {
-            font-size: 22px;
-            color: #3d4d5c;
+            font-size: 24px;
+            color: #2c3e50;
             max-width: 650px;
             margin: 0 auto 12px;
             font-weight: 300;
             letter-spacing: 0.5px;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         .hero .sub-text {
             font-size: 18px;
-            color: #3d4d5c;
+            color: #2c3e50;
             font-weight: 200;
             margin-bottom: 40px;
             letter-spacing: 1px;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .hero-actions {
@@ -178,7 +178,7 @@
             font-weight: 200;
             text-align: center;
             letter-spacing: 5px;
-            color: rgba(61, 77, 92, 0.25);
+            color: rgba(44, 62, 80, 0.2);
             margin-bottom: 30px;
             text-transform: uppercase;
         }
@@ -195,27 +195,27 @@
             background: rgba(255, 255, 255, 0.6);
             padding: 32px 28px;
             border-radius: 16px;
-            border: 1px solid rgba(61, 77, 92, 0.08);
+            border: 1px solid rgba(44, 62, 80, 0.08);
             text-align: center;
             transition: 0.3s;
         }
 
         .additional-item:hover {
             background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(61, 77, 92, 0.15);
-            box-shadow: 0 4px 24px rgba(61, 77, 92, 0.05);
+            border-color: rgba(44, 62, 80, 0.15);
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.05);
         }
 
         .additional-item h4 {
             font-size: 19px;
             font-weight: 300;
             margin-bottom: 6px;
-            color: #3d4d5c;
+            color: #2c3e50;
             letter-spacing: 1px;
         }
 
         .additional-item p {
-            color: rgba(61, 77, 92, 0.5);
+            color: rgba(44, 62, 80, 0.5);
             font-size: 15px;
             font-weight: 200;
             letter-spacing: 0.3px;
@@ -227,7 +227,7 @@
             padding: 35px 35px 40px;
             background: rgba(255, 255, 255, 0.35);
             border-radius: 20px;
-            border: 1px solid rgba(61, 77, 92, 0.06);
+            border: 1px solid rgba(44, 62, 80, 0.06);
             margin: 20px 0 30px;
         }
 
@@ -237,7 +237,7 @@
             text-align: center;
             margin-bottom: 30px;
             letter-spacing: 3px;
-            color: #3d4d5c;
+            color: #2c3e50;
         }
 
         .steps {
@@ -262,12 +262,12 @@
             font-size: 19px;
             font-weight: 300;
             margin-bottom: 6px;
-            color: #3d4d5c;
+            color: #2c3e50;
             letter-spacing: 1px;
         }
 
         .step p {
-            color: rgba(61, 77, 92, 0.4);
+            color: rgba(44, 62, 80, 0.4);
             font-size: 14px;
             font-weight: 200;
             letter-spacing: 0.5px;
@@ -289,14 +289,14 @@
         }
 
         .step-divider .wave-line {
-            stroke: rgba(61, 77, 92, 0.08);
+            stroke: rgba(44, 62, 80, 0.08);
             stroke-width: 1.5;
             fill: none;
         }
 
         /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
         footer {
-            border-top: 1px solid rgba(61, 77, 92, 0.06);
+            border-top: 1px solid rgba(44, 62, 80, 0.06);
             padding: 35px 0 20px;
             margin-top: 30px;
             text-align: center;
@@ -305,7 +305,7 @@
         footer .footer-title {
             font-size: 18px;
             font-weight: 300;
-            color: #3d4d5c;
+            color: #2c3e50;
             letter-spacing: 3px;
             margin-bottom: 25px;
             opacity: 0.7;
@@ -319,7 +319,7 @@
         }
 
         .footer-contacts a {
-            color: #3d4d5c;
+            color: #2c3e50;
             text-decoration: none;
             font-size: 16px;
             font-weight: 300;
@@ -327,13 +327,41 @@
             transition: 0.3s;
             padding: 14px 36px;
             border-radius: 50px;
-            border: 1px solid rgba(61, 77, 92, 0.1);
+            border: 1px solid rgba(44, 62, 80, 0.1);
             background: rgba(255, 255, 255, 0.4);
         }
 
         .footer-contacts a:hover {
-            border-color: rgba(61, 77, 92, 0.25);
+            border-color: rgba(44, 62, 80, 0.25);
             background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== КНОПКА MAX ===== */
+        .max-button {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .max-button a {
+            display: inline-block;
+            background: #c0392b;
+            color: #fdf8f0;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            padding: 16px 50px;
+            border-radius: 50px;
+            transition: 0.4s;
+            border: none;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(192, 57, 43, 0.2);
+        }
+
+        .max-button a:hover {
+            background: #e74c3c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(192, 57, 43, 0.3);
         }
 
         /* ===== АДАПТИВ ===== */
@@ -375,7 +403,7 @@
             }
 
             .hero p {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             .hero .sub-text {
@@ -427,11 +455,29 @@
             footer .footer-title {
                 font-size: 16px;
             }
+
+            .max-button a {
+                font-size: 16px;
+                padding: 14px 40px;
+                letter-spacing: 3px;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .max-button a {
+                font-size: 14px;
+                padding: 12px 30px;
+                letter-spacing: 2px;
+                width: 100%;
+                max-width: 280px;
             }
         }
     </style>
@@ -538,6 +584,9 @@
                 <a href="#">Telegram</a>
                 <a href="#">WhatsApp</a>
                 <a href="#">Email</a>
+            </div>
+            <div class="max-button">
+                <a href="#">MAX</a>
             </div>
         </footer>
 
