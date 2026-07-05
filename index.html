@@ -18,7 +18,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #e8edf5;
-            color: #1a2744;
+            color: #c47a3a;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.04;
+            opacity: 0.35;
         }
 
         /* Весь контент поверх canvas */
@@ -43,12 +43,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(232, 237, 245, 0.75);
-            backdrop-filter: blur(8px);
+            background: rgba(232, 237, 245, 0.82);
+            backdrop-filter: blur(6px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(26, 39, 68, 0.03);
-            border-left: 1px solid rgba(255, 255, 255, 0.5);
-            border-right: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 80px rgba(196, 122, 58, 0.03);
+            border-left: 1px solid rgba(196, 122, 58, 0.06);
+            border-right: 1px solid rgba(196, 122, 58, 0.06);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -57,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 30px;
-            border-bottom: 1px solid rgba(26, 39, 68, 0.06);
+            border-bottom: 1px solid rgba(196, 122, 58, 0.08);
             flex-wrap: wrap;
         }
 
@@ -65,20 +65,20 @@
             font-size: 20px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #1a2744;
+            color: #c47a3a;
             text-transform: uppercase;
         }
 
         .logo span {
             font-weight: 400;
-            color: #1a2744;
+            color: #c47a3a;
             letter-spacing: 2px;
         }
 
         .cta-btn {
             background: transparent;
-            color: #1a2744;
-            border: 1px solid rgba(26, 39, 68, 0.1);
+            color: #c47a3a;
+            border: 1px solid rgba(196, 122, 58, 0.15);
             padding: 10px 30px;
             border-radius: 50px;
             font-weight: 300;
@@ -92,12 +92,12 @@
         }
 
         .cta-btn:hover {
-            background: rgba(26, 39, 68, 0.03);
-            border-color: rgba(26, 39, 68, 0.2);
+            background: rgba(196, 122, 58, 0.05);
+            border-color: rgba(196, 122, 58, 0.3);
         }
 
         .cta-btn-primary {
-            background: #1a2744;
+            background: #c47a3a;
             color: #e8edf5;
             border: none;
             padding: 12px 36px;
@@ -106,20 +106,20 @@
         }
 
         .cta-btn-primary:hover {
-            background: #2a3a5c;
+            background: #d48a4a;
             transform: translateY(-1px);
-            box-shadow: 0 4px 30px rgba(26, 39, 68, 0.1);
+            box-shadow: 0 4px 30px rgba(196, 122, 58, 0.2);
         }
 
         .cta-btn-outline {
-            border: 1px solid rgba(26, 39, 68, 0.08);
+            border: 1px solid rgba(196, 122, 58, 0.12);
             background: transparent;
-            color: #1a2744;
+            color: #c47a3a;
         }
 
         .cta-btn-outline:hover {
-            border-color: rgba(26, 39, 68, 0.2);
-            background: rgba(26, 39, 68, 0.02);
+            border-color: rgba(196, 122, 58, 0.25);
+            background: rgba(196, 122, 58, 0.03);
         }
 
         /* ===== ГЕРОЙ ===== */
@@ -134,12 +134,12 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
-            color: #1a2744;
+            color: #c47a3a;
         }
 
         .hero h1 .highlight {
             font-weight: 400;
-            color: #1a2744;
+            color: #c47a3a;
             position: relative;
         }
 
@@ -150,12 +150,12 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: rgba(26, 39, 68, 0.08);
+            background: rgba(196, 122, 58, 0.1);
         }
 
         .hero p {
             font-size: 18px;
-            color: rgba(26, 39, 68, 0.5);
+            color: rgba(196, 122, 58, 0.5);
             max-width: 680px;
             margin: 0 auto 15px;
             font-weight: 300;
@@ -164,7 +164,7 @@
 
         .hero .sub-text {
             font-size: 16px;
-            color: rgba(26, 39, 68, 0.4);
+            color: rgba(196, 122, 58, 0.4);
             font-weight: 300;
             margin-bottom: 40px;
             letter-spacing: 1px;
@@ -188,12 +188,12 @@
             text-align: center;
             margin-bottom: 50px;
             letter-spacing: 3px;
-            color: #1a2744;
+            color: #c47a3a;
         }
 
         .section-title .highlight {
             font-weight: 300;
-            color: #1a2744;
+            color: #c47a3a;
         }
 
         .main-service {
@@ -202,30 +202,31 @@
         }
 
         .service-card-main {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4);
             padding: 50px 45px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(196, 122, 58, 0.08);
             text-align: center;
             transition: 0.4s;
-            box-shadow: 0 2px 20px rgba(26, 39, 68, 0.02);
+            box-shadow: 0 2px 20px rgba(196, 122, 58, 0.02);
         }
 
         .service-card-main:hover {
-            box-shadow: 0 8px 40px rgba(26, 39, 68, 0.04);
+            box-shadow: 0 8px 40px rgba(196, 122, 58, 0.05);
             transform: translateY(-2px);
+            border-color: rgba(196, 122, 58, 0.15);
         }
 
         .service-card-main h3 {
             font-size: 26px;
             font-weight: 300;
             margin-bottom: 16px;
-            color: #1a2744;
+            color: #c47a3a;
             letter-spacing: 2px;
         }
 
         .service-card-main p {
-            color: rgba(26, 39, 68, 0.5);
+            color: rgba(196, 122, 58, 0.5);
             font-size: 16px;
             font-weight: 300;
             max-width: 500px;
@@ -242,7 +243,7 @@
         }
 
         .service-card-main .feature-list li {
-            color: rgba(26, 39, 68, 0.35);
+            color: rgba(196, 122, 58, 0.35);
             font-size: 13px;
             font-weight: 300;
             padding-left: 18px;
@@ -254,7 +255,7 @@
             content: '—';
             position: absolute;
             left: 0;
-            color: rgba(26, 39, 68, 0.1);
+            color: rgba(196, 122, 58, 0.15);
         }
 
         /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
@@ -267,7 +268,7 @@
             font-weight: 300;
             text-align: center;
             letter-spacing: 4px;
-            color: rgba(26, 39, 68, 0.15);
+            color: rgba(196, 122, 58, 0.15);
             margin-bottom: 30px;
             text-transform: uppercase;
         }
@@ -281,29 +282,29 @@
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.25);
             padding: 24px 20px;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(196, 122, 58, 0.06);
             text-align: center;
             transition: 0.3s;
         }
 
         .additional-item:hover {
-            background: rgba(255, 255, 255, 0.5);
-            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(196, 122, 58, 0.12);
         }
 
         .additional-item h4 {
             font-size: 16px;
             font-weight: 300;
             margin-bottom: 6px;
-            color: rgba(26, 39, 68, 0.6);
+            color: rgba(196, 122, 58, 0.6);
             letter-spacing: 1px;
         }
 
         .additional-item p {
-            color: rgba(26, 39, 68, 0.25);
+            color: rgba(196, 122, 58, 0.25);
             font-size: 13px;
             font-weight: 300;
             letter-spacing: 0.3px;
@@ -311,10 +312,10 @@
 
         /* ===== ПРЕИМУЩЕСТВА ===== */
         .advantages {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             padding: 45px 40px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(196, 122, 58, 0.06);
             margin: 40px 0 30px;
             text-align: center;
         }
@@ -330,12 +331,12 @@
             font-size: 16px;
             font-weight: 400;
             margin-bottom: 6px;
-            color: #1a2744;
+            color: #c47a3a;
             letter-spacing: 1px;
         }
 
         .advantage-item p {
-            color: rgba(26, 39, 68, 0.35);
+            color: rgba(196, 122, 58, 0.35);
             font-size: 13px;
             font-weight: 300;
             letter-spacing: 0.3px;
@@ -343,10 +344,10 @@
 
         /* ===== КАЛЬКУЛЯТОР ===== */
         .calculator {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             padding: 45px 40px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(196, 122, 58, 0.06);
             margin: 50px 0 30px;
         }
 
@@ -366,7 +367,7 @@
             display: block;
             font-weight: 300;
             margin-bottom: 8px;
-            color: rgba(26, 39, 68, 0.2);
+            color: rgba(196, 122, 58, 0.2);
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 2.5px;
@@ -377,9 +378,9 @@
             width: 100%;
             padding: 14px 18px;
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            color: #1a2744;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(196, 122, 58, 0.08);
+            color: #c47a3a;
             font-size: 14px;
             font-weight: 300;
             outline: none;
@@ -390,34 +391,34 @@
 
         .calc-group select option {
             background: #e8edf5;
-            color: #1a2744;
+            color: #c47a3a;
         }
 
         .calc-group select:focus,
         .calc-group input:focus {
-            border-color: rgba(26, 39, 68, 0.15);
-            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(196, 122, 58, 0.2);
+            background: rgba(255, 255, 255, 0.6);
         }
 
         .calc-result {
             font-size: 36px;
             font-weight: 200;
-            color: #1a2744;
+            color: #c47a3a;
             margin-top: 30px;
             text-align: center;
             letter-spacing: 2px;
         }
 
         .calc-result span {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.25);
             padding: 4px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(196, 122, 58, 0.06);
             border-radius: 50px;
         }
 
         .calc-note {
             text-align: center;
-            color: rgba(26, 39, 68, 0.15);
+            color: rgba(196, 122, 58, 0.15);
             font-size: 12px;
             margin-top: 14px;
             font-weight: 300;
@@ -452,12 +453,12 @@
             font-size: 16px;
             font-weight: 300;
             margin-bottom: 6px;
-            color: #1a2744;
+            color: #c47a3a;
             letter-spacing: 1px;
         }
 
         .step p {
-            color: rgba(26, 39, 68, 0.25);
+            color: rgba(196, 122, 58, 0.25);
             font-size: 12px;
             font-weight: 300;
             letter-spacing: 0.5px;
@@ -479,7 +480,7 @@
         }
 
         .step-divider .wave-line {
-            stroke: rgba(26, 39, 68, 0.06);
+            stroke: rgba(196, 122, 58, 0.08);
             stroke-width: 1;
             fill: none;
         }
@@ -491,7 +492,7 @@
         }
 
         .contact-section p {
-            color: rgba(26, 39, 68, 0.35);
+            color: rgba(196, 122, 58, 0.35);
             max-width: 500px;
             margin: 0 auto;
             font-weight: 300;
@@ -513,11 +514,11 @@
 
         /* ===== ПОДВАЛ ===== */
         footer {
-            border-top: 1px solid rgba(26, 39, 68, 0.04);
+            border-top: 1px solid rgba(196, 122, 58, 0.04);
             padding: 30px 0 10px;
             margin-top: 40px;
             text-align: center;
-            color: rgba(26, 39, 68, 0.1);
+            color: rgba(196, 122, 58, 0.1);
             font-size: 12px;
             font-weight: 300;
             letter-spacing: 2px;
@@ -544,7 +545,7 @@
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(232, 237, 245, 0.85);
+                background: rgba(232, 237, 245, 0.88);
             }
 
             header {
@@ -810,7 +811,7 @@
             <p>Напишите нам — ответим в течение 15 минут.</p>
             <div class="contact-buttons">
                 <a href="#" class="cta-btn cta-btn-primary">Telegram</a>
-                <a href="#" class="cta-btn cta-btn-primary" style="background: #1a2744; border: none;">WhatsApp</a>
+                <a href="#" class="cta-btn cta-btn-primary" style="background: #c47a3a; border: none;">WhatsApp</a>
                 <a href="#" class="cta-btn cta-btn-outline">Email</a>
             </div>
         </section>
@@ -831,10 +832,10 @@
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
             const charArray = chars.split('');
 
-            const fontSize = 13;
+            const fontSize = 14;
             const columns = Math.floor(width / fontSize);
             const drops = [];
 
@@ -843,10 +844,9 @@
             }
 
             function draw() {
-                ctx.fillStyle = 'rgba(232, 237, 245, 0.03)';
+                ctx.fillStyle = 'rgba(232, 237, 245, 0.02)';
                 ctx.fillRect(0, 0, width, height);
 
-                ctx.fillStyle = 'rgba(26, 39, 68, 0.06)';
                 ctx.font = fontSize + 'px monospace';
                 ctx.textAlign = 'center';
 
@@ -855,10 +855,16 @@
                     const x = i * fontSize + fontSize / 2;
                     const y = drops[i] * fontSize;
 
-                    const brightness = 0.2 + Math.random() * 0.5;
-                    ctx.shadowColor = `rgba(26, 39, 68, ${brightness * 0.02})`;
-                    ctx.shadowBlur = 4;
-                    ctx.fillStyle = `rgba(26, 39, 68, ${brightness * 0.04})`;
+                    const brightness = 0.3 + Math.random() * 0.7;
+                    
+                    // Основной цвет — оранжево-золотистый (комплиментарный к синему)
+                    const r = 196 + Math.random() * 40;
+                    const g = 122 + Math.random() * 30;
+                    const b = 58 + Math.random() * 20;
+                    
+                    ctx.shadowColor = `rgba(196, 122, 58, ${brightness * 0.3})`;
+                    ctx.shadowBlur = 12;
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${brightness * 0.6})`;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
