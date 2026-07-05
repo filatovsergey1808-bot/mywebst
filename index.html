@@ -51,11 +51,6 @@
             border-right: 1px solid rgba(44, 62, 80, 0.06);
         }
 
-        /* ===== ОБЩИЙ СТИЛЬ ТЕКСТА ===== */
-        .text-uppercase {
-            text-transform: uppercase;
-        }
-
         /* ===== ЦВЕТА ===== */
         .color-accent {
             color: #c0392b;
@@ -73,6 +68,7 @@
             padding: 20px 0 25px;
             border-bottom: 1px solid rgba(44, 62, 80, 0.08);
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo {
@@ -89,40 +85,28 @@
             letter-spacing: 3px;
         }
 
-        .cta-btn {
-            background: transparent;
+        .header-phone {
             color: #2c3e50;
-            border: 1px solid rgba(44, 62, 80, 0.15);
-            padding: 12px 34px;
-            border-radius: 50px;
-            font-weight: 200;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.4s;
             text-decoration: none;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-
-        .cta-btn:hover {
-            background: rgba(44, 62, 80, 0.05);
-            border-color: rgba(44, 62, 80, 0.25);
-        }
-
-        .cta-btn-primary {
-            background: #2c3e50;
-            color: #fdf8f0;
-            border: none;
-            padding: 14px 40px;
+            font-size: 15px;
             font-weight: 200;
             letter-spacing: 4px;
+            transition: 0.4s;
+            padding: 12px 34px;
+            border-radius: 50px;
+            border: 1px solid rgba(44, 62, 80, 0.08);
+            background: transparent;
+            text-transform: uppercase;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            transition: all 0.4s ease;
         }
 
-        .cta-btn-primary:hover {
-            background: #3a4e62;
+        .header-phone:hover {
+            border-color: rgba(231, 76, 60, 0.3);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px rgba(231, 76, 60, 0.12), 0 0 60px rgba(231, 76, 60, 0.04);
             transform: translateY(-1px);
-            box-shadow: 0 4px 30px rgba(44, 62, 80, 0.15);
         }
 
         /* ===== ГЕРОЙ ===== */
@@ -170,7 +154,7 @@
             border-radius: 16px;
             border: 1px solid rgba(44, 62, 80, 0.08);
             text-align: center;
-            transition: 0.4s;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -178,13 +162,35 @@
             height: 180px;
             min-height: 180px;
             box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-service-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(231, 76, 60, 0.03) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            pointer-events: none;
         }
 
         .main-service-item:hover {
             background: rgba(255, 255, 255, 0.85);
             border-color: rgba(231, 76, 60, 0.3);
-            box-shadow: 0 0 30px rgba(231, 76, 60, 0.15), 0 0 60px rgba(231, 76, 60, 0.05);
-            transform: translateY(-2px);
+            box-shadow: 
+                0 0 40px rgba(231, 76, 60, 0.15),
+                0 0 80px rgba(231, 76, 60, 0.06),
+                0 0 120px rgba(231, 76, 60, 0.03);
+            transform: translateY(-3px);
+        }
+
+        .main-service-item:hover::before {
+            opacity: 1;
         }
 
         .main-service-item h3 {
@@ -233,7 +239,7 @@
             border-radius: 16px;
             border: 1px solid rgba(44, 62, 80, 0.08);
             text-align: center;
-            transition: 0.4s;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -241,13 +247,35 @@
             height: 180px;
             min-height: 180px;
             box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .additional-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(231, 76, 60, 0.03) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            pointer-events: none;
         }
 
         .additional-item:hover {
             background: rgba(255, 255, 255, 0.85);
             border-color: rgba(231, 76, 60, 0.3);
-            box-shadow: 0 0 30px rgba(231, 76, 60, 0.15), 0 0 60px rgba(231, 76, 60, 0.05);
-            transform: translateY(-2px);
+            box-shadow: 
+                0 0 40px rgba(231, 76, 60, 0.15),
+                0 0 80px rgba(231, 76, 60, 0.06),
+                0 0 120px rgba(231, 76, 60, 0.03);
+            transform: translateY(-3px);
+        }
+
+        .additional-item:hover::before {
+            opacity: 1;
         }
 
         .additional-item h4 {
@@ -297,7 +325,7 @@
             font-size: 15px;
             font-weight: 200;
             letter-spacing: 4px;
-            transition: 0.4s;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 12px 20px;
             border-radius: 50px;
             border: 1px solid rgba(44, 62, 80, 0.08);
@@ -306,13 +334,34 @@
             text-align: center;
             width: 100%;
             box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-contacts a::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(231, 76, 60, 0.04) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            pointer-events: none;
         }
 
         .footer-contacts a:hover {
             border-color: rgba(231, 76, 60, 0.3);
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 25px rgba(231, 76, 60, 0.12);
-            transform: translateY(-1px);
+            box-shadow: 
+                0 0 30px rgba(231, 76, 60, 0.12),
+                0 0 60px rgba(231, 76, 60, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .footer-contacts a:hover::before {
+            opacity: 1;
         }
 
         /* ===== АДАПТИВ ===== */
@@ -390,13 +439,10 @@
                 margin-bottom: 25px;
             }
 
-            .cta-btn {
-                letter-spacing: 4px;
+            .header-phone {
                 font-size: 13px;
-            }
-
-            .cta-btn-primary {
                 letter-spacing: 3px;
+                padding: 10px 24px;
             }
         }
 
@@ -452,6 +498,12 @@
                 letter-spacing: 3px;
                 padding: 12px 20px;
             }
+
+            .header-phone {
+                font-size: 12px;
+                letter-spacing: 2px;
+                padding: 8px 20px;
+            }
         }
     </style>
 </head>
@@ -467,7 +519,7 @@
         <header>
             <div class="logo"><span>✦</span> STUDIO</div>
             <div>
-                <a href="#contact" class="cta-btn cta-btn-primary">НАЧАТЬ ПРОЕКТ</a>
+                <a href="tel:+79999999999" class="header-phone">+7 999 999-99-99</a>
             </div>
         </header>
 
