@@ -100,6 +100,16 @@
             color: #e74c3c;
         }
 
+        /* ===== КАРТОЧКИ-КНОПКИ ===== */
+        .clickable {
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .clickable:hover {
+            transform: translateY(-3px);
+        }
+
         /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
         .main-services {
             padding: 40px 0 50px;
@@ -136,12 +146,13 @@
             justify-content: center;
             height: 190px;
             min-height: 190px;
+            cursor: pointer;
         }
 
         .main-service-item:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(231, 76, 60, 0.2);
+            border-color: rgba(231, 76, 60, 0.3);
             box-shadow: 
                 0 0 10px rgba(231, 76, 60, 0.06),
                 0 0 20px rgba(231, 76, 60, 0.02);
@@ -200,12 +211,13 @@
             justify-content: center;
             height: 190px;
             min-height: 190px;
+            cursor: pointer;
         }
 
         .additional-item:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(231, 76, 60, 0.2);
+            border-color: rgba(231, 76, 60, 0.3);
             box-shadow: 
                 0 0 10px rgba(231, 76, 60, 0.06),
                 0 0 20px rgba(231, 76, 60, 0.02);
@@ -226,6 +238,137 @@
             font-weight: 200;
             letter-spacing: 4px;
             text-transform: uppercase;
+        }
+
+        /* ===== МОДАЛЬНОЕ ОКНО ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fdf8f0;
+            border-radius: 24px;
+            padding: 50px 45px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: 200;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.4;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 28px;
+            font-weight: 200;
+            letter-spacing: 4px;
+            color: #e74c3c;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .modal-subtitle {
+            font-size: 16px;
+            font-weight: 200;
+            color: rgba(44, 62, 80, 0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .modal-divider {
+            width: 40px;
+            height: 2px;
+            background: #c0392b;
+            margin-bottom: 30px;
+            opacity: 0.3;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .modal-item {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 25px 20px;
+            border: 1px solid rgba(44, 62, 80, 0.06);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(231, 76, 60, 0.15);
+        }
+
+        .modal-item h5 {
+            font-size: 16px;
+            font-weight: 200;
+            color: #2c3e50;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .modal-item p {
+            font-size: 13px;
+            font-weight: 200;
+            color: rgba(44, 62, 80, 0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ===== АНИМАЦИИ ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
@@ -372,6 +515,35 @@
                 font-size: 16px;
                 letter-spacing: 5px;
             }
+
+            .modal {
+                padding: 35px 25px;
+                max-width: 95%;
+            }
+
+            .modal-title {
+                font-size: 24px;
+                letter-spacing: 3px;
+            }
+
+            .modal-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+
+            .modal-item {
+                padding: 20px 15px;
+            }
+
+            .modal-item h5 {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .modal-item p {
+                font-size: 12px;
+                letter-spacing: 1.5px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -455,6 +627,20 @@
                 font-size: 16px;
                 letter-spacing: 4px;
             }
+
+            .modal {
+                padding: 30px 20px;
+            }
+
+            .modal-title {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .modal-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
         }
     </style>
 </head>
@@ -486,7 +672,7 @@
         <section class="main-services">
             <div class="main-services-title">ОСНОВНОЕ НАПРАВЛЕНИЕ</div>
             <div class="main-services-grid">
-                <div class="main-service-item">
+                <div class="main-service-item" data-modal="sites">
                     <h3>КРАСИВЫЕ САЙТЫ</h3>
                     <p>УНИКАЛЬНЫЙ ДИЗАЙН, ПОЛНЫЙ КОД</p>
                 </div>
@@ -497,11 +683,11 @@
         <section class="additional">
             <div class="additional-title">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</div>
             <div class="additional-grid">
-                <div class="additional-item">
+                <div class="additional-item" data-modal="bots">
                     <h4>TELEGRAM-БОТЫ</h4>
                     <p>АВТОМАТИЗАЦИЯ, ПРОДАЖИ</p>
                 </div>
-                <div class="additional-item">
+                <div class="additional-item" data-modal="apps">
                     <h4>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</h4>
                     <p>IOS И ANDROID</p>
                 </div>
@@ -521,8 +707,22 @@
 
     </div>
 
-    <!-- ===== СКРИПТ МАТРИЦЫ ===== -->
+    <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <span class="modal-close" id="modalClose">×</span>
+            <div class="modal-title" id="modalTitle">КРАСИВЫЕ САЙТЫ</div>
+            <div class="modal-subtitle" id="modalSubtitle">НАШИ РАБОТЫ</div>
+            <div class="modal-divider"></div>
+            <div class="modal-grid" id="modalGrid">
+                <!-- Контент будет заполняться через JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== СКРИПТЫ ===== -->
     <script>
+        // ===== МАТРИЦА =====
         (function matrixRain() {
             const canvas = document.getElementById('matrixCanvas');
             const ctx = canvas.getContext('2d');
@@ -589,6 +789,98 @@
             window.addEventListener('resize', resizeCanvas);
             setInterval(draw, 45);
         })();
+
+        // ===== МОДАЛЬНОЕ ОКНО =====
+        const modalData = {
+            sites: {
+                title: 'КРАСИВЫЕ САЙТЫ',
+                subtitle: 'НАШИ РАБОТЫ',
+                items: [
+                    { name: 'Студия красоты Aura', desc: 'Лендинг, дизайн, верстка' },
+                    { name: 'Мебельный дом Home', desc: 'Интернет-магазин, каталог' },
+                    { name: 'Юридическая фирма Lex', desc: 'Корпоративный сайт' },
+                    { name: 'Ресторан La Maison', desc: 'Сайт-визитка, бронирование' }
+                ]
+            },
+            bots: {
+                title: 'TELEGRAM-БОТЫ',
+                subtitle: 'НАШИ РАБОТЫ',
+                items: [
+                    { name: 'Бот для доставки еды', desc: 'Заказы, оплата, трекинг' },
+                    { name: 'Бот для интернет-магазина', desc: 'Каталог, корзина, уведомления' },
+                    { name: 'Бот для поддержки клиентов', desc: 'Чат-бот, FAQ, тикеты' },
+                    { name: 'Бот для мероприятий', desc: 'Регистрация, расписание, опросы' }
+                ]
+            },
+            apps: {
+                title: 'МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ',
+                subtitle: 'НАШИ РАБОТЫ',
+                items: [
+                    { name: 'Фитнес-трекер', desc: 'iOS / Android, тренировки, статистика' },
+                    { name: 'Приложение для доставки', desc: 'Заказы, геолокация, оплата' },
+                    { name: 'Социальная сеть для дизайнеров', desc: 'Профили, портфолио, чаты' },
+                    { name: 'Приложение для образования', desc: 'Курсы, тесты, сертификаты' }
+                ]
+            }
+        };
+
+        const overlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalGrid = document.getElementById('modalGrid');
+
+        function openModal(type) {
+            const data = modalData[type];
+            if (!data) return;
+
+            modalTitle.textContent = data.title;
+            modalSubtitle.textContent = data.subtitle;
+            
+            modalGrid.innerHTML = '';
+            data.items.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'modal-item';
+                div.innerHTML = `
+                    <h5>${item.name}</h5>
+                    <p>${item.desc}</p>
+                `;
+                modalGrid.appendChild(div);
+            });
+
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Клик по карточкам
+        document.querySelectorAll('[data-modal]').forEach(el => {
+            el.addEventListener('click', function() {
+                const type = this.getAttribute('data-modal');
+                openModal(type);
+            });
+        });
+
+        // Закрытие по крестику
+        modalClose.addEventListener('click', closeModal);
+
+        // Закрытие по клику на оверлей
+        overlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 
 </body>
