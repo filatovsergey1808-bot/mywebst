@@ -65,10 +65,6 @@
             text-transform: uppercase;
         }
 
-        .logo span {
-            color: #ff6b6b;
-        }
-
         .header-phone {
             color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
@@ -97,17 +93,67 @@
             color: #ffffff;
         }
 
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcbff, #a66bff);
+        /* ===== ГРАДИЕНТЫ С БЫСТРОЙ АНИМАЦИЕЙ ===== */
+        .gradient-text {
+            background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 300% 300%;
-            animation: gradientShift 4s ease-in-out infinite;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        .gradient-rainbow {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcbff, #a66bff, #ff6b6b);
+            background-size: 500% 500%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 2.5s ease-in-out infinite;
+        }
+
+        .gradient-orange {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #ff9a56);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 2.8s ease-in-out infinite;
+        }
+
+        .gradient-blue {
+            background: linear-gradient(135deg, #6bcbff, #4a9eff, #a66bff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3.2s ease-in-out infinite;
+        }
+
+        .gradient-green {
+            background: linear-gradient(135deg, #6bffb8, #4ae6a0, #6bcbff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        .gradient-pink {
+            background: linear-gradient(135deg, #ff6b9d, #ff6b6b, #ff9a56);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 2.8s ease-in-out infinite;
+        }
+
+        .gradient-purple {
+            background: linear-gradient(135deg, #a66bff, #6bcbff, #4ae6a0);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3.5s ease-in-out infinite;
         }
 
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
+            25% { background-position: 50% 50%; }
             50% { background-position: 100% 50%; }
+            75% { background-position: 50% 50%; }
             100% { background-position: 0% 50%; }
         }
 
@@ -163,12 +209,6 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 6px;
-        }
-
-        .main-service-item h3 span {
-            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .main-service-item p {
@@ -227,16 +267,10 @@
         .additional-item h4 {
             font-size: 22px;
             font-weight: 200;
-            margin-bottom: 6px;
             color: #ffffff;
             letter-spacing: 5px;
             text-transform: uppercase;
-        }
-
-        .additional-item h4 span {
-            background: linear-gradient(135deg, #6bcbff, #a66bff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
         }
 
         .additional-item p {
@@ -304,12 +338,6 @@
             color: #ffffff;
             text-transform: uppercase;
             margin-bottom: 8px;
-        }
-
-        .modal-title span {
-            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .modal-subtitle {
@@ -494,7 +522,7 @@
         <section class="hero">
             <h1>
                 СОЗДАЕМ ДИЗАЙН, КОТОРЫЙ<br>
-                <span class="highlight">ЗАПОМИНАЕТСЯ НАДОЛГО</span>
+                <span class="gradient-rainbow">ЗАПОМИНАЕТСЯ НАДОЛГО</span>
             </h1>
         </section>
 
@@ -502,8 +530,8 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <h3><span>КРАСИВЫЕ САЙТЫ</span></h3>
-                    <p>С УНИКАЛЬНЫМ ДИЗАЙНОМ</p>
+                    <h3><span class="gradient-orange">КРАСИВЫЕ САЙТЫ</span></h3>
+                    <p class="gradient-green">С УНИКАЛЬНЫМ ДИЗАЙНОМ</p>
                 </div>
             </div>
         </section>
@@ -512,12 +540,12 @@
             <div class="additional-title">ДОПОЛНИТЕЛЬНО МОЖЕМ НАПИСАТЬ</div>
             <div class="additional-grid">
                 <div class="additional-item" data-modal="bots">
-                    <h4><span>TELEGRAM-БОТЫ</span></h4>
-                    <p>ЛИЧНОГО ТРЕНЕРА ИЛИ АНАЛИТИКА ПОГОДЫ</p>
+                    <h4><span class="gradient-blue">TELEGRAM-БОТЫ</span></h4>
+                    <p class="gradient-pink">ЛИЧНОГО ТРЕНЕРА ИЛИ АНАЛИТИКА ПОГОДЫ</p>
                 </div>
                 <div class="additional-item" data-modal="apps">
-                    <h4><span>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span></h4>
-                    <p>ОТ КАЛЬКУЛЯТОРА ДО ТРЕКЕРА АКТИВНОСТИ</p>
+                    <h4><span class="gradient-purple">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span></h4>
+                    <p class="gradient-orange">ОТ КАЛЬКУЛЯТОРА ДО ТРЕКЕРА АКТИВНОСТИ</p>
                 </div>
             </div>
         </section>
