@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #d5dce4;
+            background-color: #c8d4de;
             color: #2c3e50;
             line-height: 1.6;
             min-height: 100vh;
@@ -34,7 +34,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.15;
+            opacity: 1;
         }
 
         /* Весь контент поверх canvas */
@@ -44,7 +44,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(213, 220, 228, 0.88);
+            background: rgba(200, 212, 222, 0.85);
             backdrop-filter: blur(4px);
             min-height: 100vh;
             box-shadow: 0 0 80px rgba(44, 62, 80, 0.04);
@@ -98,7 +98,7 @@
             margin-bottom: 0px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #4a6a8a;
+            color: #3a5a7a;
         }
 
         /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
@@ -113,7 +113,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #4a6a8a;
+            color: #3a5a7a;
         }
 
         .main-services-grid {
@@ -125,7 +125,7 @@
         }
 
         .main-service-item {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4);
             padding: 50px 30px;
             border-radius: 16px;
             border: 1px solid rgba(44, 62, 80, 0.06);
@@ -142,11 +142,11 @@
 
         .main-service-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(74, 106, 138, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(58, 90, 122, 0.15);
             box-shadow: 
-                0 0 10px rgba(74, 106, 138, 0.04),
-                0 0 20px rgba(74, 106, 138, 0.02);
+                0 0 10px rgba(58, 90, 122, 0.04),
+                0 0 20px rgba(58, 90, 122, 0.02);
         }
 
         .main-service-item h3 {
@@ -178,7 +178,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #4a6a8a;
+            color: #3a5a7a;
         }
 
         .additional-grid {
@@ -190,7 +190,7 @@
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4);
             padding: 50px 20px;
             border-radius: 16px;
             border: 1px solid rgba(44, 62, 80, 0.06);
@@ -207,11 +207,11 @@
 
         .additional-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(74, 106, 138, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(58, 90, 122, 0.15);
             box-shadow: 
-                0 0 10px rgba(74, 106, 138, 0.04),
-                0 0 20px rgba(74, 106, 138, 0.02);
+                0 0 10px rgba(58, 90, 122, 0.04),
+                0 0 20px rgba(58, 90, 122, 0.02);
         }
 
         .additional-item h4 {
@@ -286,7 +286,7 @@
             font-size: 28px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #4a6a8a;
+            color: #3a5a7a;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
@@ -303,7 +303,7 @@
         .modal-divider {
             width: 40px;
             height: 2px;
-            background: #4a6a8a;
+            background: #3a5a7a;
             margin-bottom: 30px;
             opacity: 0.3;
         }
@@ -325,7 +325,7 @@
 
         .modal-item:hover {
             background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(74, 106, 138, 0.12);
+            border-color: rgba(58, 90, 122, 0.12);
         }
 
         .modal-item h5 {
@@ -375,7 +375,7 @@
             letter-spacing: 6px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            color: #4a6a8a;
+            color: #3a5a7a;
         }
 
         .footer-contacts {
@@ -405,17 +405,17 @@
         .footer-contacts a:hover {
             transform: translateY(-2px);
             background: rgba(255, 255, 255, 0.5);
-            border-color: rgba(74, 106, 138, 0.15);
+            border-color: rgba(58, 90, 122, 0.15);
             box-shadow: 
-                0 0 8px rgba(74, 106, 138, 0.04),
-                0 0 16px rgba(74, 106, 138, 0.02);
+                0 0 8px rgba(58, 90, 122, 0.04),
+                0 0 16px rgba(58, 90, 122, 0.02);
         }
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(213, 220, 228, 0.92);
+                background: rgba(200, 212, 222, 0.92);
             }
 
             header {
@@ -723,18 +723,19 @@
 
             // Геометрические фигуры
             const shapes = [];
-            const numShapes = 18;
+            const numShapes = 25;
 
             // Типы фигур
-            const types = ['line', 'rectangle', 'triangle', 'circle', 'arc'];
+            const types = ['line', 'rectangle', 'triangle', 'circle', 'arc', 'cross'];
 
-            // Цвета в холодной гамме
+            // Цвета в холодной гамме — более насыщенные
             const colors = [
-                'rgba(74, 106, 138, 0.08)',
-                'rgba(100, 130, 160, 0.06)',
-                'rgba(44, 62, 80, 0.04)',
-                'rgba(120, 150, 180, 0.05)',
-                'rgba(60, 90, 120, 0.07)'
+                'rgba(58, 90, 122, 0.15)',
+                'rgba(44, 62, 80, 0.12)',
+                'rgba(80, 120, 160, 0.10)',
+                'rgba(30, 50, 70, 0.08)',
+                'rgba(100, 140, 180, 0.07)',
+                'rgba(58, 90, 122, 0.20)'
             ];
 
             // Создание фигур
@@ -742,13 +743,14 @@
                 const type = types[Math.floor(Math.random() * types.length)];
                 const x = Math.random() * width;
                 const y = Math.random() * height;
-                const size = 30 + Math.random() * 120;
-                const speedX = (Math.random() - 0.5) * 0.3;
-                const speedY = (Math.random() - 0.5) * 0.3;
+                const size = 40 + Math.random() * 150;
+                const speedX = (Math.random() - 0.5) * 0.2;
+                const speedY = (Math.random() - 0.5) * 0.2;
                 const rotation = Math.random() * Math.PI * 2;
-                const rotationSpeed = (Math.random() - 0.5) * 0.002;
+                const rotationSpeed = (Math.random() - 0.5) * 0.003;
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 const phase = Math.random() * Math.PI * 2;
+                const lineWidth = 1 + Math.random() * 2;
 
                 shapes.push({
                     type,
@@ -761,6 +763,7 @@
                     rotationSpeed,
                     color,
                     phase,
+                    lineWidth,
                     originalX: x,
                     originalY: y
                 });
@@ -771,43 +774,55 @@
                 ctx.translate(shape.x, shape.y);
                 ctx.rotate(shape.rotation);
                 ctx.strokeStyle = shape.color;
-                ctx.lineWidth = 1.2;
+                ctx.lineWidth = shape.lineWidth;
+
+                const s = shape.size;
 
                 switch (shape.type) {
                     case 'line':
                         ctx.beginPath();
-                        ctx.moveTo(-shape.size / 2, 0);
-                        ctx.lineTo(shape.size / 2, 0);
+                        ctx.moveTo(-s / 2, 0);
+                        ctx.lineTo(s / 2, 0);
                         ctx.stroke();
                         break;
 
                     case 'rectangle':
-                        ctx.strokeRect(-shape.size / 3, -shape.size / 4, shape.size * 0.66, shape.size * 0.5);
+                        ctx.strokeRect(-s / 3, -s / 4, s * 0.66, s * 0.5);
                         break;
 
                     case 'triangle':
                         ctx.beginPath();
-                        ctx.moveTo(0, -shape.size / 2);
-                        ctx.lineTo(-shape.size / 2, shape.size / 2);
-                        ctx.lineTo(shape.size / 2, shape.size / 2);
+                        ctx.moveTo(0, -s / 2);
+                        ctx.lineTo(-s / 2, s / 2);
+                        ctx.lineTo(s / 2, s / 2);
                         ctx.closePath();
                         ctx.stroke();
                         break;
 
                     case 'circle':
                         ctx.beginPath();
-                        ctx.arc(0, 0, shape.size / 3, 0, Math.PI * 2);
+                        ctx.arc(0, 0, s / 3, 0, Math.PI * 2);
                         ctx.stroke();
                         break;
 
                     case 'arc':
                         ctx.beginPath();
-                        ctx.arc(0, 0, shape.size / 2.5, 0, Math.PI * 1.5);
+                        ctx.arc(0, 0, s / 2.5, 0, Math.PI * 1.5);
                         ctx.stroke();
-                        // Дополнительная линия для архитектурности
                         ctx.beginPath();
                         ctx.moveTo(0, 0);
-                        ctx.lineTo(shape.size / 2.5, 0);
+                        ctx.lineTo(s / 2.5, 0);
+                        ctx.stroke();
+                        break;
+
+                    case 'cross':
+                        ctx.beginPath();
+                        ctx.moveTo(-s / 4, 0);
+                        ctx.lineTo(s / 4, 0);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.moveTo(0, -s / 4);
+                        ctx.lineTo(0, s / 4);
                         ctx.stroke();
                         break;
                 }
@@ -820,35 +835,14 @@
             function animate() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Обновляем позиции фигур с плавным движением
-                shapes.forEach((shape, index) => {
-                    // Медленное плавающее движение
-                    const floatX = Math.sin(time * 0.3 + shape.phase) * 15;
-                    const floatY = Math.cos(time * 0.2 + shape.phase * 0.7) * 15;
-
-                    shape.x = shape.originalX + floatX;
-                    shape.y = shape.originalY + floatY;
-                    shape.rotation += shape.rotationSpeed;
-
-                    // Плавное изменение размера
-                    const pulse = 1 + Math.sin(time * 0.4 + shape.phase) * 0.08;
-                    const currentSize = shape.size * pulse;
-
-                    // Рисуем фигуру с пульсацией
-                    const originalSize = shape.size;
-                    shape.size = currentSize;
-                    drawShape(shape);
-                    shape.size = originalSize;
-                });
-
-                // Рисуем дополнительные архитектурные линии (сетка)
+                // Сетка — более заметная
                 ctx.save();
-                ctx.strokeStyle = 'rgba(74, 106, 138, 0.02)';
+                ctx.strokeStyle = 'rgba(58, 90, 122, 0.04)';
                 ctx.lineWidth = 0.5;
 
                 // Горизонтальные линии
-                for (let y = 0; y < height; y += 80) {
-                    const offset = Math.sin(time * 0.1 + y * 0.01) * 5;
+                for (let y = 0; y < height; y += 60) {
+                    const offset = Math.sin(time * 0.08 + y * 0.008) * 8;
                     ctx.beginPath();
                     ctx.moveTo(0, y + offset);
                     ctx.lineTo(width, y + offset);
@@ -856,8 +850,8 @@
                 }
 
                 // Вертикальные линии
-                for (let x = 0; x < width; x += 80) {
-                    const offset = Math.cos(time * 0.1 + x * 0.01) * 5;
+                for (let x = 0; x < width; x += 60) {
+                    const offset = Math.cos(time * 0.08 + x * 0.008) * 8;
                     ctx.beginPath();
                     ctx.moveTo(x + offset, 0);
                     ctx.lineTo(x + offset, height);
@@ -865,6 +859,26 @@
                 }
 
                 ctx.restore();
+
+                // Рисуем фигуры
+                shapes.forEach((shape) => {
+                    // Медленное плавающее движение
+                    const floatX = Math.sin(time * 0.25 + shape.phase) * 25;
+                    const floatY = Math.cos(time * 0.18 + shape.phase * 0.7) * 25;
+
+                    shape.x = shape.originalX + floatX;
+                    shape.y = shape.originalY + floatY;
+                    shape.rotation += shape.rotationSpeed;
+
+                    // Пульсация размера
+                    const pulse = 1 + Math.sin(time * 0.35 + shape.phase) * 0.12;
+                    const currentSize = shape.size * pulse;
+
+                    const originalSize = shape.size;
+                    shape.size = currentSize;
+                    drawShape(shape);
+                    shape.size = originalSize;
+                });
 
                 time += 0.01;
                 requestAnimationFrame(animate);
