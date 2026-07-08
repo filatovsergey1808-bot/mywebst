@@ -181,17 +181,18 @@
 
         .main-service-item {
             background: rgba(255, 255, 255, 0.03);
-            padding: 50px 30px;
+            padding: 40px 30px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            height: 200px;
-            min-height: 200px;
+            gap: 40px;
+            height: 220px;
+            min-height: 220px;
             cursor: pointer;
         }
 
@@ -200,6 +201,12 @@
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 107, 107, 0.3);
             box-shadow: 0 0 40px rgba(255, 107, 107, 0.05);
+        }
+
+        .main-service-item .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .main-service-item h3 {
@@ -217,6 +224,52 @@
             color: rgba(255, 255, 255, 0.4);
             letter-spacing: 5px;
             text-transform: uppercase;
+        }
+
+        /* ===== SVG ПЕРСОНАЖ ===== */
+        .character-wrapper {
+            flex-shrink: 0;
+            width: 120px;
+            height: 160px;
+        }
+
+        .character-wrapper svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .character-wrapper svg .body {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.15);
+            stroke-width: 1.5;
+            transition: all 0.4s ease;
+        }
+
+        .character-wrapper svg .body-accent {
+            fill: none;
+            stroke: rgba(255, 107, 107, 0.2);
+            stroke-width: 1.5;
+            transition: all 0.4s ease;
+        }
+
+        .character-wrapper svg .accent-fill {
+            fill: rgba(255, 107, 107, 0.05);
+            stroke: rgba(255, 107, 107, 0.15);
+            stroke-width: 1;
+        }
+
+        .main-service-item:hover .character-wrapper svg .body {
+            stroke: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-service-item:hover .character-wrapper svg .body-accent {
+            stroke: rgba(255, 107, 107, 0.4);
+        }
+
+        .main-service-item:hover .character-wrapper svg .accent-fill {
+            fill: rgba(255, 107, 107, 0.1);
+            stroke: rgba(255, 107, 107, 0.25);
         }
 
         .additional {
@@ -461,7 +514,20 @@
             header { flex-direction: column; gap: 15px; text-align: center; }
             .hero { padding: 50px 0 30px; }
             .hero h1 { font-size: 38px; letter-spacing: 1px; }
-            .main-service-item { height: 170px; min-height: 170px; padding: 30px 20px; }
+            
+            .main-service-item {
+                flex-direction: column;
+                height: auto;
+                min-height: 280px;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+            
+            .character-wrapper {
+                width: 80px;
+                height: 110px;
+            }
+            
             .main-service-item h3 { font-size: 26px; letter-spacing: 4px; }
             .main-service-item p { font-size: 17px; letter-spacing: 4px; }
             .additional-grid { grid-template-columns: 1fr 1fr; }
@@ -486,7 +552,8 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 30px; letter-spacing: 0.5px; }
             .additional-grid { grid-template-columns: 1fr; }
-            .main-service-item { height: 150px; min-height: 150px; padding: 24px 16px; }
+            .main-service-item { min-height: 250px; padding: 24px 16px; gap: 16px; }
+            .character-wrapper { width: 60px; height: 85px; }
             .main-service-item h3 { font-size: 22px; letter-spacing: 3px; }
             .main-service-item p { font-size: 15px; letter-spacing: 3px; }
             .additional-item { height: 150px; min-height: 150px; padding: 24px 16px; }
@@ -530,8 +597,67 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <h3><span class="gradient-orange">КРАСИВЫЕ САЙТЫ</span></h3>
-                    <p class="gradient-green">С УНИКАЛЬНЫМ ДИЗАЙНОМ</p>
+                    <!-- ===== СИДЯЩИЙ ПЕРСОНАЖ SVG ===== -->
+                    <div class="character-wrapper">
+                        <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Кресло -->
+                            <rect x="15" y="100" width="90" height="50" rx="6" class="body-accent"/>
+                            <rect x="25" y="90" width="70" height="12" rx="4" class="body-accent"/>
+                            <rect x="35" y="150" width="8" height="10" class="body-accent"/>
+                            <rect x="77" y="150" width="8" height="10" class="body-accent"/>
+                            
+                            <!-- Ноги -->
+                            <path d="M45 100 L40 130 L35 130 M45 100 L50 130 L55 130" class="body" stroke-linecap="round"/>
+                            
+                            <!-- Тело (сидящее) -->
+                            <path d="M40 70 L35 100 L45 100 L50 70 L55 70 L65 100 L75 100 L70 70 L60 70 L60 55 L50 55 L50 70 L40 70Z" class="body"/>
+                            
+                            <!-- Рука левая (за монитором) -->
+                            <path d="M40 70 L25 85 L20 85" class="body" stroke-linecap="round"/>
+                            
+                            <!-- Рука правая (на клавиатуре/мыши) -->
+                            <path d="M70 70 L85 85 L90 85" class="body" stroke-linecap="round"/>
+                            
+                            <!-- Голова -->
+                            <circle cx="50" cy="42" r="14" class="body"/>
+                            
+                            <!-- Монитор -->
+                            <rect x="65" y="60" width="40" height="28" rx="3" class="body-accent"/>
+                            <rect x="68" y="63" width="34" height="22" rx="1" class="accent-fill"/>
+                            <rect x="78" y="88" width="14" height="4" rx="1" class="body-accent"/>
+                            <rect x="80" y="92" width="10" height="3" rx="1" class="body-accent"/>
+                            
+                            <!-- Код на мониторе -->
+                            <line x1="72" y1="68" x2="90" y2="68" class="body" stroke-width="1" opacity="0.3"/>
+                            <line x1="72" y1="72" x2="85" y2="72" class="body" stroke-width="1" opacity="0.3"/>
+                            <line x1="72" y1="76" x2="92" y2="76" class="body" stroke-width="1" opacity="0.3"/>
+                            <line x1="72" y1="80" x2="80" y2="80" class="body" stroke-width="1" opacity="0.3"/>
+                            
+                            <!-- Клавиатура -->
+                            <rect x="68" y="94" width="30" height="8" rx="2" class="body-accent"/>
+                            
+                            <!-- Очки -->
+                            <circle cx="44" cy="40" r="4" class="body-accent" stroke-width="1.2"/>
+                            <circle cx="56" cy="40" r="4" class="body-accent" stroke-width="1.2"/>
+                            <line x1="48" y1="40" x2="52" y2="40" class="body-accent" stroke-width="1.2"/>
+                            
+                            <!-- Улыбка -->
+                            <path d="M46 46 C48 49, 52 49, 54 46" class="body-accent" stroke-width="1.2" stroke-linecap="round"/>
+                            
+                            <!-- Волосы -->
+                            <path d="M38 36 C38 28, 62 28, 62 36" class="body" stroke-width="1.2"/>
+                            <path d="M36 34 L38 28 M40 32 L40 26 M44 30 L44 24 M50 28 L50 22 M56 30 L56 24 M60 32 L60 26 M64 34 L62 28" class="body" stroke-width="1" opacity="0.4"/>
+                            
+                            <!-- Акцентные линии (архитектурный стиль) -->
+                            <path d="M10 10 L10 150 M110 10 L110 150" class="body" stroke-width="0.5" opacity="0.05"/>
+                            <path d="M10 10 L110 10 M10 150 L110 150" class="body" stroke-width="0.5" opacity="0.05"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="content-wrapper">
+                        <h3><span class="gradient-orange">КРАСИВЫЕ САЙТЫ</span></h3>
+                        <p class="gradient-green">С УНИКАЛЬНЫМ ДИЗАЙНОМ</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -540,11 +666,11 @@
             <div class="additional-title">ДОПОЛНИТЕЛЬНО МОЖЕМ НАПИСАТЬ</div>
             <div class="additional-grid">
                 <div class="additional-item" data-modal="bots">
-                    <h4><span class="gradient-blue">TELEGRAM-БОТА</span></h4>
+                    <h4><span class="gradient-blue">TELEGRAM-БОТЫ</span></h4>
                     <p class="gradient-pink">ЛИЧНОГО ТРЕНЕРА ИЛИ АНАЛИТИКА ПОГОДЫ</p>
                 </div>
                 <div class="additional-item" data-modal="apps">
-                    <h4><span class="gradient-purple">МОБИЛЬНОЕ ПРИЛОЖЕНИЕ</span></h4>
+                    <h4><span class="gradient-purple">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span></h4>
                     <p class="gradient-orange">ОТ КАЛЬКУЛЯТОРА ДО ТРЕКЕРА АКТИВНОСТИ</p>
                 </div>
             </div>
