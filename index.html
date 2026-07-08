@@ -25,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ ===== */
         #geoCanvas {
             position: fixed;
             top: 0;
@@ -37,7 +36,6 @@
             opacity: 1;
         }
 
-        /* Весь контент поверх canvas */
         .content {
             position: relative;
             z-index: 1;
@@ -52,7 +50,6 @@
             border-right: 1px solid rgba(44, 62, 80, 0.06);
         }
 
-        /* ===== ХЕДЕР ===== */
         header {
             display: flex;
             justify-content: space-between;
@@ -85,7 +82,6 @@
             opacity: 1;
         }
 
-        /* ===== ГЕРОЙ ===== */
         .hero {
             padding: 80px 0 50px;
             text-align: center;
@@ -101,7 +97,6 @@
             color: #3a5a7a;
         }
 
-        /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
         .main-services {
             padding: 40px 0 50px;
         }
@@ -144,9 +139,7 @@
             transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.7);
             border-color: rgba(58, 90, 122, 0.15);
-            box-shadow: 
-                0 0 10px rgba(58, 90, 122, 0.04),
-                0 0 20px rgba(58, 90, 122, 0.02);
+            box-shadow: 0 0 10px rgba(58, 90, 122, 0.04), 0 0 20px rgba(58, 90, 122, 0.02);
         }
 
         .main-service-item h3 {
@@ -166,7 +159,6 @@
             text-transform: uppercase;
         }
 
-        /* ===== ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ===== */
         .additional {
             padding: 20px 0 30px;
         }
@@ -209,9 +201,7 @@
             transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.7);
             border-color: rgba(58, 90, 122, 0.15);
-            box-shadow: 
-                0 0 10px rgba(58, 90, 122, 0.04),
-                0 0 20px rgba(58, 90, 122, 0.02);
+            box-shadow: 0 0 10px rgba(58, 90, 122, 0.04), 0 0 20px rgba(58, 90, 122, 0.02);
         }
 
         .additional-item h4 {
@@ -231,7 +221,6 @@
             text-transform: uppercase;
         }
 
-        /* ===== МОДАЛЬНОЕ ОКНО ===== */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -345,7 +334,6 @@
             text-transform: uppercase;
         }
 
-        /* ===== АНИМАЦИИ ===== */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -362,7 +350,6 @@
             }
         }
 
-        /* ===== ПОДВАЛ С КОНТАКТАМИ ===== */
         footer {
             padding: 45px 0 25px;
             margin-top: 20px;
@@ -406,244 +393,65 @@
             transform: translateY(-2px);
             background: rgba(255, 255, 255, 0.5);
             border-color: rgba(58, 90, 122, 0.15);
-            box-shadow: 
-                0 0 8px rgba(58, 90, 122, 0.04),
-                0 0 16px rgba(58, 90, 122, 0.02);
+            box-shadow: 0 0 8px rgba(58, 90, 122, 0.04), 0 0 16px rgba(58, 90, 122, 0.02);
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
-            .content {
-                padding: 15px;
-                background: rgba(200, 212, 222, 0.92);
-            }
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .hero {
-                padding: 50px 0 30px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-                letter-spacing: 3px;
-                line-height: 1.3;
-            }
-
-            .main-service-item {
-                height: 160px;
-                min-height: 160px;
-                padding: 30px 20px;
-            }
-
-            .main-service-item h3 {
-                font-size: 22px;
-                letter-spacing: 5px;
-            }
-
-            .main-service-item p {
-                font-size: 15px;
-                letter-spacing: 4px;
-            }
-
-            .additional-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .additional-item {
-                height: 160px;
-                min-height: 160px;
-                padding: 30px 16px;
-            }
-
-            .additional-item h4 {
-                font-size: 19px;
-                letter-spacing: 4px;
-            }
-
-            .additional-item p {
-                font-size: 14px;
-                letter-spacing: 3px;
-            }
-
-            .footer-contacts {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .footer-contacts a {
-                font-size: 14px;
-                letter-spacing: 4px;
-                padding: 12px 16px;
-            }
-
-            footer .footer-title {
-                font-size: 18px;
-                letter-spacing: 5px;
-                margin-bottom: 25px;
-            }
-
-            .logo {
-                font-size: 22px;
-                letter-spacing: 5px;
-            }
-
-            .header-phone {
-                font-size: 15px;
-                letter-spacing: 2px;
-            }
-
-            .main-services-title {
-                font-size: 16px;
-                letter-spacing: 5px;
-            }
-
-            .additional-title {
-                font-size: 16px;
-                letter-spacing: 5px;
-            }
-
-            .modal {
-                padding: 35px 25px;
-                max-width: 95%;
-            }
-
-            .modal-title {
-                font-size: 24px;
-                letter-spacing: 3px;
-            }
-
-            .modal-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 14px;
-            }
-
-            .modal-item {
-                padding: 20px 15px;
-            }
-
-            .modal-item h5 {
-                font-size: 14px;
-                letter-spacing: 2px;
-            }
-
-            .modal-item p {
-                font-size: 12px;
-                letter-spacing: 1.5px;
-            }
+            .content { padding: 15px; background: rgba(200, 212, 222, 0.92); }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .hero { padding: 50px 0 30px; }
+            .hero h1 { font-size: 38px; letter-spacing: 3px; }
+            .main-service-item { height: 160px; min-height: 160px; padding: 30px 20px; }
+            .main-service-item h3 { font-size: 22px; letter-spacing: 5px; }
+            .main-service-item p { font-size: 15px; letter-spacing: 4px; }
+            .additional-grid { grid-template-columns: 1fr 1fr; }
+            .additional-item { height: 160px; min-height: 160px; padding: 30px 16px; }
+            .additional-item h4 { font-size: 19px; letter-spacing: 4px; }
+            .additional-item p { font-size: 14px; letter-spacing: 3px; }
+            .footer-contacts { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .footer-contacts a { font-size: 14px; letter-spacing: 4px; padding: 12px 16px; }
+            footer .footer-title { font-size: 18px; letter-spacing: 5px; margin-bottom: 25px; }
+            .logo { font-size: 22px; letter-spacing: 5px; }
+            .header-phone { font-size: 15px; letter-spacing: 2px; }
+            .main-services-title { font-size: 16px; letter-spacing: 5px; }
+            .additional-title { font-size: 16px; letter-spacing: 5px; }
+            .modal { padding: 35px 25px; max-width: 95%; }
+            .modal-title { font-size: 24px; letter-spacing: 3px; }
+            .modal-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .modal-item { padding: 20px 15px; }
+            .modal-item h5 { font-size: 14px; letter-spacing: 2px; }
+            .modal-item p { font-size: 12px; letter-spacing: 1.5px; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 30px;
-                letter-spacing: 2px;
-            }
-
-            .additional-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .main-service-item {
-                height: 140px;
-                min-height: 140px;
-                padding: 24px 16px;
-            }
-
-            .main-service-item h3 {
-                font-size: 20px;
-                letter-spacing: 4px;
-            }
-
-            .main-service-item p {
-                font-size: 14px;
-                letter-spacing: 3px;
-            }
-
-            .additional-item {
-                height: 140px;
-                min-height: 140px;
-                padding: 24px 16px;
-            }
-
-            .additional-item h4 {
-                font-size: 18px;
-                letter-spacing: 3px;
-            }
-
-            .additional-item p {
-                font-size: 14px;
-                letter-spacing: 2px;
-            }
-
-            .footer-contacts {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .footer-contacts a {
-                font-size: 14px;
-                letter-spacing: 4px;
-                padding: 12px 20px;
-            }
-
-            .logo {
-                font-size: 20px;
-                letter-spacing: 4px;
-            }
-
-            .header-phone {
-                font-size: 13px;
-                letter-spacing: 2px;
-            }
-
-            .hero {
-                padding: 40px 0 25px;
-            }
-
-            .main-services-title {
-                font-size: 14px;
-                letter-spacing: 4px;
-            }
-
-            .additional-title {
-                font-size: 14px;
-                letter-spacing: 4px;
-            }
-
-            footer .footer-title {
-                font-size: 16px;
-                letter-spacing: 4px;
-            }
-
-            .modal {
-                padding: 30px 20px;
-            }
-
-            .modal-title {
-                font-size: 20px;
-                letter-spacing: 2px;
-            }
-
-            .modal-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+            .hero h1 { font-size: 30px; letter-spacing: 2px; }
+            .additional-grid { grid-template-columns: 1fr; }
+            .main-service-item { height: 140px; min-height: 140px; padding: 24px 16px; }
+            .main-service-item h3 { font-size: 20px; letter-spacing: 4px; }
+            .main-service-item p { font-size: 14px; letter-spacing: 3px; }
+            .additional-item { height: 140px; min-height: 140px; padding: 24px 16px; }
+            .additional-item h4 { font-size: 18px; letter-spacing: 3px; }
+            .additional-item p { font-size: 14px; letter-spacing: 2px; }
+            .footer-contacts { grid-template-columns: 1fr; gap: 10px; }
+            .footer-contacts a { font-size: 14px; letter-spacing: 4px; padding: 12px 20px; }
+            .logo { font-size: 20px; letter-spacing: 4px; }
+            .header-phone { font-size: 13px; letter-spacing: 2px; }
+            .hero { padding: 40px 0 25px; }
+            .main-services-title { font-size: 14px; letter-spacing: 4px; }
+            .additional-title { font-size: 14px; letter-spacing: 4px; }
+            footer .footer-title { font-size: 16px; letter-spacing: 4px; }
+            .modal { padding: 30px 20px; }
+            .modal-title { font-size: 20px; letter-spacing: 2px; }
+            .modal-grid { grid-template-columns: 1fr; gap: 12px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ХОЛСТ ДЛЯ АРХИТЕКТУРНОЙ ГЕОМЕТРИИ ===== -->
     <canvas id="geoCanvas"></canvas>
 
-    <!-- ===== КОНТЕНТ ===== -->
     <div class="content">
 
-        <!-- HEADER -->
         <header>
             <div class="logo">STRUKTURA</div>
             <div>
@@ -651,7 +459,6 @@
             </div>
         </header>
 
-        <!-- HERO -->
         <section class="hero">
             <h1>
                 СОЗДАЕМ ДИЗАЙН, КОТОРЫЙ<br>
@@ -659,7 +466,6 @@
             </h1>
         </section>
 
-        <!-- ОСНОВНЫЕ УСЛУГИ -->
         <section class="main-services">
             <div class="main-services-title">ОСНОВНОЕ НАПРАВЛЕНИЕ</div>
             <div class="main-services-grid">
@@ -670,7 +476,6 @@
             </div>
         </section>
 
-        <!-- ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ -->
         <section class="additional">
             <div class="additional-title">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</div>
             <div class="additional-grid">
@@ -685,7 +490,6 @@
             </div>
         </section>
 
-        <!-- FOOTER WITH CONTACTS -->
         <footer id="contact">
             <div class="footer-title">СВЯЖИТЕСЬ С НАМИ</div>
             <div class="footer-contacts">
@@ -698,66 +502,58 @@
 
     </div>
 
-    <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <span class="modal-close" id="modalClose">×</span>
             <div class="modal-title" id="modalTitle">КРАСИВЫЕ САЙТЫ</div>
             <div class="modal-subtitle" id="modalSubtitle">НАШИ РАБОТЫ</div>
             <div class="modal-divider"></div>
-            <div class="modal-grid" id="modalGrid">
-                <!-- Контент будет заполняться через JavaScript -->
-            </div>
+            <div class="modal-grid" id="modalGrid"></div>
         </div>
     </div>
 
-    <!-- ===== СКРИПТЫ ===== -->
     <script>
-        // ===== АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ С БОГАТЫМИ ЭЛЕМЕНТАМИ =====
-        (function architecturalGeometry() {
+        // ===== ДИНАМИЧЕСКАЯ АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ =====
+        (function dynamicArchitecture() {
             const canvas = document.getElementById('geoCanvas');
             const ctx = canvas.getContext('2d');
 
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            // Геометрические фигуры и архитектурные элементы
+            // Сложные архитектурные элементы
             const elements = [];
-            
-            // Типы элементов
-            const types = [
-                'line', 'rectangle', 'triangle', 'circle', 'arc', 'cross',
-                'column', 'wave', 'frame', 'silhouette', 'fresco', 'arch',
-                'dome', 'pillar', 'ornament', 'grid'
-            ];
+            const numElements = 80;
 
-            // Цвета в холодной гамме
             const colors = [
-                'rgba(58, 90, 122, 0.15)',
-                'rgba(44, 62, 80, 0.12)',
-                'rgba(80, 120, 160, 0.10)',
-                'rgba(30, 50, 70, 0.08)',
-                'rgba(100, 140, 180, 0.07)',
-                'rgba(58, 90, 122, 0.20)',
-                'rgba(44, 62, 80, 0.18)',
-                'rgba(70, 100, 130, 0.14)'
+                'rgba(58, 90, 122, 0.20)', 'rgba(44, 62, 80, 0.16)',
+                'rgba(80, 120, 160, 0.14)', 'rgba(30, 50, 70, 0.12)',
+                'rgba(100, 140, 180, 0.10)', 'rgba(58, 90, 122, 0.25)',
+                'rgba(44, 62, 80, 0.22)', 'rgba(70, 100, 130, 0.18)'
             ];
 
-            // Создание элементов (увеличиваем количество до 60)
-            const numElements = 60;
+            // Более сложные типы фигур
+            const types = [
+                'mandala', 'spiral', 'star', 'hexagon', 'octagon',
+                'gothic_arch', 'rose_window', 'labyrinth', 'fractal_tree',
+                'arabesque', 'tessellation', 'compass', 'gear',
+                'wave_complex', 'column_complex', 'frame_ornate',
+                'silhouette_complex', 'dome_complex', 'arch_complex'
+            ];
 
             for (let i = 0; i < numElements; i++) {
                 const type = types[Math.floor(Math.random() * types.length)];
                 const x = Math.random() * width;
                 const y = Math.random() * height;
-                const size = 30 + Math.random() * 180;
-                const speedX = (Math.random() - 0.5) * 0.15;
-                const speedY = (Math.random() - 0.5) * 0.15;
+                const size = 40 + Math.random() * 200;
+                const speedX = (Math.random() - 0.5) * 0.3;
+                const speedY = (Math.random() - 0.5) * 0.3;
                 const rotation = Math.random() * Math.PI * 2;
-                const rotationSpeed = (Math.random() - 0.5) * 0.002;
+                const rotationSpeed = (Math.random() - 0.5) * 0.008;
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 const phase = Math.random() * Math.PI * 2;
                 const lineWidth = 0.8 + Math.random() * 2.5;
+                const lifePhase = Math.random() * Math.PI * 2; // Для появления/исчезновения
 
                 elements.push({
                     type,
@@ -771,44 +567,15 @@
                     color,
                     phase,
                     lineWidth,
+                    lifePhase,
                     originalX: x,
-                    originalY: y
+                    originalY: y,
+                    opacity: 0.3 + Math.random() * 0.7
                 });
             }
 
-            // Дополнительные крупные архитектурные элементы
-            const largeElements = [
-                { type: 'column', x: width * 0.1, y: height * 0.3, size: 200 },
-                { type: 'column', x: width * 0.9, y: height * 0.7, size: 180 },
-                { type: 'dome', x: width * 0.85, y: height * 0.2, size: 150 },
-                { type: 'arch', x: width * 0.15, y: height * 0.7, size: 160 },
-                { type: 'fresco', x: width * 0.5, y: height * 0.15, size: 250 },
-                { type: 'frame', x: width * 0.3, y: height * 0.5, size: 140 },
-                { type: 'frame', x: width * 0.7, y: height * 0.4, size: 130 },
-                { type: 'silhouette', x: width * 0.45, y: height * 0.8, size: 170 },
-                { type: 'ornament', x: width * 0.6, y: height * 0.6, size: 120 },
-                { type: 'grid', x: width * 0.4, y: height * 0.1, size: 300 }
-            ];
-
-            largeElements.forEach(el => {
-                elements.push({
-                    type: el.type,
-                    x: el.x,
-                    y: el.y,
-                    size: el.size,
-                    speedX: (Math.random() - 0.5) * 0.05,
-                    speedY: (Math.random() - 0.5) * 0.05,
-                    rotation: 0,
-                    rotationSpeed: (Math.random() - 0.5) * 0.0005,
-                    color: 'rgba(44, 62, 80, 0.06)',
-                    phase: Math.random() * Math.PI * 2,
-                    lineWidth: 1.2,
-                    originalX: el.x,
-                    originalY: el.y
-                });
-            });
-
-            function drawArchitecturalElement(el) {
+            // Рисование сложных фигур
+            function drawComplexShape(el) {
                 ctx.save();
                 ctx.translate(el.x, el.y);
                 ctx.rotate(el.rotation);
@@ -816,230 +583,458 @@
                 ctx.lineWidth = el.lineWidth;
 
                 const s = el.size;
+                const half = s / 2;
 
                 switch (el.type) {
-                    case 'line':
+                    case 'mandala': {
+                        // Мандала — сложный узор
+                        const petals = 8;
+                        for (let i = 0; i < petals; i++) {
+                            const angle = (i / petals) * Math.PI * 2;
+                            ctx.save();
+                            ctx.rotate(angle);
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            ctx.quadraticCurveTo(s / 4, -s / 6, 0, -s / 2.5);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        // Внутренние круги
                         ctx.beginPath();
-                        ctx.moveTo(-s / 2, 0);
-                        ctx.lineTo(s / 2, 0);
+                        ctx.arc(0, 0, s / 6, 0, Math.PI * 2);
                         ctx.stroke();
-                        break;
-
-                    case 'rectangle':
-                        ctx.strokeRect(-s / 3, -s / 4, s * 0.66, s * 0.5);
-                        break;
-
-                    case 'triangle':
-                        ctx.beginPath();
-                        ctx.moveTo(0, -s / 2);
-                        ctx.lineTo(-s / 2, s / 2);
-                        ctx.lineTo(s / 2, s / 2);
-                        ctx.closePath();
-                        ctx.stroke();
-                        break;
-
-                    case 'circle':
                         ctx.beginPath();
                         ctx.arc(0, 0, s / 3, 0, Math.PI * 2);
                         ctx.stroke();
                         break;
+                    }
 
-                    case 'arc':
+                    case 'spiral': {
+                        // Спираль
                         ctx.beginPath();
-                        ctx.arc(0, 0, s / 2.5, 0, Math.PI * 1.5);
-                        ctx.stroke();
-                        ctx.beginPath();
-                        ctx.moveTo(0, 0);
-                        ctx.lineTo(s / 2.5, 0);
-                        ctx.stroke();
-                        break;
-
-                    case 'cross':
-                        ctx.beginPath();
-                        ctx.moveTo(-s / 4, 0);
-                        ctx.lineTo(s / 4, 0);
-                        ctx.stroke();
-                        ctx.beginPath();
-                        ctx.moveTo(0, -s / 4);
-                        ctx.lineTo(0, s / 4);
-                        ctx.stroke();
-                        break;
-
-                    case 'column':
-                        // Колонна с капителью
-                        ctx.beginPath();
-                        ctx.moveTo(-s / 10, -s / 2);
-                        ctx.lineTo(-s / 10, s / 2);
-                        ctx.lineTo(s / 10, s / 2);
-                        ctx.lineTo(s / 10, -s / 2);
-                        ctx.stroke();
-                        // Капитель
-                        ctx.strokeRect(-s / 6, -s / 2 - s / 12, s / 3, s / 10);
-                        ctx.strokeRect(-s / 8, s / 2 - s / 20, s / 4, s / 10);
-                        break;
-
-                    case 'wave':
-                        // Волна
-                        ctx.beginPath();
-                        for (let i = 0; i <= 20; i++) {
-                            const t = i / 20;
-                            const x = -s / 2 + t * s;
-                            const y = Math.sin(t * Math.PI * 4) * s / 6;
-                            if (i === 0) ctx.moveTo(x, y);
+                        for (let t = 0; t < Math.PI * 6; t += 0.05) {
+                            const r = t * s / 20;
+                            const x = Math.cos(t) * r;
+                            const y = Math.sin(t) * r;
+                            if (t === 0) ctx.moveTo(x, y);
                             else ctx.lineTo(x, y);
                         }
                         ctx.stroke();
                         break;
+                    }
 
-                    case 'frame':
-                        // Картинная рамка
-                        const f = s / 3;
-                        ctx.strokeRect(-f, -f * 0.8, f * 2, f * 1.6);
-                        // Внутренняя рамка
-                        ctx.strokeRect(-f * 0.8, -f * 0.6, f * 1.6, f * 1.2);
-                        // Углы
-                        const c = f * 0.05;
-                        [
-                            [-f, -f * 0.8],
-                            [-f, f * 0.8],
-                            [f, -f * 0.8],
-                            [f, f * 0.8]
-                        ].forEach(([x, y]) => {
+                    case 'star': {
+                        // Звезда
+                        const points = 12;
+                        ctx.beginPath();
+                        for (let i = 0; i < points * 2; i++) {
+                            const radius = i % 2 === 0 ? half : half * 0.4;
+                            const angle = (i / (points * 2)) * Math.PI * 2 - Math.PI / 2;
+                            const x = Math.cos(angle) * radius;
+                            const y = Math.sin(angle) * radius;
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        ctx.closePath();
+                        ctx.stroke();
+                        break;
+                    }
+
+                    case 'hexagon': {
+                        // Шестиугольник
+                        ctx.beginPath();
+                        for (let i = 0; i < 6; i++) {
+                            const angle = (i / 6) * Math.PI * 2 - Math.PI / 2;
+                            const x = Math.cos(angle) * half;
+                            const y = Math.sin(angle) * half;
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        ctx.closePath();
+                        ctx.stroke();
+                        // Внутренний
+                        const inner = half * 0.7;
+                        ctx.beginPath();
+                        for (let i = 0; i < 6; i++) {
+                            const angle = (i / 6) * Math.PI * 2 - Math.PI / 2;
+                            const x = Math.cos(angle) * inner;
+                            const y = Math.sin(angle) * inner;
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        ctx.closePath();
+                        ctx.stroke();
+                        break;
+                    }
+
+                    case 'octagon': {
+                        // Восьмиугольник с диагоналями
+                        ctx.beginPath();
+                        for (let i = 0; i < 8; i++) {
+                            const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+                            const x = Math.cos(angle) * half;
+                            const y = Math.sin(angle) * half;
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        ctx.closePath();
+                        ctx.stroke();
+                        // Диагонали
+                        for (let i = 0; i < 4; i++) {
+                            const angle = (i / 4) * Math.PI * 2;
                             ctx.beginPath();
-                            ctx.moveTo(x - c, y);
-                            ctx.lineTo(x, y);
-                            ctx.lineTo(x, y - c);
+                            ctx.moveTo(0, 0);
+                            ctx.lineTo(Math.cos(angle) * half, Math.sin(angle) * half);
                             ctx.stroke();
+                        }
+                        break;
+                    }
+
+                    case 'gothic_arch': {
+                        // Готическая арка
+                        const archWidth = s / 2.5;
+                        const archHeight = s / 2;
+                        ctx.beginPath();
+                        ctx.moveTo(-archWidth, archHeight / 2);
+                        ctx.quadraticCurveTo(-archWidth, -archHeight, 0, -archHeight);
+                        ctx.quadraticCurveTo(archWidth, -archHeight, archWidth, archHeight / 2);
+                        ctx.stroke();
+                        // Стрельчатая деталь
+                        ctx.beginPath();
+                        ctx.moveTo(-archWidth * 0.3, archHeight / 2);
+                        ctx.quadraticCurveTo(-archWidth * 0.3, -archHeight * 0.3, 0, -archHeight * 0.5);
+                        ctx.quadraticCurveTo(archWidth * 0.3, -archHeight * 0.3, archWidth * 0.3, archHeight / 2);
+                        ctx.stroke();
+                        break;
+                    }
+
+                    case 'rose_window': {
+                        // Окно-роза
+                        const segments = 12;
+                        for (let i = 0; i < segments; i++) {
+                            const angle = (i / segments) * Math.PI * 2;
+                            ctx.save();
+                            ctx.rotate(angle);
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            ctx.quadraticCurveTo(s / 6, -s / 6, 0, -s / 2.8);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        // Внешняя окружность
+                        ctx.beginPath();
+                        ctx.arc(0, 0, s / 2.8, 0, Math.PI * 2);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(0, 0, s / 6, 0, Math.PI * 2);
+                        ctx.stroke();
+                        break;
+                    }
+
+                    case 'labyrinth': {
+                        // Лабиринт
+                        const step = s / 8;
+                        for (let i = 0; i < 4; i++) {
+                            const offset = i * step;
+                            const size = s - offset * 2;
+                            if (size > 0) {
+                                ctx.strokeRect(-size / 2, -size / 2, size, size);
+                                // Разрывы
+                                const gap = step * 0.6;
+                                if (i % 2 === 0) {
+                                    ctx.clearRect(size / 2 - gap / 2, -size / 2 - 1, gap, 2);
+                                } else {
+                                    ctx.clearRect(-size / 2 - gap / 2, size / 2 - 1, gap, 2);
+                                }
+                            }
+                        }
+                        break;
+                    }
+
+                    case 'fractal_tree': {
+                        // Дерево
+                        const branches = 4;
+                        ctx.beginPath();
+                        ctx.moveTo(0, half);
+                        ctx.lineTo(0, half * 0.3);
+                        for (let i = 0; i < branches; i++) {
+                            const angle = (i / (branches - 1)) * Math.PI * 0.8 - Math.PI * 0.4;
+                            const len = half * 0.5;
+                            ctx.save();
+                            ctx.rotate(angle);
+                            ctx.beginPath();
+                            ctx.moveTo(0, half * 0.3);
+                            ctx.lineTo(Math.sin(angle) * len * 0.3, half * 0.3 - len);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        ctx.stroke();
+                        break;
+                    }
+
+                    case 'arabesque': {
+                        // Арабеска (восточный узор)
+                        for (let i = 0; i < 6; i++) {
+                            const angle = (i / 6) * Math.PI * 2;
+                            ctx.save();
+                            ctx.rotate(angle);
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            ctx.bezierCurveTo(s / 4, -s / 4, s / 6, -s / 3, 0, -s / 2.5);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        for (let i = 0; i < 6; i++) {
+                            const angle = (i / 6) * Math.PI * 2 + Math.PI / 6;
+                            ctx.save();
+                            ctx.rotate(angle);
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            ctx.bezierCurveTo(s / 5, -s / 6, s / 8, -s / 4, 0, -s / 3.5);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        break;
+                    }
+
+                    case 'tessellation': {
+                        // Тесселяция
+                        const tSize = s / 4;
+                        for (let i = -2; i <= 2; i++) {
+                            for (let j = -2; j <= 2; j++) {
+                                const x = i * tSize + (j % 2) * tSize / 2;
+                                const y = j * tSize * 0.8;
+                                ctx.strokeRect(x - tSize / 2, y - tSize / 2, tSize, tSize);
+                            }
+                        }
+                        break;
+                    }
+
+                    case 'compass': {
+                        // Компас
+                        ctx.beginPath();
+                        ctx.arc(0, 0, half, 0, Math.PI * 2);
+                        ctx.stroke();
+                        for (let i = 0; i < 8; i++) {
+                            const angle = (i / 8) * Math.PI * 2;
+                            const len = i % 2 === 0 ? half : half * 0.6;
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            ctx.lineTo(Math.cos(angle) * len, Math.sin(angle) * len);
+                            ctx.stroke();
+                        }
+                        // Стрелки
+                        for (let i = 0; i < 4; i++) {
+                            const angle = (i / 4) * Math.PI * 2;
+                            ctx.save();
+                            ctx.rotate(angle);
+                            ctx.beginPath();
+                            ctx.moveTo(0, -half * 0.8);
+                            ctx.lineTo(-half * 0.08, -half * 0.6);
+                            ctx.lineTo(half * 0.08, -half * 0.6);
+                            ctx.closePath();
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        break;
+                    }
+
+                    case 'gear': {
+                        // Шестерня
+                        const teeth = 12;
+                        const outerRadius = half;
+                        const innerRadius = half * 0.7;
+                        const toothSize = half * 0.15;
+
+                        ctx.beginPath();
+                        for (let i = 0; i < teeth * 2; i++) {
+                            const angle = (i / (teeth * 2)) * Math.PI * 2;
+                            const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                            const x = Math.cos(angle) * radius;
+                            const y = Math.sin(angle) * radius;
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        ctx.closePath();
+                        ctx.stroke();
+                        // Центр
+                        ctx.beginPath();
+                        ctx.arc(0, 0, half * 0.2, 0, Math.PI * 2);
+                        ctx.stroke();
+                        break;
+                    }
+
+                    case 'wave_complex': {
+                        // Сложные волны
+                        for (let w = 0; w < 3; w++) {
+                            const offset = w * s / 6;
+                            ctx.beginPath();
+                            for (let i = 0; i <= 30; i++) {
+                                const t = i / 30;
+                                const x = -half + t * s;
+                                const y = Math.sin(t * Math.PI * 6 + w) * (s / 8) + offset - s / 4;
+                                if (i === 0) ctx.moveTo(x, y);
+                                else ctx.lineTo(x, y);
+                            }
+                            ctx.stroke();
+                        }
+                        break;
+                    }
+
+                    case 'column_complex': {
+                        // Сложная колонна
+                        const colWidth = s / 6;
+                        ctx.strokeRect(-colWidth, -half, colWidth * 2, s);
+
+                        // Каннелюры
+                        for (let i = -2; i <= 2; i++) {
+                            ctx.beginPath();
+                            const x = i * colWidth * 0.4;
+                            ctx.moveTo(x, -half + s / 10);
+                            ctx.lineTo(x, half - s / 10);
+                            ctx.stroke();
+                        }
+
+                        // Капитель
+                        ctx.strokeRect(-colWidth * 1.8, -half - s / 12, colWidth * 3.6, s / 8);
+                        // Детали капители
+                        for (let i = -2; i <= 2; i++) {
+                            const x = i * colWidth * 0.5;
+                            ctx.beginPath();
+                            ctx.arc(x, -half - s / 12, colWidth * 0.3, 0, Math.PI);
+                            ctx.stroke();
+                        }
+                        break;
+                    }
+
+                    case 'frame_ornate': {
+                        // Орнаментальная рамка
+                        const f = half;
+                        ctx.strokeRect(-f, -f * 0.7, f * 2, f * 1.4);
+
+                        // Угловые орнаменты
+                        const corners = [
+                            [-f, -f * 0.7],
+                            [-f, f * 0.7],
+                            [f, -f * 0.7],
+                            [f, f * 0.7]
+                        ];
+                        corners.forEach(([cx, cy]) => {
+                            for (let i = 0; i < 3; i++) {
+                                ctx.save();
+                                ctx.translate(cx, cy);
+                                ctx.rotate(i * Math.PI / 2 + Math.PI / 4);
+                                ctx.beginPath();
+                                ctx.arc(0, 0, f * 0.2, 0, Math.PI / 2);
+                                ctx.stroke();
+                                ctx.restore();
+                            }
                         });
-                        break;
 
-                    case 'silhouette':
-                        // Силуэт античной фигуры
-                        ctx.beginPath();
+                        // Внутренняя рамка
+                        ctx.strokeRect(-f * 0.7, -f * 0.5, f * 1.4, f);
+                        break;
+                    }
+
+                    case 'silhouette_complex': {
+                        // Сложный силуэт
                         // Голова
-                        ctx.arc(0, -s / 4, s / 10, 0, Math.PI * 2);
-                        ctx.stroke();
-                        // Тело
                         ctx.beginPath();
-                        ctx.moveTo(-s / 10, -s / 4 + s / 10);
-                        ctx.lineTo(-s / 8, s / 4);
-                        ctx.lineTo(-s / 6, s / 2);
-                        ctx.moveTo(s / 10, -s / 4 + s / 10);
-                        ctx.lineTo(s / 8, s / 4);
-                        ctx.lineTo(s / 6, s / 2);
+                        ctx.arc(0, -half * 0.3, half * 0.15, 0, Math.PI * 2);
+                        ctx.stroke();
+                        // Тело с изгибом
+                        ctx.beginPath();
+                        ctx.moveTo(-half * 0.08, -half * 0.15);
+                        ctx.quadraticCurveTo(-half * 0.2, 0, -half * 0.12, half * 0.15);
+                        ctx.quadraticCurveTo(-half * 0.15, half * 0.35, -half * 0.1, half * 0.6);
+                        ctx.moveTo(half * 0.08, -half * 0.15);
+                        ctx.quadraticCurveTo(half * 0.2, 0, half * 0.12, half * 0.15);
+                        ctx.quadraticCurveTo(half * 0.15, half * 0.35, half * 0.1, half * 0.6);
+                        ctx.stroke();
+                        // Руки
+                        ctx.beginPath();
+                        ctx.moveTo(-half * 0.08, 0);
+                        ctx.quadraticCurveTo(-half * 0.3, -half * 0.05, -half * 0.35, -half * 0.15);
+                        ctx.moveTo(half * 0.08, 0);
+                        ctx.quadraticCurveTo(half * 0.3, -half * 0.05, half * 0.35, -half * 0.15);
                         ctx.stroke();
                         break;
+                    }
 
-                    case 'fresco':
-                        // Фреска (окно с аркой)
-                        const fw = s / 3;
-                        const fh = s / 2.5;
-                        ctx.strokeRect(-fw, -fh, fw * 2, fh * 2);
-                        // Арка сверху
-                        ctx.beginPath();
-                        ctx.arc(0, -fh, fw, Math.PI, 0);
-                        ctx.stroke();
-                        // Перегородки
-                        ctx.beginPath();
-                        ctx.moveTo(-fw / 2, -fh);
-                        ctx.lineTo(-fw / 2, fh);
-                        ctx.moveTo(fw / 2, -fh);
-                        ctx.lineTo(fw / 2, fh);
-                        ctx.stroke();
-                        break;
-
-                    case 'arch':
-                        // Арка
-                        const ar = s / 2;
-                        ctx.beginPath();
-                        ctx.arc(0, ar / 2, ar, Math.PI, 0);
-                        ctx.stroke();
-                        ctx.beginPath();
-                        ctx.moveTo(-ar, ar / 2);
-                        ctx.lineTo(-ar, ar / 2 + ar / 3);
-                        ctx.moveTo(ar, ar / 2);
-                        ctx.lineTo(ar, ar / 2 + ar / 3);
-                        ctx.stroke();
-                        break;
-
-                    case 'dome':
-                        // Купол
-                        const d = s / 2;
+                    case 'dome_complex': {
+                        // Сложный купол
+                        const d = half;
                         ctx.beginPath();
                         ctx.arc(0, 0, d, Math.PI, 0);
                         ctx.stroke();
-                        // Крест на куполе
+
+                        // Купол с ребрами
+                        for (let i = 0; i < 6; i++) {
+                            const angle = Math.PI / 6 + i * Math.PI / 6;
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            const ex = Math.cos(angle) * d;
+                            const ey = -Math.sin(angle) * d;
+                            ctx.lineTo(ex, ey);
+                            ctx.stroke();
+                        }
+
+                        // Окна
+                        for (let i = 0; i < 6; i++) {
+                            const angle = Math.PI / 6 + i * Math.PI / 6;
+                            const wx = Math.cos(angle) * d * 0.75;
+                            const wy = -Math.sin(angle) * d * 0.75;
+                            ctx.beginPath();
+                            ctx.arc(wx, wy, d * 0.1, 0, Math.PI * 2);
+                            ctx.stroke();
+                            // Крестики в окнах
+                            ctx.beginPath();
+                            ctx.moveTo(wx - d * 0.05, wy);
+                            ctx.lineTo(wx + d * 0.05, wy);
+                            ctx.moveTo(wx, wy - d * 0.05);
+                            ctx.lineTo(wx, wy + d * 0.05);
+                            ctx.stroke();
+                        }
+
+                        // Крест на вершине
                         ctx.beginPath();
                         ctx.moveTo(0, -d);
                         ctx.lineTo(0, -d - s / 8);
                         ctx.moveTo(-s / 16, -d - s / 16);
                         ctx.lineTo(s / 16, -d - s / 16);
                         ctx.stroke();
-                        // Окна
-                        for (let i = 0; i < 6; i++) {
-                            const angle = Math.PI / 6 + i * Math.PI / 6;
-                            const wx = Math.cos(angle) * d * 0.85;
-                            const wy = -Math.sin(angle) * d * 0.85;
-                            ctx.beginPath();
-                            ctx.arc(wx, wy, d * 0.08, 0, Math.PI * 2);
-                            ctx.stroke();
-                        }
                         break;
+                    }
 
-                    case 'pillar':
-                        // Пилястра
-                        const ps = s / 4;
-                        ctx.strokeRect(-ps / 2, -s / 2, ps, s);
-                        // Каннелюры
-                        for (let i = 0; i < 4; i++) {
-                            const px = -ps / 2 + ps / 4 + i * ps / 4;
-                            ctx.beginPath();
-                            ctx.moveTo(px, -s / 2 + s / 10);
-                            ctx.lineTo(px, s / 2 - s / 10);
-                            ctx.stroke();
-                        }
-                        break;
+                    case 'arch_complex': {
+                        // Сложная арка
+                        const ar = half;
+                        ctx.beginPath();
+                        ctx.arc(0, ar * 0.3, ar, Math.PI, 0);
+                        ctx.stroke();
 
-                    case 'ornament':
-                        // Орнамент (меандр)
-                        const os = s / 8;
-                        for (let i = 0; i < 8; i++) {
-                            const ox = -s / 2 + i * os;
-                            const oy = -s / 2;
-                            ctx.beginPath();
-                            ctx.moveTo(ox, oy);
-                            ctx.lineTo(ox + os / 2, oy);
-                            ctx.lineTo(ox + os / 2, oy + os);
-                            ctx.lineTo(ox + os, oy + os);
-                            ctx.stroke();
-                        }
-                        for (let i = 0; i < 8; i++) {
-                            const ox = -s / 2 + i * os;
-                            const oy = s / 2;
-                            ctx.beginPath();
-                            ctx.moveTo(ox, oy);
-                            ctx.lineTo(ox + os / 2, oy);
-                            ctx.lineTo(ox + os / 2, oy - os);
-                            ctx.lineTo(ox + os, oy - os);
-                            ctx.stroke();
-                        }
-                        break;
+                        // Пилястры
+                        ctx.strokeRect(-ar - ar / 8, ar * 0.3, ar / 6, ar * 0.7);
+                        ctx.strokeRect(ar - ar / 12, ar * 0.3, ar / 6, ar * 0.7);
 
-                    case 'grid':
-                        // Архитектурная сетка
-                        const gs = s / 10;
-                        for (let i = 0; i < 10; i++) {
-                            const pos = -s / 2 + i * gs;
-                            ctx.beginPath();
-                            ctx.moveTo(pos, -s / 2);
-                            ctx.lineTo(pos, s / 2);
-                            ctx.stroke();
-                            ctx.beginPath();
-                            ctx.moveTo(-s / 2, pos);
-                            ctx.lineTo(s / 2, pos);
-                            ctx.stroke();
+                        // Декоративные элементы
+                        for (let i = 0; i < 5; i++) {
+                            const t = i / 4;
+                            const x = -ar + t * ar * 2;
+                            const y = Math.sqrt(ar * ar - (x) * (x));
+                            if (!isNaN(y)) {
+                                const dy = y + ar * 0.3;
+                                ctx.beginPath();
+                                ctx.arc(x, dy, ar * 0.03, 0, Math.PI * 2);
+                                ctx.stroke();
+                            }
                         }
                         break;
+                    }
+
+                    default: {
+                        ctx.strokeRect(-half, -half, s, s);
+                    }
                 }
 
                 ctx.restore();
@@ -1050,58 +1045,68 @@
             function animate() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Рисуем архитектурную сетку (фон)
+                // Динамическая сетка с эффектом появления
                 ctx.save();
-                ctx.strokeStyle = 'rgba(44, 62, 80, 0.03)';
+                const gridOpacity = 0.03 + Math.sin(time * 0.2) * 0.015 + 0.015;
+                ctx.strokeStyle = `rgba(44, 62, 80, ${gridOpacity})`;
                 ctx.lineWidth = 0.5;
 
-                for (let y = 0; y < height; y += 40) {
-                    const offset = Math.sin(time * 0.06 + y * 0.006) * 10;
+                for (let y = 0; y < height; y += 30) {
+                    const offset = Math.sin(time * 0.08 + y * 0.005) * 15;
                     ctx.beginPath();
                     ctx.moveTo(0, y + offset);
                     ctx.lineTo(width, y + offset);
                     ctx.stroke();
                 }
 
-                for (let x = 0; x < width; x += 40) {
-                    const offset = Math.cos(time * 0.06 + x * 0.006) * 10;
+                for (let x = 0; x < width; x += 30) {
+                    const offset = Math.cos(time * 0.08 + x * 0.005) * 15;
                     ctx.beginPath();
                     ctx.moveTo(x + offset, 0);
                     ctx.lineTo(x + offset, height);
                     ctx.stroke();
                 }
-
-                // Тонкие диагональные линии
-                ctx.strokeStyle = 'rgba(44, 62, 80, 0.02)';
-                for (let i = -height; i < width + height; i += 60) {
-                    const offset = Math.sin(time * 0.04 + i * 0.005) * 5;
-                    ctx.beginPath();
-                    ctx.moveTo(i + offset, 0);
-                    ctx.lineTo(i + offset + height, height);
-                    ctx.stroke();
-                }
-
                 ctx.restore();
 
-                // Рисуем все архитектурные элементы
+                // Динамическое появление/исчезновение элементов
                 elements.forEach((el) => {
-                    const floatX = Math.sin(time * 0.15 + el.phase) * 20;
-                    const floatY = Math.cos(time * 0.12 + el.phase * 0.7) * 20;
+                    // Жизненный цикл с плавным появлением и исчезновением
+                    const life = Math.sin(time * 0.15 + el.lifePhase);
+                    const appear = (life + 1) / 2; // 0-1
+                    const scale = 0.3 + appear * 0.7;
+
+                    // Плавающее движение
+                    const floatX = Math.sin(time * 0.2 + el.phase) * 30 * appear;
+                    const floatY = Math.cos(time * 0.17 + el.phase * 0.7) * 30 * appear;
 
                     el.x = el.originalX + floatX;
                     el.y = el.originalY + floatY;
-                    el.rotation += el.rotationSpeed;
+                    el.rotation += el.rotationSpeed * (0.5 + appear * 0.5);
 
-                    const pulse = 1 + Math.sin(time * 0.25 + el.phase) * 0.08;
-                    const currentSize = el.size * pulse;
+                    // Пульсация размера
+                    const pulse = 1 + Math.sin(time * 0.3 + el.phase) * 0.1 * appear;
+                    const currentSize = el.size * pulse * scale;
+
+                    // Прозрачность зависит от жизненного цикла
+                    const opacity = 0.2 + appear * 0.6;
+
+                    const originalColor = el.color;
+                    const rgba = el.color.match(/[\d.]+/g);
+                    if (rgba && rgba.length >= 3) {
+                        const r = parseFloat(rgba[0]);
+                        const g = parseFloat(rgba[1]);
+                        const b = parseFloat(rgba[2]);
+                        el.color = `rgba(${r}, ${g}, ${b}, ${opacity * 0.6})`;
+                    }
 
                     const originalSize = el.size;
                     el.size = currentSize;
-                    drawArchitecturalElement(el);
+                    drawComplexShape(el);
                     el.size = originalSize;
+                    el.color = originalColor;
                 });
 
-                time += 0.008;
+                time += 0.01;
                 requestAnimationFrame(animate);
             }
 
@@ -1114,31 +1119,6 @@
                     el.originalY = Math.random() * height;
                     el.x = el.originalX;
                     el.y = el.originalY;
-                });
-
-                // Обновляем позиции крупных элементов
-                const largePositions = [
-                    { x: width * 0.1, y: height * 0.3 },
-                    { x: width * 0.9, y: height * 0.7 },
-                    { x: width * 0.85, y: height * 0.2 },
-                    { x: width * 0.15, y: height * 0.7 },
-                    { x: width * 0.5, y: height * 0.15 },
-                    { x: width * 0.3, y: height * 0.5 },
-                    { x: width * 0.7, y: height * 0.4 },
-                    { x: width * 0.45, y: height * 0.8 },
-                    { x: width * 0.6, y: height * 0.6 },
-                    { x: width * 0.4, y: height * 0.1 }
-                ];
-
-                let largeIndex = 0;
-                elements.forEach((el) => {
-                    if (el.size > 120 && largeIndex < largePositions.length) {
-                        el.originalX = largePositions[largeIndex].x;
-                        el.originalY = largePositions[largeIndex].y;
-                        el.x = el.originalX;
-                        el.y = el.originalY;
-                        largeIndex++;
-                    }
                 });
             }
 
@@ -1192,15 +1172,15 @@
 
             modalTitle.textContent = data.title;
             modalSubtitle.textContent = data.subtitle;
-            
+
             modalGrid.innerHTML = '';
             data.items.forEach(item => {
                 const div = document.createElement('div');
                 div.className = 'modal-item';
                 div.innerHTML = `
-                    <h5>${item.name}</h5>
-                    <p>${item.desc}</p>
-                `;
+                            <h5>${item.name}</h5>
+                            <p>${item.desc}</p>
+                        `;
                 modalGrid.appendChild(div);
             });
 
@@ -1213,7 +1193,6 @@
             document.body.style.overflow = '';
         }
 
-        // Клик по карточкам
         document.querySelectorAll('[data-modal]').forEach(el => {
             el.addEventListener('click', function() {
                 const type = this.getAttribute('data-modal');
@@ -1221,17 +1200,14 @@
             });
         });
 
-        // Закрытие по крестику
         modalClose.addEventListener('click', closeModal);
 
-        // Закрытие по клику на оверлей
         overlay.addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
 
-        // Закрытие по ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
