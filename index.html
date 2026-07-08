@@ -17,8 +17,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fdf8f0;
-            color: #2c3e50;
+            background-color: #e8e0d8;
+            color: #3a3a3a;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
@@ -33,7 +33,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.3;
+            opacity: 0.15;
         }
 
         /* Весь контент поверх canvas */
@@ -43,12 +43,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(253, 248, 240, 0.92);
+            background: rgba(232, 224, 216, 0.92);
             backdrop-filter: blur(6px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(44, 62, 80, 0.03);
-            border-left: 1px solid rgba(44, 62, 80, 0.06);
-            border-right: 1px solid rgba(44, 62, 80, 0.06);
+            box-shadow: 0 0 80px rgba(60, 60, 60, 0.04);
+            border-left: 1px solid rgba(60, 60, 60, 0.06);
+            border-right: 1px solid rgba(60, 60, 60, 0.06);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -57,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 25px;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+            border-bottom: 1px solid rgba(60, 60, 60, 0.08);
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -66,18 +66,18 @@
             font-size: 24px;
             font-weight: 200;
             letter-spacing: 6px;
-            color: #2c3e50;
+            color: #3a3a3a;
             text-transform: uppercase;
         }
 
         .header-phone {
-            color: #2c3e50;
+            color: #3a3a3a;
             text-decoration: none;
             font-size: 17px;
             font-weight: 200;
             letter-spacing: 3px;
             transition: all 0.3s ease;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .header-phone:hover {
@@ -97,17 +97,7 @@
             margin-bottom: 0px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #e74c3c;
-        }
-
-        /* ===== КАРТОЧКИ-КНОПКИ ===== */
-        .clickable {
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .clickable:hover {
-            transform: translateY(-3px);
+            color: #8b3a3a;
         }
 
         /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
@@ -122,7 +112,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #c0392b;
+            color: #8b3a3a;
         }
 
         .main-services-grid {
@@ -134,10 +124,10 @@
         }
 
         .main-service-item {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 252, 248, 0.7);
             padding: 50px 30px;
             border-radius: 16px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
+            border: 1px solid rgba(60, 60, 60, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -151,17 +141,17 @@
 
         .main-service-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(231, 76, 60, 0.3);
+            background: rgba(255, 252, 248, 0.9);
+            border-color: rgba(139, 58, 58, 0.15);
             box-shadow: 
-                0 0 10px rgba(231, 76, 60, 0.06),
-                0 0 20px rgba(231, 76, 60, 0.02);
+                0 0 10px rgba(139, 58, 58, 0.04),
+                0 0 20px rgba(139, 58, 58, 0.02);
         }
 
         .main-service-item h3 {
             font-size: 26px;
             font-weight: 200;
-            color: #2c3e50;
+            color: #3a3a3a;
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 6px;
@@ -170,7 +160,7 @@
         .main-service-item p {
             font-size: 17px;
             font-weight: 200;
-            color: rgba(44, 62, 80, 0.5);
+            color: rgba(60, 60, 60, 0.5);
             letter-spacing: 5px;
             text-transform: uppercase;
         }
@@ -187,7 +177,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #c0392b;
+            color: #8b3a3a;
         }
 
         .additional-grid {
@@ -199,10 +189,10 @@
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 252, 248, 0.7);
             padding: 50px 20px;
             border-radius: 16px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
+            border: 1px solid rgba(60, 60, 60, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -216,24 +206,24 @@
 
         .additional-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(231, 76, 60, 0.3);
+            background: rgba(255, 252, 248, 0.9);
+            border-color: rgba(139, 58, 58, 0.15);
             box-shadow: 
-                0 0 10px rgba(231, 76, 60, 0.06),
-                0 0 20px rgba(231, 76, 60, 0.02);
+                0 0 10px rgba(139, 58, 58, 0.04),
+                0 0 20px rgba(139, 58, 58, 0.02);
         }
 
         .additional-item h4 {
             font-size: 22px;
             font-weight: 200;
             margin-bottom: 6px;
-            color: #2c3e50;
+            color: #3a3a3a;
             letter-spacing: 5px;
             text-transform: uppercase;
         }
 
         .additional-item p {
-            color: rgba(44, 62, 80, 0.5);
+            color: rgba(60, 60, 60, 0.5);
             font-size: 16px;
             font-weight: 200;
             letter-spacing: 4px;
@@ -248,7 +238,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(60, 60, 60, 0.5);
             backdrop-filter: blur(8px);
             z-index: 1000;
             justify-content: center;
@@ -261,7 +251,7 @@
         }
 
         .modal {
-            background: #fdf8f0;
+            background: #e8e0d8;
             border-radius: 24px;
             padding: 50px 45px;
             max-width: 700px;
@@ -270,7 +260,7 @@
             overflow-y: auto;
             position: relative;
             animation: slideUp 0.4s ease;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(60, 60, 60, 0.15);
         }
 
         .modal-close {
@@ -279,7 +269,7 @@
             right: 25px;
             font-size: 28px;
             font-weight: 200;
-            color: #2c3e50;
+            color: #3a3a3a;
             cursor: pointer;
             transition: all 0.3s ease;
             opacity: 0.4;
@@ -295,7 +285,7 @@
             font-size: 28px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #e74c3c;
+            color: #8b3a3a;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
@@ -303,7 +293,7 @@
         .modal-subtitle {
             font-size: 16px;
             font-weight: 200;
-            color: rgba(44, 62, 80, 0.5);
+            color: rgba(60, 60, 60, 0.5);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -312,7 +302,7 @@
         .modal-divider {
             width: 40px;
             height: 2px;
-            background: #c0392b;
+            background: #8b3a3a;
             margin-bottom: 30px;
             opacity: 0.3;
         }
@@ -324,23 +314,23 @@
         }
 
         .modal-item {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 252, 248, 0.6);
             border-radius: 12px;
             padding: 25px 20px;
-            border: 1px solid rgba(44, 62, 80, 0.06);
+            border: 1px solid rgba(60, 60, 60, 0.06);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .modal-item:hover {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(231, 76, 60, 0.15);
+            background: rgba(255, 252, 248, 0.9);
+            border-color: rgba(139, 58, 58, 0.12);
         }
 
         .modal-item h5 {
             font-size: 16px;
             font-weight: 200;
-            color: #2c3e50;
+            color: #3a3a3a;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 4px;
@@ -349,7 +339,7 @@
         .modal-item p {
             font-size: 13px;
             font-weight: 200;
-            color: rgba(44, 62, 80, 0.4);
+            color: rgba(60, 60, 60, 0.4);
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -384,7 +374,7 @@
             letter-spacing: 6px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            color: #c0392b;
+            color: #8b3a3a;
         }
 
         .footer-contacts {
@@ -396,14 +386,14 @@
         }
 
         .footer-contacts a {
-            color: #2c3e50;
+            color: #3a3a3a;
             text-decoration: none;
             font-size: 16px;
             font-weight: 200;
             letter-spacing: 5px;
             padding: 14px 20px;
             border-radius: 50px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
+            border: 1px solid rgba(60, 60, 60, 0.08);
             background: transparent;
             text-transform: uppercase;
             text-align: center;
@@ -413,18 +403,18 @@
 
         .footer-contacts a:hover {
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(231, 76, 60, 0.2);
+            background: rgba(255, 252, 248, 0.5);
+            border-color: rgba(139, 58, 58, 0.15);
             box-shadow: 
-                0 0 8px rgba(231, 76, 60, 0.06),
-                0 0 16px rgba(231, 76, 60, 0.02);
+                0 0 8px rgba(139, 58, 58, 0.04),
+                0 0 16px rgba(139, 58, 58, 0.02);
         }
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(253, 248, 240, 0.92);
+                background: rgba(232, 224, 216, 0.92);
             }
 
             header {
@@ -742,7 +732,7 @@
             }
 
             function draw() {
-                ctx.fillStyle = 'rgba(253, 248, 240, 0.02)';
+                ctx.fillStyle = 'rgba(232, 224, 216, 0.02)';
                 ctx.fillRect(0, 0, width, height);
 
                 ctx.font = fontSize + 'px monospace';
@@ -755,13 +745,13 @@
 
                     const brightness = 0.4 + Math.random() * 0.6;
                     
-                    const r = 200 + Math.random() * 55;
-                    const g = 50 + Math.random() * 40;
-                    const b = 30 + Math.random() * 30;
+                    const r = 139 + Math.random() * 40;
+                    const g = 58 + Math.random() * 30;
+                    const b = 58 + Math.random() * 20;
                     
-                    ctx.shadowColor = `rgba(200, 50, 30, ${brightness * 0.5})`;
-                    ctx.shadowBlur = 25;
-                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.6 + brightness * 0.4})`;
+                    ctx.shadowColor = `rgba(139, 58, 58, ${brightness * 0.3})`;
+                    ctx.shadowBlur = 20;
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.4 + brightness * 0.3})`;
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
 
