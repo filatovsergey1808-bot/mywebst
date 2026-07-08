@@ -16,15 +16,14 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e8edf2;
-            color: #2c3e50;
+            background-color: #0a0e1a;
+            color: #ffffff;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* ===== АРХИТЕКТУРНЫЙ ФОН ===== */
         #archCanvas {
             position: fixed;
             top: 0;
@@ -41,12 +40,11 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(232, 237, 242, 0.88);
+            background: rgba(10, 14, 26, 0.82);
             backdrop-filter: blur(3px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(44, 62, 80, 0.04);
-            border-left: 1px solid rgba(44, 62, 80, 0.06);
-            border-right: 1px solid rgba(44, 62, 80, 0.06);
+            border-left: 1px solid rgba(255, 255, 255, 0.04);
+            border-right: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         header {
@@ -54,7 +52,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 25px;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -63,22 +61,25 @@
             font-size: 24px;
             font-weight: 200;
             letter-spacing: 6px;
-            color: #2c3e50;
+            color: #ffffff;
             text-transform: uppercase;
         }
 
+        .logo span {
+            color: #ff6b6b;
+        }
+
         .header-phone {
-            color: #2c3e50;
+            color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
             font-size: 17px;
             font-weight: 200;
             letter-spacing: 3px;
             transition: all 0.3s ease;
-            opacity: 0.5;
         }
 
         .header-phone:hover {
-            opacity: 1;
+            color: #ffffff;
         }
 
         .hero {
@@ -93,11 +94,21 @@
             margin-bottom: 0px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #2c3e50;
+            color: #ffffff;
         }
 
         .hero h1 .highlight {
-            color: #4a7a9c;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcbff, #a66bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .main-services {
@@ -111,7 +122,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #4a7a9c;
+            color: rgba(255, 255, 255, 0.3);
         }
 
         .main-services-grid {
@@ -123,10 +134,10 @@
         }
 
         .main-service-item {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.03);
             padding: 50px 30px;
             border-radius: 16px;
-            border: 1px solid rgba(44, 62, 80, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -140,24 +151,30 @@
 
         .main-service-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(74, 122, 156, 0.2);
-            box-shadow: 0 0 20px rgba(74, 122, 156, 0.05);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 107, 107, 0.3);
+            box-shadow: 0 0 40px rgba(255, 107, 107, 0.05);
         }
 
         .main-service-item h3 {
             font-size: 26px;
             font-weight: 200;
-            color: #2c3e50;
+            color: #ffffff;
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 6px;
         }
 
+        .main-service-item h3 span {
+            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .main-service-item p {
             font-size: 17px;
             font-weight: 200;
-            color: rgba(44, 62, 80, 0.5);
+            color: rgba(255, 255, 255, 0.4);
             letter-spacing: 5px;
             text-transform: uppercase;
         }
@@ -173,7 +190,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #4a7a9c;
+            color: rgba(255, 255, 255, 0.3);
         }
 
         .additional-grid {
@@ -185,10 +202,10 @@
         }
 
         .additional-item {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.03);
             padding: 50px 20px;
             border-radius: 16px;
-            border: 1px solid rgba(44, 62, 80, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -202,22 +219,28 @@
 
         .additional-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(74, 122, 156, 0.2);
-            box-shadow: 0 0 20px rgba(74, 122, 156, 0.05);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(107, 203, 255, 0.3);
+            box-shadow: 0 0 40px rgba(107, 203, 255, 0.05);
         }
 
         .additional-item h4 {
             font-size: 22px;
             font-weight: 200;
             margin-bottom: 6px;
-            color: #2c3e50;
+            color: #ffffff;
             letter-spacing: 5px;
             text-transform: uppercase;
         }
 
+        .additional-item h4 span {
+            background: linear-gradient(135deg, #6bcbff, #a66bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .additional-item p {
-            color: rgba(44, 62, 80, 0.5);
+            color: rgba(255, 255, 255, 0.4);
             font-size: 16px;
             font-weight: 200;
             letter-spacing: 4px;
@@ -231,7 +254,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(44, 62, 80, 0.5);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(8px);
             z-index: 1000;
             justify-content: center;
@@ -244,7 +267,7 @@
         }
 
         .modal {
-            background: #e8edf2;
+            background: #141b2b;
             border-radius: 24px;
             padding: 50px 45px;
             max-width: 700px;
@@ -253,7 +276,8 @@
             overflow-y: auto;
             position: relative;
             animation: slideUp 0.4s ease;
-            box-shadow: 0 20px 60px rgba(44, 62, 80, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .modal-close {
@@ -262,15 +286,14 @@
             right: 25px;
             font-size: 28px;
             font-weight: 200;
-            color: #2c3e50;
+            color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: all 0.3s ease;
-            opacity: 0.4;
             line-height: 1;
         }
 
         .modal-close:hover {
-            opacity: 1;
+            color: #ffffff;
             transform: rotate(90deg);
         }
 
@@ -278,15 +301,21 @@
             font-size: 28px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #4a7a9c;
+            color: #ffffff;
             text-transform: uppercase;
             margin-bottom: 8px;
+        }
+
+        .modal-title span {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .modal-subtitle {
             font-size: 16px;
             font-weight: 200;
-            color: rgba(44, 62, 80, 0.5);
+            color: rgba(255, 255, 255, 0.4);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -295,9 +324,8 @@
         .modal-divider {
             width: 40px;
             height: 2px;
-            background: #4a7a9c;
+            background: rgba(255, 107, 107, 0.3);
             margin-bottom: 30px;
-            opacity: 0.3;
         }
 
         .modal-grid {
@@ -307,23 +335,23 @@
         }
 
         .modal-item {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
             padding: 25px 20px;
-            border: 1px solid rgba(44, 62, 80, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .modal-item:hover {
-            background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(74, 122, 156, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 107, 107, 0.2);
         }
 
         .modal-item h5 {
             font-size: 16px;
             font-weight: 200;
-            color: #2c3e50;
+            color: #ffffff;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 4px;
@@ -332,7 +360,7 @@
         .modal-item p {
             font-size: 13px;
             font-weight: 200;
-            color: rgba(44, 62, 80, 0.4);
+            color: rgba(255, 255, 255, 0.4);
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -365,7 +393,7 @@
             letter-spacing: 6px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            color: #4a7a9c;
+            color: rgba(255, 255, 255, 0.3);
         }
 
         .footer-contacts {
@@ -377,15 +405,15 @@
         }
 
         .footer-contacts a {
-            color: #2c3e50;
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 16px;
             font-weight: 200;
             letter-spacing: 5px;
             padding: 14px 20px;
             border-radius: 50px;
-            border: 1px solid rgba(44, 62, 80, 0.08);
-            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
             text-transform: uppercase;
             text-align: center;
             width: 100%;
@@ -394,13 +422,14 @@
 
         .footer-contacts a:hover {
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.5);
-            border-color: rgba(74, 122, 156, 0.2);
-            box-shadow: 0 0 12px rgba(74, 122, 156, 0.05);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 107, 107, 0.3);
+            color: #ffffff;
+            box-shadow: 0 0 30px rgba(255, 107, 107, 0.05);
         }
 
         @media (max-width: 768px) {
-            .content { padding: 15px; background: rgba(232, 237, 242, 0.92); }
+            .content { padding: 15px; background: rgba(10, 14, 26, 0.88); }
             header { flex-direction: column; gap: 15px; text-align: center; }
             .hero { padding: 50px 0 30px; }
             .hero h1 { font-size: 38px; letter-spacing: 3px; }
@@ -456,7 +485,7 @@
     <div class="content">
 
         <header>
-            <div class="logo">STRUKTURA</div>
+            <div class="logo"><span>✦</span> STRUKTURA</div>
             <div>
                 <a href="tel:+79999999999" class="header-phone">+7 999 999-99-99</a>
             </div>
@@ -473,7 +502,7 @@
             <div class="main-services-title">ОСНОВНОЕ НАПРАВЛЕНИЕ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <h3>КРАСИВЫЕ САЙТЫ</h3>
+                    <h3><span>КРАСИВЫЕ САЙТЫ</span></h3>
                     <p>УНИКАЛЬНЫЙ ДИЗАЙН, ПОЛНЫЙ КОД</p>
                 </div>
             </div>
@@ -483,11 +512,11 @@
             <div class="additional-title">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</div>
             <div class="additional-grid">
                 <div class="additional-item" data-modal="bots">
-                    <h4>TELEGRAM-БОТЫ</h4>
+                    <h4><span>TELEGRAM-БОТЫ</span></h4>
                     <p>АВТОМАТИЗАЦИЯ, ПРОДАЖИ</p>
                 </div>
                 <div class="additional-item" data-modal="apps">
-                    <h4>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</h4>
+                    <h4><span>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span></h4>
                     <p>IOS И ANDROID</p>
                 </div>
             </div>
@@ -508,7 +537,7 @@
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <span class="modal-close" id="modalClose">×</span>
-            <div class="modal-title" id="modalTitle">КРАСИВЫЕ САЙТЫ</div>
+            <div class="modal-title"><span id="modalTitle">КРАСИВЫЕ САЙТЫ</span></div>
             <div class="modal-subtitle" id="modalSubtitle">НАШИ РАБОТЫ</div>
             <div class="modal-divider"></div>
             <div class="modal-grid" id="modalGrid"></div>
@@ -516,88 +545,79 @@
     </div>
 
     <script>
-        // ===== АРХИТЕКТУРНЫЙ ФОН В СТИЛЕ ЧЕРТЕЖА =====
-        (function architecturalBackground() {
+        // ===== ЯРКИЙ АРХИТЕКТУРНЫЙ ФОН =====
+        (function vibrantArchitecture() {
             const canvas = document.getElementById('archCanvas');
             const ctx = canvas.getContext('2d');
 
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            // ===== 1. ОСНОВНАЯ СЕТКА (МИЛЛИМЕТРОВКА) =====
+            // ===== 1. ЦВЕТНАЯ СЕТКА =====
             function drawGrid() {
                 ctx.save();
 
-                // Крупная сетка
-                ctx.strokeStyle = 'rgba(44, 62, 80, 0.04)';
-                ctx.lineWidth = 0.5;
+                // Горизонтальные линии с цветным градиентом
+                for (let y = 0; y <= height; y += 40) {
+                    const progress = y / height;
+                    const hue = 220 + progress * 120;
+                    const alpha = 0.04 + progress * 0.04;
+                    ctx.strokeStyle = `hsla(${hue}, 80%, 60%, ${alpha})`;
+                    ctx.lineWidth = 0.5;
 
-                for (let x = 0; x <= width; x += 50) {
+                    const offset = Math.sin(y * 0.01 + performance.now() * 0.0003) * 5;
                     ctx.beginPath();
-                    ctx.moveTo(x, 0);
-                    ctx.lineTo(x, height);
+                    ctx.moveTo(0, y + offset);
+                    ctx.lineTo(width, y + offset);
                     ctx.stroke();
                 }
 
-                for (let y = 0; y <= height; y += 50) {
+                // Вертикальные линии
+                for (let x = 0; x <= width; x += 40) {
+                    const progress = x / width;
+                    const hue = 220 + progress * 120;
+                    const alpha = 0.04 + progress * 0.04;
+                    ctx.strokeStyle = `hsla(${hue}, 80%, 60%, ${alpha})`;
+                    ctx.lineWidth = 0.5;
+
+                    const offset = Math.cos(x * 0.01 + performance.now() * 0.0003) * 5;
                     ctx.beginPath();
-                    ctx.moveTo(0, y);
-                    ctx.lineTo(width, y);
+                    ctx.moveTo(x + offset, 0);
+                    ctx.lineTo(x + offset, height);
                     ctx.stroke();
-                }
-
-                // Мелкая сетка
-                ctx.strokeStyle = 'rgba(44, 62, 80, 0.02)';
-                ctx.lineWidth = 0.3;
-
-                for (let x = 0; x <= width; x += 10) {
-                    if (x % 50 !== 0) {
-                        ctx.beginPath();
-                        ctx.moveTo(x, 0);
-                        ctx.lineTo(x, height);
-                        ctx.stroke();
-                    }
-                }
-
-                for (let y = 0; y <= height; y += 10) {
-                    if (y % 50 !== 0) {
-                        ctx.beginPath();
-                        ctx.moveTo(0, y);
-                        ctx.lineTo(width, y);
-                        ctx.stroke();
-                    }
                 }
 
                 ctx.restore();
             }
 
-            // ===== 2. АРХИТЕКТУРНЫЕ ЭЛЕМЕНТЫ =====
+            // ===== 2. АРХИТЕКТУРНЫЕ ЭЛЕМЕНТЫ С ЦВЕТНЫМИ АКЦЕНТАМИ =====
             const elements = [];
 
-            // Типы элементов чертежа
             const types = [
-                'blueprint_line', 'blueprint_arc', 'blueprint_circle',
-                'blueprint_rect', 'blueprint_dimension', 'blueprint_angle'
+                'vibrant_line', 'vibrant_arc', 'vibrant_circle',
+                'vibrant_rect', 'vibrant_spiral', 'vibrant_triangle'
             ];
 
-            // Цвета в стиле чертежа (сине-голубые)
-            const blueprintColors = [
-                'rgba(44, 62, 80, 0.06)',
-                'rgba(74, 122, 156, 0.05)',
-                'rgba(44, 62, 80, 0.04)',
-                'rgba(74, 122, 156, 0.03)',
-                'rgba(44, 62, 80, 0.07)'
+            const colorPalette = [
+                { hue: 0, sat: 90, light: 65 },     // Красный
+                { hue: 45, sat: 95, light: 60 },    // Оранжевый
+                { hue: 55, sat: 95, light: 65 },    // Желтый
+                { hue: 200, sat: 90, light: 65 },   // Голубой
+                { hue: 260, sat: 85, light: 70 },   // Фиолетовый
+                { hue: 320, sat: 85, light: 65 },   // Розовый
+                { hue: 170, sat: 80, light: 55 },   // Бирюзовый
+                { hue: 30, sat: 90, light: 60 },    // Терракотовый
             ];
 
-            // Создаем элементы
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 45; i++) {
                 const type = types[Math.floor(Math.random() * types.length)];
                 const x = Math.random() * width;
                 const y = Math.random() * height;
-                const size = 40 + Math.random() * 200;
-                const rotation = (Math.random() - 0.5) * 0.5;
-                const color = blueprintColors[Math.floor(Math.random() * blueprintColors.length)];
+                const size = 30 + Math.random() * 250;
+                const rotation = (Math.random() - 0.5) * 0.8;
+                const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
                 const phase = Math.random() * Math.PI * 2;
+                const speed = 0.05 + Math.random() * 0.15;
 
                 elements.push({
                     type,
@@ -607,53 +627,57 @@
                     rotation,
                     color,
                     phase,
-                    speed: 0.1 + Math.random() * 0.15,
+                    speed,
                     originalX: x,
-                    originalY: y
+                    originalY: y,
+                    alpha: 0.06 + Math.random() * 0.12
                 });
             }
 
-            // ===== 3. РИСОВАНИЕ ЭЛЕМЕНТОВ =====
-            function drawBlueprintElement(el) {
+            // ===== 3. РИСОВАНИЕ ЦВЕТНЫХ ЭЛЕМЕНТОВ =====
+            function drawVibrantElement(el) {
                 ctx.save();
                 ctx.translate(el.x, el.y);
                 ctx.rotate(el.rotation);
-                ctx.strokeStyle = el.color;
-                ctx.lineWidth = 1.2;
+
+                const { hue, sat, light } = el.color;
+                const alpha = el.alpha;
+                ctx.strokeStyle = `hsla(${hue}, ${sat}%, ${light}%, ${alpha})`;
+                ctx.lineWidth = 1.2 + Math.random() * 0.5;
 
                 const s = el.size;
 
                 switch (el.type) {
-                    case 'blueprint_line':
+                    case 'vibrant_line':
                         ctx.beginPath();
                         ctx.moveTo(-s / 2, 0);
                         ctx.lineTo(s / 2, 0);
                         ctx.stroke();
-                        // Стрелки на концах
+                        // Стрелки
                         ctx.beginPath();
-                        ctx.moveTo(-s / 2, -3);
-                        ctx.lineTo(-s / 2 + 6, 0);
-                        ctx.lineTo(-s / 2, 3);
+                        ctx.moveTo(-s / 2, -4);
+                        ctx.lineTo(-s / 2 + 8, 0);
+                        ctx.lineTo(-s / 2, 4);
                         ctx.stroke();
                         ctx.beginPath();
-                        ctx.moveTo(s / 2, -3);
-                        ctx.lineTo(s / 2 - 6, 0);
-                        ctx.lineTo(s / 2, 3);
+                        ctx.moveTo(s / 2, -4);
+                        ctx.lineTo(s / 2 - 8, 0);
+                        ctx.lineTo(s / 2, 4);
                         ctx.stroke();
                         break;
 
-                    case 'blueprint_arc':
+                    case 'vibrant_arc':
                         ctx.beginPath();
-                        ctx.arc(0, 0, s / 3, 0, Math.PI * 1.2);
+                        ctx.arc(0, 0, s / 3, 0, Math.PI * 1.5);
                         ctx.stroke();
-                        // Радиусная линия
+                        // Радиус
                         ctx.beginPath();
                         ctx.moveTo(0, 0);
-                        ctx.lineTo(Math.cos(0) * s / 3, Math.sin(0) * s / 3);
+                        ctx.lineTo(s / 3, 0);
                         ctx.stroke();
                         break;
 
-                    case 'blueprint_circle':
+                    case 'vibrant_circle':
                         ctx.beginPath();
                         ctx.arc(0, 0, s / 4, 0, Math.PI * 2);
                         ctx.stroke();
@@ -668,7 +692,7 @@
                         ctx.setLineDash([]);
                         break;
 
-                    case 'blueprint_rect':
+                    case 'vibrant_rect':
                         ctx.strokeRect(-s / 3, -s / 4, s * 0.66, s * 0.5);
                         // Диагонали
                         ctx.setLineDash([3, 5]);
@@ -681,93 +705,111 @@
                         ctx.setLineDash([]);
                         break;
 
-                    case 'blueprint_dimension':
-                        // Размерная линия
-                        const d = s / 2;
+                    case 'vibrant_spiral':
                         ctx.beginPath();
-                        ctx.moveTo(-d, 0);
-                        ctx.lineTo(d, 0);
+                        for (let t = 0; t < Math.PI * 5; t += 0.05) {
+                            const r = t * s / 12;
+                            const x = Math.cos(t) * r;
+                            const y = Math.sin(t) * r;
+                            if (t === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
                         ctx.stroke();
-                        // Выносные линии
-                        ctx.beginPath();
-                        ctx.moveTo(-d, -8);
-                        ctx.lineTo(-d, 8);
-                        ctx.moveTo(d, -8);
-                        ctx.lineTo(d, 8);
-                        ctx.stroke();
-                        // Текст размера
-                        ctx.fillStyle = el.color;
-                        ctx.font = '10px Inter, sans-serif';
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'bottom';
-                        ctx.fillText('100', 0, -4);
                         break;
 
-                    case 'blueprint_angle':
-                        // Угол
-                        const a = s / 3;
+                    case 'vibrant_triangle':
                         ctx.beginPath();
-                        ctx.moveTo(0, 0);
-                        ctx.lineTo(a, 0);
-                        ctx.moveTo(0, 0);
-                        ctx.lineTo(0, -a);
+                        ctx.moveTo(0, -s / 2);
+                        ctx.lineTo(-s / 2, s / 2);
+                        ctx.lineTo(s / 2, s / 2);
+                        ctx.closePath();
                         ctx.stroke();
-                        // Дуга угла
+                        // Внутренний треугольник
                         ctx.beginPath();
-                        ctx.arc(0, 0, a * 0.4, -Math.PI / 2, 0);
+                        ctx.moveTo(0, -s / 3);
+                        ctx.lineTo(-s / 3, s / 3);
+                        ctx.lineTo(s / 3, s / 3);
+                        ctx.closePath();
                         ctx.stroke();
-                        // Подпись угла
-                        ctx.fillStyle = el.color;
-                        ctx.font = '9px Inter, sans-serif';
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'middle';
-                        ctx.fillText('90°', a * 0.35, -a * 0.35);
                         break;
                 }
 
                 ctx.restore();
             }
 
-            // ===== 4. АНИМАЦИЯ =====
+            // ===== 4. ЦВЕТНЫЕ АКЦЕНТЫ (СЛУЧАЙНЫЕ ТОЧКИ И ПЯТНА) =====
+            function drawColorAccents() {
+                const time = performance.now() * 0.0002;
+                for (let i = 0; i < 15; i++) {
+                    const x = (Math.sin(time + i * 2.5) * 0.5 + 0.5) * width;
+                    const y = (Math.cos(time * 0.7 + i * 1.8) * 0.5 + 0.5) * height;
+                    const radius = 30 + Math.sin(time + i) * 20 + 20;
+                    const hue = (i * 45 + time * 20) % 360;
+
+                    const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+                    gradient.addColorStop(0, `hsla(${hue}, 90%, 70%, 0.04)`);
+                    gradient.addColorStop(1, `hsla(${hue}, 90%, 70%, 0)`);
+
+                    ctx.fillStyle = gradient;
+                    ctx.beginPath();
+                    ctx.arc(x, y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // ===== 5. АНИМАЦИЯ =====
             let time = 0;
 
             function animate() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Рисуем сетку
+                // Цветные акценты
+                drawColorAccents();
+
+                // Сетка
                 drawGrid();
 
-                // Рисуем элементы с плавным движением
+                // Элементы
                 elements.forEach((el) => {
-                    const floatX = Math.sin(time * el.speed + el.phase) * 15;
-                    const floatY = Math.cos(time * el.speed * 0.7 + el.phase * 0.8) * 15;
+                    const floatX = Math.sin(time * el.speed + el.phase) * 25;
+                    const floatY = Math.cos(time * el.speed * 0.7 + el.phase * 0.8) * 25;
 
                     el.x = el.originalX + floatX;
                     el.y = el.originalY + floatY;
 
-                    drawBlueprintElement(el);
+                    drawVibrantElement(el);
                 });
 
-                // ===== 5. ДЕКОРАТИВНЫЕ АКЦЕНТЫ =====
+                // Декоративные рамки
                 ctx.save();
 
-                // Рамка по краям (как у чертежа)
-                ctx.strokeStyle = 'rgba(44, 62, 80, 0.03)';
+                // Рамка с цветным градиентом
+                const grad = ctx.createLinearGradient(0, 0, width, height);
+                grad.addColorStop(0, 'rgba(255, 107, 107, 0.02)');
+                grad.addColorStop(0.3, 'rgba(255, 217, 61, 0.02)');
+                grad.addColorStop(0.6, 'rgba(107, 203, 255, 0.02)');
+                grad.addColorStop(1, 'rgba(166, 107, 255, 0.02)');
+
+                ctx.strokeStyle = grad;
                 ctx.lineWidth = 1;
-                ctx.strokeRect(20, 20, width - 40, height - 40);
+                ctx.strokeRect(25, 25, width - 50, height - 50);
 
                 // Угловые метки
-                const cornerSize = 20;
+                const cornerSize = 25;
                 const corners = [
-                    [20, 20],
-                    [width - 20, 20],
-                    [20, height - 20],
-                    [width - 20, height - 20]
+                    [25, 25],
+                    [width - 25, 25],
+                    [25, height - 25],
+                    [width - 25, height - 25]
                 ];
 
-                corners.forEach(([cx, cy]) => {
+                corners.forEach(([cx, cy], index) => {
                     const dirX = cx < width / 2 ? 1 : -1;
                     const dirY = cy < height / 2 ? 1 : -1;
+
+                    const hue = index * 90 + 220;
+                    ctx.strokeStyle = `hsla(${hue}, 80%, 65%, 0.1)`;
+                    ctx.lineWidth = 1.5;
 
                     ctx.beginPath();
                     ctx.moveTo(cx + dirX * cornerSize, cy);
@@ -776,20 +818,12 @@
                     ctx.stroke();
                 });
 
-                // Штамп "СТРОИТЕЛЬНАЯ ДОКУМЕНТАЦИЯ"
-                ctx.fillStyle = 'rgba(44, 62, 80, 0.02)';
-                ctx.font = '10px Inter, sans-serif';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'bottom';
-                ctx.fillText('АРХИТЕКТУРНАЯ ДОКУМЕНТАЦИЯ', width / 2, height - 35);
-
                 ctx.restore();
 
                 time += 0.01;
                 requestAnimationFrame(animate);
             }
 
-            // ===== 6. АДАПТАЦИЯ ПРИ РЕСАЙЗЕ =====
             function resizeCanvas() {
                 width = canvas.width = window.innerWidth;
                 height = canvas.height = window.innerHeight;
