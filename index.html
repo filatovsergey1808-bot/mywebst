@@ -713,7 +713,7 @@
 
     <!-- ===== СКРИПТЫ ===== -->
     <script>
-        // ===== АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ =====
+        // ===== АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ С БОГАТЫМИ ЭЛЕМЕНТАМИ =====
         (function architecturalGeometry() {
             const canvas = document.getElementById('geoCanvas');
             const ctx = canvas.getContext('2d');
@@ -721,38 +721,45 @@
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            // Геометрические фигуры
-            const shapes = [];
-            const numShapes = 25;
+            // Геометрические фигуры и архитектурные элементы
+            const elements = [];
+            
+            // Типы элементов
+            const types = [
+                'line', 'rectangle', 'triangle', 'circle', 'arc', 'cross',
+                'column', 'wave', 'frame', 'silhouette', 'fresco', 'arch',
+                'dome', 'pillar', 'ornament', 'grid'
+            ];
 
-            // Типы фигур
-            const types = ['line', 'rectangle', 'triangle', 'circle', 'arc', 'cross'];
-
-            // Цвета в холодной гамме — более насыщенные
+            // Цвета в холодной гамме
             const colors = [
                 'rgba(58, 90, 122, 0.15)',
                 'rgba(44, 62, 80, 0.12)',
                 'rgba(80, 120, 160, 0.10)',
                 'rgba(30, 50, 70, 0.08)',
                 'rgba(100, 140, 180, 0.07)',
-                'rgba(58, 90, 122, 0.20)'
+                'rgba(58, 90, 122, 0.20)',
+                'rgba(44, 62, 80, 0.18)',
+                'rgba(70, 100, 130, 0.14)'
             ];
 
-            // Создание фигур
-            for (let i = 0; i < numShapes; i++) {
+            // Создание элементов (увеличиваем количество до 60)
+            const numElements = 60;
+
+            for (let i = 0; i < numElements; i++) {
                 const type = types[Math.floor(Math.random() * types.length)];
                 const x = Math.random() * width;
                 const y = Math.random() * height;
-                const size = 40 + Math.random() * 150;
-                const speedX = (Math.random() - 0.5) * 0.2;
-                const speedY = (Math.random() - 0.5) * 0.2;
+                const size = 30 + Math.random() * 180;
+                const speedX = (Math.random() - 0.5) * 0.15;
+                const speedY = (Math.random() - 0.5) * 0.15;
                 const rotation = Math.random() * Math.PI * 2;
-                const rotationSpeed = (Math.random() - 0.5) * 0.003;
+                const rotationSpeed = (Math.random() - 0.5) * 0.002;
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 const phase = Math.random() * Math.PI * 2;
-                const lineWidth = 1 + Math.random() * 2;
+                const lineWidth = 0.8 + Math.random() * 2.5;
 
-                shapes.push({
+                elements.push({
                     type,
                     x,
                     y,
@@ -769,16 +776,48 @@
                 });
             }
 
-            function drawShape(shape) {
+            // Дополнительные крупные архитектурные элементы
+            const largeElements = [
+                { type: 'column', x: width * 0.1, y: height * 0.3, size: 200 },
+                { type: 'column', x: width * 0.9, y: height * 0.7, size: 180 },
+                { type: 'dome', x: width * 0.85, y: height * 0.2, size: 150 },
+                { type: 'arch', x: width * 0.15, y: height * 0.7, size: 160 },
+                { type: 'fresco', x: width * 0.5, y: height * 0.15, size: 250 },
+                { type: 'frame', x: width * 0.3, y: height * 0.5, size: 140 },
+                { type: 'frame', x: width * 0.7, y: height * 0.4, size: 130 },
+                { type: 'silhouette', x: width * 0.45, y: height * 0.8, size: 170 },
+                { type: 'ornament', x: width * 0.6, y: height * 0.6, size: 120 },
+                { type: 'grid', x: width * 0.4, y: height * 0.1, size: 300 }
+            ];
+
+            largeElements.forEach(el => {
+                elements.push({
+                    type: el.type,
+                    x: el.x,
+                    y: el.y,
+                    size: el.size,
+                    speedX: (Math.random() - 0.5) * 0.05,
+                    speedY: (Math.random() - 0.5) * 0.05,
+                    rotation: 0,
+                    rotationSpeed: (Math.random() - 0.5) * 0.0005,
+                    color: 'rgba(44, 62, 80, 0.06)',
+                    phase: Math.random() * Math.PI * 2,
+                    lineWidth: 1.2,
+                    originalX: el.x,
+                    originalY: el.y
+                });
+            });
+
+            function drawArchitecturalElement(el) {
                 ctx.save();
-                ctx.translate(shape.x, shape.y);
-                ctx.rotate(shape.rotation);
-                ctx.strokeStyle = shape.color;
-                ctx.lineWidth = shape.lineWidth;
+                ctx.translate(el.x, el.y);
+                ctx.rotate(el.rotation);
+                ctx.strokeStyle = el.color;
+                ctx.lineWidth = el.lineWidth;
 
-                const s = shape.size;
+                const s = el.size;
 
-                switch (shape.type) {
+                switch (el.type) {
                     case 'line':
                         ctx.beginPath();
                         ctx.moveTo(-s / 2, 0);
@@ -825,6 +864,182 @@
                         ctx.lineTo(0, s / 4);
                         ctx.stroke();
                         break;
+
+                    case 'column':
+                        // Колонна с капителью
+                        ctx.beginPath();
+                        ctx.moveTo(-s / 10, -s / 2);
+                        ctx.lineTo(-s / 10, s / 2);
+                        ctx.lineTo(s / 10, s / 2);
+                        ctx.lineTo(s / 10, -s / 2);
+                        ctx.stroke();
+                        // Капитель
+                        ctx.strokeRect(-s / 6, -s / 2 - s / 12, s / 3, s / 10);
+                        ctx.strokeRect(-s / 8, s / 2 - s / 20, s / 4, s / 10);
+                        break;
+
+                    case 'wave':
+                        // Волна
+                        ctx.beginPath();
+                        for (let i = 0; i <= 20; i++) {
+                            const t = i / 20;
+                            const x = -s / 2 + t * s;
+                            const y = Math.sin(t * Math.PI * 4) * s / 6;
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        ctx.stroke();
+                        break;
+
+                    case 'frame':
+                        // Картинная рамка
+                        const f = s / 3;
+                        ctx.strokeRect(-f, -f * 0.8, f * 2, f * 1.6);
+                        // Внутренняя рамка
+                        ctx.strokeRect(-f * 0.8, -f * 0.6, f * 1.6, f * 1.2);
+                        // Углы
+                        const c = f * 0.05;
+                        [
+                            [-f, -f * 0.8],
+                            [-f, f * 0.8],
+                            [f, -f * 0.8],
+                            [f, f * 0.8]
+                        ].forEach(([x, y]) => {
+                            ctx.beginPath();
+                            ctx.moveTo(x - c, y);
+                            ctx.lineTo(x, y);
+                            ctx.lineTo(x, y - c);
+                            ctx.stroke();
+                        });
+                        break;
+
+                    case 'silhouette':
+                        // Силуэт античной фигуры
+                        ctx.beginPath();
+                        // Голова
+                        ctx.arc(0, -s / 4, s / 10, 0, Math.PI * 2);
+                        ctx.stroke();
+                        // Тело
+                        ctx.beginPath();
+                        ctx.moveTo(-s / 10, -s / 4 + s / 10);
+                        ctx.lineTo(-s / 8, s / 4);
+                        ctx.lineTo(-s / 6, s / 2);
+                        ctx.moveTo(s / 10, -s / 4 + s / 10);
+                        ctx.lineTo(s / 8, s / 4);
+                        ctx.lineTo(s / 6, s / 2);
+                        ctx.stroke();
+                        break;
+
+                    case 'fresco':
+                        // Фреска (окно с аркой)
+                        const fw = s / 3;
+                        const fh = s / 2.5;
+                        ctx.strokeRect(-fw, -fh, fw * 2, fh * 2);
+                        // Арка сверху
+                        ctx.beginPath();
+                        ctx.arc(0, -fh, fw, Math.PI, 0);
+                        ctx.stroke();
+                        // Перегородки
+                        ctx.beginPath();
+                        ctx.moveTo(-fw / 2, -fh);
+                        ctx.lineTo(-fw / 2, fh);
+                        ctx.moveTo(fw / 2, -fh);
+                        ctx.lineTo(fw / 2, fh);
+                        ctx.stroke();
+                        break;
+
+                    case 'arch':
+                        // Арка
+                        const ar = s / 2;
+                        ctx.beginPath();
+                        ctx.arc(0, ar / 2, ar, Math.PI, 0);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.moveTo(-ar, ar / 2);
+                        ctx.lineTo(-ar, ar / 2 + ar / 3);
+                        ctx.moveTo(ar, ar / 2);
+                        ctx.lineTo(ar, ar / 2 + ar / 3);
+                        ctx.stroke();
+                        break;
+
+                    case 'dome':
+                        // Купол
+                        const d = s / 2;
+                        ctx.beginPath();
+                        ctx.arc(0, 0, d, Math.PI, 0);
+                        ctx.stroke();
+                        // Крест на куполе
+                        ctx.beginPath();
+                        ctx.moveTo(0, -d);
+                        ctx.lineTo(0, -d - s / 8);
+                        ctx.moveTo(-s / 16, -d - s / 16);
+                        ctx.lineTo(s / 16, -d - s / 16);
+                        ctx.stroke();
+                        // Окна
+                        for (let i = 0; i < 6; i++) {
+                            const angle = Math.PI / 6 + i * Math.PI / 6;
+                            const wx = Math.cos(angle) * d * 0.85;
+                            const wy = -Math.sin(angle) * d * 0.85;
+                            ctx.beginPath();
+                            ctx.arc(wx, wy, d * 0.08, 0, Math.PI * 2);
+                            ctx.stroke();
+                        }
+                        break;
+
+                    case 'pillar':
+                        // Пилястра
+                        const ps = s / 4;
+                        ctx.strokeRect(-ps / 2, -s / 2, ps, s);
+                        // Каннелюры
+                        for (let i = 0; i < 4; i++) {
+                            const px = -ps / 2 + ps / 4 + i * ps / 4;
+                            ctx.beginPath();
+                            ctx.moveTo(px, -s / 2 + s / 10);
+                            ctx.lineTo(px, s / 2 - s / 10);
+                            ctx.stroke();
+                        }
+                        break;
+
+                    case 'ornament':
+                        // Орнамент (меандр)
+                        const os = s / 8;
+                        for (let i = 0; i < 8; i++) {
+                            const ox = -s / 2 + i * os;
+                            const oy = -s / 2;
+                            ctx.beginPath();
+                            ctx.moveTo(ox, oy);
+                            ctx.lineTo(ox + os / 2, oy);
+                            ctx.lineTo(ox + os / 2, oy + os);
+                            ctx.lineTo(ox + os, oy + os);
+                            ctx.stroke();
+                        }
+                        for (let i = 0; i < 8; i++) {
+                            const ox = -s / 2 + i * os;
+                            const oy = s / 2;
+                            ctx.beginPath();
+                            ctx.moveTo(ox, oy);
+                            ctx.lineTo(ox + os / 2, oy);
+                            ctx.lineTo(ox + os / 2, oy - os);
+                            ctx.lineTo(ox + os, oy - os);
+                            ctx.stroke();
+                        }
+                        break;
+
+                    case 'grid':
+                        // Архитектурная сетка
+                        const gs = s / 10;
+                        for (let i = 0; i < 10; i++) {
+                            const pos = -s / 2 + i * gs;
+                            ctx.beginPath();
+                            ctx.moveTo(pos, -s / 2);
+                            ctx.lineTo(pos, s / 2);
+                            ctx.stroke();
+                            ctx.beginPath();
+                            ctx.moveTo(-s / 2, pos);
+                            ctx.lineTo(s / 2, pos);
+                            ctx.stroke();
+                        }
+                        break;
                 }
 
                 ctx.restore();
@@ -835,52 +1050,58 @@
             function animate() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Сетка — более заметная
+                // Рисуем архитектурную сетку (фон)
                 ctx.save();
-                ctx.strokeStyle = 'rgba(58, 90, 122, 0.04)';
+                ctx.strokeStyle = 'rgba(44, 62, 80, 0.03)';
                 ctx.lineWidth = 0.5;
 
-                // Горизонтальные линии
-                for (let y = 0; y < height; y += 60) {
-                    const offset = Math.sin(time * 0.08 + y * 0.008) * 8;
+                for (let y = 0; y < height; y += 40) {
+                    const offset = Math.sin(time * 0.06 + y * 0.006) * 10;
                     ctx.beginPath();
                     ctx.moveTo(0, y + offset);
                     ctx.lineTo(width, y + offset);
                     ctx.stroke();
                 }
 
-                // Вертикальные линии
-                for (let x = 0; x < width; x += 60) {
-                    const offset = Math.cos(time * 0.08 + x * 0.008) * 8;
+                for (let x = 0; x < width; x += 40) {
+                    const offset = Math.cos(time * 0.06 + x * 0.006) * 10;
                     ctx.beginPath();
                     ctx.moveTo(x + offset, 0);
                     ctx.lineTo(x + offset, height);
                     ctx.stroke();
                 }
 
+                // Тонкие диагональные линии
+                ctx.strokeStyle = 'rgba(44, 62, 80, 0.02)';
+                for (let i = -height; i < width + height; i += 60) {
+                    const offset = Math.sin(time * 0.04 + i * 0.005) * 5;
+                    ctx.beginPath();
+                    ctx.moveTo(i + offset, 0);
+                    ctx.lineTo(i + offset + height, height);
+                    ctx.stroke();
+                }
+
                 ctx.restore();
 
-                // Рисуем фигуры
-                shapes.forEach((shape) => {
-                    // Медленное плавающее движение
-                    const floatX = Math.sin(time * 0.25 + shape.phase) * 25;
-                    const floatY = Math.cos(time * 0.18 + shape.phase * 0.7) * 25;
+                // Рисуем все архитектурные элементы
+                elements.forEach((el) => {
+                    const floatX = Math.sin(time * 0.15 + el.phase) * 20;
+                    const floatY = Math.cos(time * 0.12 + el.phase * 0.7) * 20;
 
-                    shape.x = shape.originalX + floatX;
-                    shape.y = shape.originalY + floatY;
-                    shape.rotation += shape.rotationSpeed;
+                    el.x = el.originalX + floatX;
+                    el.y = el.originalY + floatY;
+                    el.rotation += el.rotationSpeed;
 
-                    // Пульсация размера
-                    const pulse = 1 + Math.sin(time * 0.35 + shape.phase) * 0.12;
-                    const currentSize = shape.size * pulse;
+                    const pulse = 1 + Math.sin(time * 0.25 + el.phase) * 0.08;
+                    const currentSize = el.size * pulse;
 
-                    const originalSize = shape.size;
-                    shape.size = currentSize;
-                    drawShape(shape);
-                    shape.size = originalSize;
+                    const originalSize = el.size;
+                    el.size = currentSize;
+                    drawArchitecturalElement(el);
+                    el.size = originalSize;
                 });
 
-                time += 0.01;
+                time += 0.008;
                 requestAnimationFrame(animate);
             }
 
@@ -888,11 +1109,36 @@
                 width = canvas.width = window.innerWidth;
                 height = canvas.height = window.innerHeight;
 
-                shapes.forEach((shape) => {
-                    shape.originalX = Math.random() * width;
-                    shape.originalY = Math.random() * height;
-                    shape.x = shape.originalX;
-                    shape.y = shape.originalY;
+                elements.forEach((el) => {
+                    el.originalX = Math.random() * width;
+                    el.originalY = Math.random() * height;
+                    el.x = el.originalX;
+                    el.y = el.originalY;
+                });
+
+                // Обновляем позиции крупных элементов
+                const largePositions = [
+                    { x: width * 0.1, y: height * 0.3 },
+                    { x: width * 0.9, y: height * 0.7 },
+                    { x: width * 0.85, y: height * 0.2 },
+                    { x: width * 0.15, y: height * 0.7 },
+                    { x: width * 0.5, y: height * 0.15 },
+                    { x: width * 0.3, y: height * 0.5 },
+                    { x: width * 0.7, y: height * 0.4 },
+                    { x: width * 0.45, y: height * 0.8 },
+                    { x: width * 0.6, y: height * 0.6 },
+                    { x: width * 0.4, y: height * 0.1 }
+                ];
+
+                let largeIndex = 0;
+                elements.forEach((el) => {
+                    if (el.size > 120 && largeIndex < largePositions.length) {
+                        el.originalX = largePositions[largeIndex].x;
+                        el.originalY = largePositions[largeIndex].y;
+                        el.x = el.originalX;
+                        el.y = el.originalY;
+                        largeIndex++;
+                    }
                 });
             }
 
