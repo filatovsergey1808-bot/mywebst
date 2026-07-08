@@ -17,15 +17,16 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e8e0d8;
-            color: #3a3a3a;
+            background-color: #d5dce4;
+            color: #2c3e50;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
+            overflow-x: hidden;
         }
 
-        /* Холст для анимации "Матрица" — фон */
-        #matrixCanvas {
+        /* ===== АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ ===== */
+        #geoCanvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -43,12 +44,12 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 30px 40px;
-            background: rgba(232, 224, 216, 0.92);
-            backdrop-filter: blur(6px);
+            background: rgba(213, 220, 228, 0.88);
+            backdrop-filter: blur(4px);
             min-height: 100vh;
-            box-shadow: 0 0 80px rgba(60, 60, 60, 0.04);
-            border-left: 1px solid rgba(60, 60, 60, 0.06);
-            border-right: 1px solid rgba(60, 60, 60, 0.06);
+            box-shadow: 0 0 80px rgba(44, 62, 80, 0.04);
+            border-left: 1px solid rgba(44, 62, 80, 0.06);
+            border-right: 1px solid rgba(44, 62, 80, 0.06);
         }
 
         /* ===== ХЕДЕР ===== */
@@ -57,7 +58,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0 25px;
-            border-bottom: 1px solid rgba(60, 60, 60, 0.08);
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -66,12 +67,12 @@
             font-size: 24px;
             font-weight: 200;
             letter-spacing: 6px;
-            color: #3a3a3a;
+            color: #2c3e50;
             text-transform: uppercase;
         }
 
         .header-phone {
-            color: #3a3a3a;
+            color: #2c3e50;
             text-decoration: none;
             font-size: 17px;
             font-weight: 200;
@@ -97,7 +98,7 @@
             margin-bottom: 0px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #8b3a3a;
+            color: #4a6a8a;
         }
 
         /* ===== ОСНОВНЫЕ УСЛУГИ ===== */
@@ -112,7 +113,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #8b3a3a;
+            color: #4a6a8a;
         }
 
         .main-services-grid {
@@ -124,10 +125,10 @@
         }
 
         .main-service-item {
-            background: rgba(255, 252, 248, 0.7);
+            background: rgba(255, 255, 255, 0.5);
             padding: 50px 30px;
             border-radius: 16px;
-            border: 1px solid rgba(60, 60, 60, 0.06);
+            border: 1px solid rgba(44, 62, 80, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -141,17 +142,17 @@
 
         .main-service-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 252, 248, 0.9);
-            border-color: rgba(139, 58, 58, 0.15);
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(74, 106, 138, 0.15);
             box-shadow: 
-                0 0 10px rgba(139, 58, 58, 0.04),
-                0 0 20px rgba(139, 58, 58, 0.02);
+                0 0 10px rgba(74, 106, 138, 0.04),
+                0 0 20px rgba(74, 106, 138, 0.02);
         }
 
         .main-service-item h3 {
             font-size: 26px;
             font-weight: 200;
-            color: #3a3a3a;
+            color: #2c3e50;
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 6px;
@@ -160,7 +161,7 @@
         .main-service-item p {
             font-size: 17px;
             font-weight: 200;
-            color: rgba(60, 60, 60, 0.5);
+            color: rgba(44, 62, 80, 0.5);
             letter-spacing: 5px;
             text-transform: uppercase;
         }
@@ -177,7 +178,7 @@
             letter-spacing: 6px;
             margin-bottom: 35px;
             text-transform: uppercase;
-            color: #8b3a3a;
+            color: #4a6a8a;
         }
 
         .additional-grid {
@@ -189,10 +190,10 @@
         }
 
         .additional-item {
-            background: rgba(255, 252, 248, 0.7);
+            background: rgba(255, 255, 255, 0.5);
             padding: 50px 20px;
             border-radius: 16px;
-            border: 1px solid rgba(60, 60, 60, 0.06);
+            border: 1px solid rgba(44, 62, 80, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -206,24 +207,24 @@
 
         .additional-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 252, 248, 0.9);
-            border-color: rgba(139, 58, 58, 0.15);
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(74, 106, 138, 0.15);
             box-shadow: 
-                0 0 10px rgba(139, 58, 58, 0.04),
-                0 0 20px rgba(139, 58, 58, 0.02);
+                0 0 10px rgba(74, 106, 138, 0.04),
+                0 0 20px rgba(74, 106, 138, 0.02);
         }
 
         .additional-item h4 {
             font-size: 22px;
             font-weight: 200;
             margin-bottom: 6px;
-            color: #3a3a3a;
+            color: #2c3e50;
             letter-spacing: 5px;
             text-transform: uppercase;
         }
 
         .additional-item p {
-            color: rgba(60, 60, 60, 0.5);
+            color: rgba(44, 62, 80, 0.5);
             font-size: 16px;
             font-weight: 200;
             letter-spacing: 4px;
@@ -238,7 +239,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(60, 60, 60, 0.5);
+            background: rgba(44, 62, 80, 0.5);
             backdrop-filter: blur(8px);
             z-index: 1000;
             justify-content: center;
@@ -251,7 +252,7 @@
         }
 
         .modal {
-            background: #e8e0d8;
+            background: #d5dce4;
             border-radius: 24px;
             padding: 50px 45px;
             max-width: 700px;
@@ -260,7 +261,7 @@
             overflow-y: auto;
             position: relative;
             animation: slideUp 0.4s ease;
-            box-shadow: 0 20px 60px rgba(60, 60, 60, 0.15);
+            box-shadow: 0 20px 60px rgba(44, 62, 80, 0.15);
         }
 
         .modal-close {
@@ -269,7 +270,7 @@
             right: 25px;
             font-size: 28px;
             font-weight: 200;
-            color: #3a3a3a;
+            color: #2c3e50;
             cursor: pointer;
             transition: all 0.3s ease;
             opacity: 0.4;
@@ -285,7 +286,7 @@
             font-size: 28px;
             font-weight: 200;
             letter-spacing: 4px;
-            color: #8b3a3a;
+            color: #4a6a8a;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
@@ -293,7 +294,7 @@
         .modal-subtitle {
             font-size: 16px;
             font-weight: 200;
-            color: rgba(60, 60, 60, 0.5);
+            color: rgba(44, 62, 80, 0.5);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -302,7 +303,7 @@
         .modal-divider {
             width: 40px;
             height: 2px;
-            background: #8b3a3a;
+            background: #4a6a8a;
             margin-bottom: 30px;
             opacity: 0.3;
         }
@@ -314,23 +315,23 @@
         }
 
         .modal-item {
-            background: rgba(255, 252, 248, 0.6);
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 12px;
             padding: 25px 20px;
-            border: 1px solid rgba(60, 60, 60, 0.06);
+            border: 1px solid rgba(44, 62, 80, 0.06);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .modal-item:hover {
-            background: rgba(255, 252, 248, 0.9);
-            border-color: rgba(139, 58, 58, 0.12);
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(74, 106, 138, 0.12);
         }
 
         .modal-item h5 {
             font-size: 16px;
             font-weight: 200;
-            color: #3a3a3a;
+            color: #2c3e50;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 4px;
@@ -339,7 +340,7 @@
         .modal-item p {
             font-size: 13px;
             font-weight: 200;
-            color: rgba(60, 60, 60, 0.4);
+            color: rgba(44, 62, 80, 0.4);
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -374,7 +375,7 @@
             letter-spacing: 6px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            color: #8b3a3a;
+            color: #4a6a8a;
         }
 
         .footer-contacts {
@@ -386,14 +387,14 @@
         }
 
         .footer-contacts a {
-            color: #3a3a3a;
+            color: #2c3e50;
             text-decoration: none;
             font-size: 16px;
             font-weight: 200;
             letter-spacing: 5px;
             padding: 14px 20px;
             border-radius: 50px;
-            border: 1px solid rgba(60, 60, 60, 0.08);
+            border: 1px solid rgba(44, 62, 80, 0.08);
             background: transparent;
             text-transform: uppercase;
             text-align: center;
@@ -403,18 +404,18 @@
 
         .footer-contacts a:hover {
             transform: translateY(-2px);
-            background: rgba(255, 252, 248, 0.5);
-            border-color: rgba(139, 58, 58, 0.15);
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(74, 106, 138, 0.15);
             box-shadow: 
-                0 0 8px rgba(139, 58, 58, 0.04),
-                0 0 16px rgba(139, 58, 58, 0.02);
+                0 0 8px rgba(74, 106, 138, 0.04),
+                0 0 16px rgba(74, 106, 138, 0.02);
         }
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                background: rgba(232, 224, 216, 0.92);
+                background: rgba(213, 220, 228, 0.92);
             }
 
             header {
@@ -636,8 +637,8 @@
 </head>
 <body>
 
-    <!-- ===== ХОЛСТ ДЛЯ МАТРИЦЫ ===== -->
-    <canvas id="matrixCanvas"></canvas>
+    <!-- ===== ХОЛСТ ДЛЯ АРХИТЕКТУРНОЙ ГЕОМЕТРИИ ===== -->
+    <canvas id="geoCanvas"></canvas>
 
     <!-- ===== КОНТЕНТ ===== -->
     <div class="content">
@@ -712,72 +713,177 @@
 
     <!-- ===== СКРИПТЫ ===== -->
     <script>
-        // ===== МАТРИЦА =====
-        (function matrixRain() {
-            const canvas = document.getElementById('matrixCanvas');
+        // ===== АРХИТЕКТУРНАЯ ГЕОМЕТРИЯ =====
+        (function architecturalGeometry() {
+            const canvas = document.getElementById('geoCanvas');
             const ctx = canvas.getContext('2d');
 
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
-            const charArray = chars.split('');
+            // Геометрические фигуры
+            const shapes = [];
+            const numShapes = 18;
 
-            const fontSize = 15;
-            const columns = Math.floor(width / fontSize);
-            const drops = [];
+            // Типы фигур
+            const types = ['line', 'rectangle', 'triangle', 'circle', 'arc'];
 
-            for (let i = 0; i < columns; i++) {
-                drops[i] = Math.random() * -100;
+            // Цвета в холодной гамме
+            const colors = [
+                'rgba(74, 106, 138, 0.08)',
+                'rgba(100, 130, 160, 0.06)',
+                'rgba(44, 62, 80, 0.04)',
+                'rgba(120, 150, 180, 0.05)',
+                'rgba(60, 90, 120, 0.07)'
+            ];
+
+            // Создание фигур
+            for (let i = 0; i < numShapes; i++) {
+                const type = types[Math.floor(Math.random() * types.length)];
+                const x = Math.random() * width;
+                const y = Math.random() * height;
+                const size = 30 + Math.random() * 120;
+                const speedX = (Math.random() - 0.5) * 0.3;
+                const speedY = (Math.random() - 0.5) * 0.3;
+                const rotation = Math.random() * Math.PI * 2;
+                const rotationSpeed = (Math.random() - 0.5) * 0.002;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const phase = Math.random() * Math.PI * 2;
+
+                shapes.push({
+                    type,
+                    x,
+                    y,
+                    size,
+                    speedX,
+                    speedY,
+                    rotation,
+                    rotationSpeed,
+                    color,
+                    phase,
+                    originalX: x,
+                    originalY: y
+                });
             }
 
-            function draw() {
-                ctx.fillStyle = 'rgba(232, 224, 216, 0.02)';
-                ctx.fillRect(0, 0, width, height);
+            function drawShape(shape) {
+                ctx.save();
+                ctx.translate(shape.x, shape.y);
+                ctx.rotate(shape.rotation);
+                ctx.strokeStyle = shape.color;
+                ctx.lineWidth = 1.2;
 
-                ctx.font = fontSize + 'px monospace';
-                ctx.textAlign = 'center';
+                switch (shape.type) {
+                    case 'line':
+                        ctx.beginPath();
+                        ctx.moveTo(-shape.size / 2, 0);
+                        ctx.lineTo(shape.size / 2, 0);
+                        ctx.stroke();
+                        break;
 
-                for (let i = 0; i < drops.length; i++) {
-                    const char = charArray[Math.floor(Math.random() * charArray.length)];
-                    const x = i * fontSize + fontSize / 2;
-                    const y = drops[i] * fontSize;
+                    case 'rectangle':
+                        ctx.strokeRect(-shape.size / 3, -shape.size / 4, shape.size * 0.66, shape.size * 0.5);
+                        break;
 
-                    const brightness = 0.4 + Math.random() * 0.6;
-                    
-                    const r = 139 + Math.random() * 40;
-                    const g = 58 + Math.random() * 30;
-                    const b = 58 + Math.random() * 20;
-                    
-                    ctx.shadowColor = `rgba(139, 58, 58, ${brightness * 0.3})`;
-                    ctx.shadowBlur = 20;
-                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.4 + brightness * 0.3})`;
-                    ctx.fillText(char, x, y);
-                    ctx.shadowBlur = 0;
+                    case 'triangle':
+                        ctx.beginPath();
+                        ctx.moveTo(0, -shape.size / 2);
+                        ctx.lineTo(-shape.size / 2, shape.size / 2);
+                        ctx.lineTo(shape.size / 2, shape.size / 2);
+                        ctx.closePath();
+                        ctx.stroke();
+                        break;
 
-                    if (y > height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
+                    case 'circle':
+                        ctx.beginPath();
+                        ctx.arc(0, 0, shape.size / 3, 0, Math.PI * 2);
+                        ctx.stroke();
+                        break;
 
-                    drops[i]++;
+                    case 'arc':
+                        ctx.beginPath();
+                        ctx.arc(0, 0, shape.size / 2.5, 0, Math.PI * 1.5);
+                        ctx.stroke();
+                        // Дополнительная линия для архитектурности
+                        ctx.beginPath();
+                        ctx.moveTo(0, 0);
+                        ctx.lineTo(shape.size / 2.5, 0);
+                        ctx.stroke();
+                        break;
                 }
+
+                ctx.restore();
+            }
+
+            let time = 0;
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Обновляем позиции фигур с плавным движением
+                shapes.forEach((shape, index) => {
+                    // Медленное плавающее движение
+                    const floatX = Math.sin(time * 0.3 + shape.phase) * 15;
+                    const floatY = Math.cos(time * 0.2 + shape.phase * 0.7) * 15;
+
+                    shape.x = shape.originalX + floatX;
+                    shape.y = shape.originalY + floatY;
+                    shape.rotation += shape.rotationSpeed;
+
+                    // Плавное изменение размера
+                    const pulse = 1 + Math.sin(time * 0.4 + shape.phase) * 0.08;
+                    const currentSize = shape.size * pulse;
+
+                    // Рисуем фигуру с пульсацией
+                    const originalSize = shape.size;
+                    shape.size = currentSize;
+                    drawShape(shape);
+                    shape.size = originalSize;
+                });
+
+                // Рисуем дополнительные архитектурные линии (сетка)
+                ctx.save();
+                ctx.strokeStyle = 'rgba(74, 106, 138, 0.02)';
+                ctx.lineWidth = 0.5;
+
+                // Горизонтальные линии
+                for (let y = 0; y < height; y += 80) {
+                    const offset = Math.sin(time * 0.1 + y * 0.01) * 5;
+                    ctx.beginPath();
+                    ctx.moveTo(0, y + offset);
+                    ctx.lineTo(width, y + offset);
+                    ctx.stroke();
+                }
+
+                // Вертикальные линии
+                for (let x = 0; x < width; x += 80) {
+                    const offset = Math.cos(time * 0.1 + x * 0.01) * 5;
+                    ctx.beginPath();
+                    ctx.moveTo(x + offset, 0);
+                    ctx.lineTo(x + offset, height);
+                    ctx.stroke();
+                }
+
+                ctx.restore();
+
+                time += 0.01;
+                requestAnimationFrame(animate);
             }
 
             function resizeCanvas() {
                 width = canvas.width = window.innerWidth;
                 height = canvas.height = window.innerHeight;
-                const newColumns = Math.floor(width / fontSize);
-                if (newColumns > drops.length) {
-                    for (let i = drops.length; i < newColumns; i++) {
-                        drops[i] = Math.random() * -100;
-                    }
-                } else if (newColumns < drops.length) {
-                    drops.length = newColumns;
-                }
+
+                shapes.forEach((shape) => {
+                    shape.originalX = Math.random() * width;
+                    shape.originalY = Math.random() * height;
+                    shape.x = shape.originalX;
+                    shape.y = shape.originalY;
+                });
             }
 
             window.addEventListener('resize', resizeCanvas);
-            setInterval(draw, 45);
+            animate();
         })();
 
         // ===== МОДАЛЬНОЕ ОКНО =====
