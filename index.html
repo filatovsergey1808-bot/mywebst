@@ -204,10 +204,10 @@
             box-shadow: 0 0 40px rgba(255, 107, 107, 0.05);
         }
 
-        /* ===== ПЕРСОНАЖ СПРАВА НА ВСЮ ВЫСОТУ ===== */
+        /* ===== ПЕРСОНАЖ СПРАВА С ЗАКРУГЛЕННЫМИ УГЛАМИ ===== */
         .character-wrapper {
             flex-shrink: 0;
-            width: 180px;
+            width: 200px;
             height: 100%;
             display: flex;
             align-items: center;
@@ -221,15 +221,17 @@
         .character-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             transition: all 0.4s ease;
             filter: grayscale(0.2) brightness(0.85) contrast(1.1);
+            padding: 8px;
+            border-radius: 16px;
         }
 
         .main-service-item:hover .character-wrapper img {
             filter: grayscale(0) brightness(1) contrast(1);
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .main-service-item .content-wrapper {
@@ -512,16 +514,18 @@
             
             .character-wrapper {
                 width: 100%;
-                height: 160px;
+                height: 180px;
                 border-radius: 0 0 16px 16px;
                 flex-shrink: 0;
                 order: 2;
             }
 
             .character-wrapper img {
-                object-fit: cover;
+                object-fit: contain;
                 width: 100%;
                 height: 100%;
+                padding: 8px;
+                border-radius: 16px;
             }
             
             .main-service-item .content-wrapper {
@@ -554,7 +558,7 @@
             .hero h1 { font-size: 30px; letter-spacing: 0.5px; }
             .additional-grid { grid-template-columns: 1fr; }
             .main-service-item { min-height: 240px; }
-            .character-wrapper { height: 130px; }
+            .character-wrapper { height: 150px; }
             .main-service-item .content-wrapper { padding: 20px 16px 25px 16px; }
             .main-service-item h3 { font-size: 22px; letter-spacing: 3px; }
             .main-service-item p { font-size: 15px; letter-spacing: 3px; }
@@ -599,7 +603,7 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <!-- ===== ПЕРСОНАЖ СПРАВА НА ВСЮ ВЫСОТУ ===== -->
+                    <!-- ===== ПЕРСОНАЖ СПРАВА С ЗАКРУГЛЕННЫМИ УГЛАМИ ===== -->
                     <div class="character-wrapper">
                         <img src="programmer.jpg" alt="Программист" />
                     </div>
