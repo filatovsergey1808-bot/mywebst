@@ -194,6 +194,7 @@
             min-height: 220px;
             cursor: pointer;
             overflow: hidden;
+            position: relative;
         }
 
         .main-service-item:hover {
@@ -203,7 +204,7 @@
             box-shadow: 0 0 40px rgba(255, 107, 107, 0.05);
         }
 
-        /* ===== ПЕРСОНАЖ (СЛЕВА, НА ВСЮ ВЫСОТУ) ===== */
+        /* ===== ПЕРСОНАЖ СПРАВА НА ВСЮ ВЫСОТУ ===== */
         .character-wrapper {
             flex-shrink: 0;
             width: 180px;
@@ -212,8 +213,9 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-radius: 16px 0 0 16px;
+            border-radius: 0 16px 16px 0;
             background: rgba(255, 255, 255, 0.02);
+            order: 2;
         }
 
         .character-wrapper img {
@@ -236,8 +238,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 30px 40px 30px 30px;
+            padding: 30px 30px 30px 40px;
             text-align: center;
+            order: 1;
         }
 
         .main-service-item h3 {
@@ -510,8 +513,9 @@
             .character-wrapper {
                 width: 100%;
                 height: 160px;
-                border-radius: 16px 16px 0 0;
+                border-radius: 0 0 16px 16px;
                 flex-shrink: 0;
+                order: 2;
             }
 
             .character-wrapper img {
@@ -522,6 +526,7 @@
             
             .main-service-item .content-wrapper {
                 padding: 25px 20px 30px 20px;
+                order: 1;
             }
             
             .main-service-item h3 { font-size: 26px; letter-spacing: 4px; }
@@ -594,7 +599,7 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <!-- ===== ПЕРСОНАЖ СЛЕВА НА ВСЮ ВЫСОТУ ===== -->
+                    <!-- ===== ПЕРСОНАЖ СПРАВА НА ВСЮ ВЫСОТУ ===== -->
                     <div class="character-wrapper">
                         <img src="programmer.jpg" alt="Программист" />
                     </div>
