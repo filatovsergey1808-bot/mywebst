@@ -180,19 +180,20 @@
 
         .main-service-item {
             background: rgba(255, 255, 255, 0.03);
-            padding: 40px 30px;
+            padding: 0;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
             flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
+            align-items: stretch;
+            justify-content: flex-start;
+            gap: 0;
             height: 220px;
             min-height: 220px;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .main-service-item:hover {
@@ -202,10 +203,41 @@
             box-shadow: 0 0 40px rgba(255, 107, 107, 0.05);
         }
 
+        /* ===== ПЕРСОНАЖ (СЛЕВА, НА ВСЮ ВЫСОТУ) ===== */
+        .character-wrapper {
+            flex-shrink: 0;
+            width: 180px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 16px 0 0 16px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .character-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: all 0.4s ease;
+            filter: grayscale(0.2) brightness(0.85) contrast(1.1);
+        }
+
+        .main-service-item:hover .character-wrapper img {
+            filter: grayscale(0) brightness(1) contrast(1);
+            transform: scale(1.03);
+        }
+
         .main-service-item .content-wrapper {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 30px 40px 30px 30px;
+            text-align: center;
         }
 
         .main-service-item h3 {
@@ -223,32 +255,6 @@
             color: rgba(255, 255, 255, 0.4);
             letter-spacing: 5px;
             text-transform: uppercase;
-        }
-
-        /* ===== ПЕРСОНАЖ (ИЗОБРАЖЕНИЕ) ===== */
-        .character-wrapper {
-            flex-shrink: 0;
-            width: 140px;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-        }
-
-        .character-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 12px;
-            filter: grayscale(0.2) brightness(0.9);
-            transition: all 0.4s ease;
-        }
-
-        .main-service-item:hover .character-wrapper img {
-            filter: grayscale(0) brightness(1);
-            transform: scale(1.02);
         }
 
         .additional {
@@ -497,14 +503,25 @@
             .main-service-item {
                 flex-direction: column;
                 height: auto;
-                min-height: 290px;
-                padding: 30px 20px;
-                gap: 20px;
+                min-height: 280px;
+                border-radius: 16px;
             }
             
             .character-wrapper {
-                width: 100px;
-                height: 130px;
+                width: 100%;
+                height: 160px;
+                border-radius: 16px 16px 0 0;
+                flex-shrink: 0;
+            }
+
+            .character-wrapper img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .main-service-item .content-wrapper {
+                padding: 25px 20px 30px 20px;
             }
             
             .main-service-item h3 { font-size: 26px; letter-spacing: 4px; }
@@ -531,8 +548,9 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 30px; letter-spacing: 0.5px; }
             .additional-grid { grid-template-columns: 1fr; }
-            .main-service-item { min-height: 260px; padding: 24px 16px; gap: 16px; }
-            .character-wrapper { width: 80px; height: 105px; }
+            .main-service-item { min-height: 240px; }
+            .character-wrapper { height: 130px; }
+            .main-service-item .content-wrapper { padding: 20px 16px 25px 16px; }
             .main-service-item h3 { font-size: 22px; letter-spacing: 3px; }
             .main-service-item p { font-size: 15px; letter-spacing: 3px; }
             .additional-item { height: 150px; min-height: 150px; padding: 24px 16px; }
@@ -576,7 +594,7 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <!-- ===== ПЕРСОНАЖ (ИЗОБРАЖЕНИЕ) ===== -->
+                    <!-- ===== ПЕРСОНАЖ СЛЕВА НА ВСЮ ВЫСОТУ ===== -->
                     <div class="character-wrapper">
                         <img src="programmer.jpg" alt="Программист" />
                     </div>
