@@ -180,21 +180,18 @@
 
         .main-service-item {
             background: rgba(255, 255, 255, 0.03);
-            padding: 0;
+            padding: 40px 30px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0;
             height: 220px;
             min-height: 220px;
             cursor: pointer;
-            overflow: hidden;
-            position: relative;
         }
 
         .main-service-item:hover {
@@ -202,48 +199,6 @@
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 107, 107, 0.3);
             box-shadow: 0 0 40px rgba(255, 107, 107, 0.05);
-        }
-
-        /* ===== ПЕРСОНАЖ СПРАВА ===== */
-        .character-wrapper {
-            flex-shrink: 0;
-            width: 220px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            order: 2;
-            padding: 8px 8px 8px 0;
-        }
-
-        .character-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: all 0.4s ease;
-            filter: grayscale(0.2) brightness(0.85) contrast(1.1);
-            border-radius: 12px;
-        }
-
-        .main-service-item:hover .character-wrapper img {
-            filter: grayscale(0) brightness(1) contrast(1);
-            transform: scale(1.02);
-        }
-
-        /* ===== ТЕКСТ ПО ЦЕНТРУ ВСЕЙ КАРТОЧКИ ===== */
-        .main-service-item .content-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            text-align: center;
-            order: 1;
-            height: 100%;
-            width: calc(100% - 220px);
         }
 
         .main-service-item h3 {
@@ -505,35 +460,7 @@
             header { flex-direction: column; gap: 15px; text-align: center; }
             .hero { padding: 50px 0 30px; }
             .hero h1 { font-size: 38px; letter-spacing: 1px; }
-            
-            .main-service-item {
-                flex-direction: column;
-                height: auto;
-                min-height: 280px;
-                border-radius: 16px;
-            }
-            
-            .main-service-item .content-wrapper {
-                width: 100%;
-                padding: 25px 20px 30px 20px;
-                order: 1;
-            }
-            
-            .character-wrapper {
-                width: 100%;
-                height: 200px;
-                flex-shrink: 0;
-                order: 2;
-                padding: 8px 8px 0 8px;
-            }
-
-            .character-wrapper img {
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-                border-radius: 12px;
-            }
-            
+            .main-service-item { height: 170px; min-height: 170px; padding: 30px 20px; }
             .main-service-item h3 { font-size: 26px; letter-spacing: 4px; }
             .main-service-item p { font-size: 17px; letter-spacing: 4px; }
             .additional-grid { grid-template-columns: 1fr 1fr; }
@@ -558,9 +485,7 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 30px; letter-spacing: 0.5px; }
             .additional-grid { grid-template-columns: 1fr; }
-            .main-service-item { min-height: 240px; }
-            .main-service-item .content-wrapper { padding: 20px 16px 25px 16px; }
-            .character-wrapper { height: 160px; }
+            .main-service-item { height: 150px; min-height: 150px; padding: 24px 16px; }
             .main-service-item h3 { font-size: 22px; letter-spacing: 3px; }
             .main-service-item p { font-size: 15px; letter-spacing: 3px; }
             .additional-item { height: 150px; min-height: 150px; padding: 24px 16px; }
@@ -604,15 +529,8 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <!-- ===== ПЕРСОНАЖ СПРАВА ===== -->
-                    <div class="character-wrapper">
-                        <img src="programmer.jpg" alt="Программист" />
-                    </div>
-                    
-                    <div class="content-wrapper">
-                        <h3><span class="gradient-orange">КРАСИВЫЕ САЙТЫ</span></h3>
-                        <p class="gradient-green">С УНИКАЛЬНЫМ ДИЗАЙНОМ</p>
-                    </div>
+                    <h3><span class="gradient-orange">КРАСИВЫЕ САЙТЫ</span></h3>
+                    <p class="gradient-green">С УНИКАЛЬНЫМ ДИЗАЙНОМ</p>
                 </div>
             </div>
         </section>
