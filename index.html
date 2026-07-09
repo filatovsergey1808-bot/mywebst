@@ -226,11 +226,11 @@
             text-transform: uppercase;
         }
 
-        /* ===== SVG ПЕРСОНАЖ ===== */
+        /* ===== МУЛЬТЯШНЫЙ ПЕРСОНАЖ SVG ===== */
         .character-wrapper {
             flex-shrink: 0;
-            width: 120px;
-            height: 160px;
+            width: 130px;
+            height: 170px;
         }
 
         .character-wrapper svg {
@@ -239,37 +239,63 @@
             display: block;
         }
 
-        .character-wrapper svg .body {
+        .character-wrapper svg .body-line {
             fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.4s ease;
+        }
+
+        .character-wrapper svg .body-line-accent {
+            fill: none;
+            stroke: rgba(255, 107, 107, 0.25);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.4s ease;
+        }
+
+        .character-wrapper svg .body-fill {
+            fill: rgba(255, 255, 255, 0.04);
             stroke: rgba(255, 255, 255, 0.15);
             stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
             transition: all 0.4s ease;
         }
 
-        .character-wrapper svg .body-accent {
-            fill: none;
-            stroke: rgba(255, 107, 107, 0.2);
-            stroke-width: 1.5;
-            transition: all 0.4s ease;
-        }
-
-        .character-wrapper svg .accent-fill {
-            fill: rgba(255, 107, 107, 0.05);
+        .character-wrapper svg .body-fill-accent {
+            fill: rgba(255, 107, 107, 0.06);
             stroke: rgba(255, 107, 107, 0.15);
-            stroke-width: 1;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.4s ease;
         }
 
-        .main-service-item:hover .character-wrapper svg .body {
+        .character-wrapper svg .glow {
+            fill: rgba(255, 107, 107, 0.03);
+            stroke: none;
+        }
+
+        .main-service-item:hover .character-wrapper svg .body-line {
+            stroke: rgba(255, 255, 255, 0.4);
+        }
+
+        .main-service-item:hover .character-wrapper svg .body-line-accent {
+            stroke: rgba(255, 107, 107, 0.45);
+        }
+
+        .main-service-item:hover .character-wrapper svg .body-fill {
+            fill: rgba(255, 255, 255, 0.08);
             stroke: rgba(255, 255, 255, 0.3);
         }
 
-        .main-service-item:hover .character-wrapper svg .body-accent {
-            stroke: rgba(255, 107, 107, 0.4);
-        }
-
-        .main-service-item:hover .character-wrapper svg .accent-fill {
-            fill: rgba(255, 107, 107, 0.1);
-            stroke: rgba(255, 107, 107, 0.25);
+        .main-service-item:hover .character-wrapper svg .body-fill-accent {
+            fill: rgba(255, 107, 107, 0.12);
+            stroke: rgba(255, 107, 107, 0.3);
         }
 
         .additional {
@@ -524,8 +550,8 @@
             }
             
             .character-wrapper {
-                width: 80px;
-                height: 110px;
+                width: 90px;
+                height: 120px;
             }
             
             .main-service-item h3 { font-size: 26px; letter-spacing: 4px; }
@@ -553,7 +579,7 @@
             .hero h1 { font-size: 30px; letter-spacing: 0.5px; }
             .additional-grid { grid-template-columns: 1fr; }
             .main-service-item { min-height: 250px; padding: 24px 16px; gap: 16px; }
-            .character-wrapper { width: 60px; height: 85px; }
+            .character-wrapper { width: 70px; height: 95px; }
             .main-service-item h3 { font-size: 22px; letter-spacing: 3px; }
             .main-service-item p { font-size: 15px; letter-spacing: 3px; }
             .additional-item { height: 150px; min-height: 150px; padding: 24px 16px; }
@@ -597,60 +623,105 @@
             <div class="main-services-title">МЫ ПИШЕМ</div>
             <div class="main-services-grid">
                 <div class="main-service-item" data-modal="sites">
-                    <!-- ===== СИДЯЩИЙ ПЕРСОНАЖ SVG ===== -->
+                    <!-- ===== МУЛЬТЯШНЫЙ ПЕРСОНАЖ SVG ===== -->
                     <div class="character-wrapper">
-                        <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Кресло -->
-                            <rect x="15" y="100" width="90" height="50" rx="6" class="body-accent"/>
-                            <rect x="25" y="90" width="70" height="12" rx="4" class="body-accent"/>
-                            <rect x="35" y="150" width="8" height="10" class="body-accent"/>
-                            <rect x="77" y="150" width="8" height="10" class="body-accent"/>
+                        <svg viewBox="0 0 130 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Кресло с подлокотниками -->
+                            <rect x="20" y="105" width="90" height="50" rx="8" class="body-fill-accent"/>
+                            <rect x="30" y="95" width="70" height="12" rx="6" class="body-fill-accent"/>
+                            <rect x="18" y="100" width="8" height="55" rx="4" class="body-fill-accent"/>
+                            <rect x="104" y="100" width="8" height="55" rx="4" class="body-fill-accent"/>
+                            <rect x="35" y="155" width="8" height="12" rx="3" class="body-line-accent"/>
+                            <rect x="87" y="155" width="8" height="12" rx="3" class="body-line-accent"/>
+
+                            <!-- Ноги (мультяшные) -->
+                            <path d="M45 100 C40 110, 35 120, 32 130 C32 135, 35 138, 38 138 L42 138" class="body-line" stroke-width="3"/>
+                            <path d="M55 100 C60 110, 65 120, 68 130 C68 135, 65 138, 62 138 L58 138" class="body-line" stroke-width="3"/>
                             
-                            <!-- Ноги -->
-                            <path d="M45 100 L40 130 L35 130 M45 100 L50 130 L55 130" class="body" stroke-linecap="round"/>
+                            <!-- Туловище (мультяшное, более округлое) -->
+                            <rect x="38" y="55" width="44" height="48" rx="12" class="body-fill"/>
                             
-                            <!-- Тело (сидящее) -->
-                            <path d="M40 70 L35 100 L45 100 L50 70 L55 70 L65 100 L75 100 L70 70 L60 70 L60 55 L50 55 L50 70 L40 70Z" class="body"/>
+                            <!-- Животик (деталь) -->
+                            <rect x="43" y="70" width="34" height="22" rx="8" class="body-fill" opacity="0.3"/>
                             
-                            <!-- Рука левая (за монитором) -->
-                            <path d="M40 70 L25 85 L20 85" class="body" stroke-linecap="round"/>
+                            <!-- Рука левая -->
+                            <path d="M38 65 C28 70, 20 78, 18 85 C18 88, 20 90, 23 90 L28 88" class="body-line" stroke-width="3"/>
                             
-                            <!-- Рука правая (на клавиатуре/мыши) -->
-                            <path d="M70 70 L85 85 L90 85" class="body" stroke-linecap="round"/>
+                            <!-- Рука правая (на клавиатуре) -->
+                            <path d="M82 65 C92 70, 100 78, 102 85 C102 88, 100 90, 97 90 L92 88" class="body-line" stroke-width="3"/>
                             
-                            <!-- Голова -->
-                            <circle cx="50" cy="42" r="14" class="body"/>
+                            <!-- Кисть правой руки -->
+                            <circle cx="97" cy="88" r="4" class="body-fill"/>
+                            <path d="M93 88 L91 92 M97 88 L95 92 M101 88 L99 92" class="body-line" stroke-width="1.5"/>
+                            
+                            <!-- Голова (большая, мультяшная) -->
+                            <circle cx="60" cy="40" r="22" class="body-fill"/>
+                            
+                            <!-- Волосы (небрежные, мультяшные) -->
+                            <path d="M40 32 C38 28, 42 22, 50 20 C56 18, 64 18, 70 20 C78 22, 82 28, 80 32" class="body-line" stroke-width="2.5"/>
+                            <path d="M38 30 L36 24 M42 28 L40 20 M48 24 L46 18 M55 20 L54 16 M62 20 L63 16 M70 24 L72 18 M76 28 L78 22 M80 30 L82 24" class="body-line" stroke-width="2"/>
+                            <!-- Несколько прядей -->
+                            <path d="M44 22 C46 26, 48 30, 46 34" class="body-line" stroke-width="1.5"/>
+                            <path d="M72 22 C70 26, 68 30, 70 34" class="body-line" stroke-width="1.5"/>
+                            
+                            <!-- Глаза (большие, выразительные) -->
+                            <ellipse cx="50" cy="38" rx="6" ry="7" class="body-fill"/>
+                            <ellipse cx="70" cy="38" rx="6" ry="7" class="body-fill"/>
+                            <!-- Зрачки -->
+                            <circle cx="52" cy="39" r="3.5" class="body-line" stroke-width="2"/>
+                            <circle cx="72" cy="39" r="3.5" class="body-line" stroke-width="2"/>
+                            <!-- Блики в глазах -->
+                            <circle cx="53.5" cy="37" r="1.5" class="body-fill" fill="rgba(255,255,255,0.6)"/>
+                            <circle cx="73.5" cy="37" r="1.5" class="body-fill" fill="rgba(255,255,255,0.6)"/>
+                            <!-- Ресницы -->
+                            <path d="M44 33 C43 30, 45 28, 48 30" class="body-line" stroke-width="1.2"/>
+                            <path d="M64 33 C63 30, 65 28, 68 30" class="body-line" stroke-width="1.2"/>
+                            
+                            <!-- Очки (круглые, стильные) -->
+                            <circle cx="50" cy="38" r="9" class="body-line-accent" stroke-width="2"/>
+                            <circle cx="70" cy="38" r="9" class="body-line-accent" stroke-width="2"/>
+                            <line x1="59" y1="38" x2="61" y2="38" class="body-line-accent" stroke-width="2"/>
+                            <!-- Дужки очков -->
+                            <path d="M41 38 L36 35 L32 33" class="body-line-accent" stroke-width="1.5"/>
+                            <path d="M79 38 L84 35 L88 33" class="body-line-accent" stroke-width="1.5"/>
+                            
+                            <!-- Рот (улыбка) -->
+                            <path d="M52 46 C54 50, 58 50, 60 48 C62 50, 66 50, 68 46" class="body-line-accent" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Ямочки на щеках -->
+                            <circle cx="47" cy="46" r="2" class="body-line-accent" stroke-width="1" opacity="0.3"/>
+                            <circle cx="73" cy="46" r="2" class="body-line-accent" stroke-width="1" opacity="0.3"/>
+                            
+                            <!-- Брови (приподнятые, дружелюбные) -->
+                            <path d="M42 30 C46 28, 50 28, 54 30" class="body-line" stroke-width="2"/>
+                            <path d="M66 30 C70 28, 74 28, 78 30" class="body-line" stroke-width="2"/>
                             
                             <!-- Монитор -->
-                            <rect x="65" y="60" width="40" height="28" rx="3" class="body-accent"/>
-                            <rect x="68" y="63" width="34" height="22" rx="1" class="accent-fill"/>
-                            <rect x="78" y="88" width="14" height="4" rx="1" class="body-accent"/>
-                            <rect x="80" y="92" width="10" height="3" rx="1" class="body-accent"/>
+                            <rect x="68" y="58" width="48" height="34" rx="4" class="body-fill-accent"/>
+                            <rect x="71" y="61" width="42" height="28" rx="2" class="body-fill" fill="rgba(10,14,26,0.6)" stroke="rgba(255,255,255,0.05)"/>
+                            <rect x="80" y="92" width="24" height="4" rx="2" class="body-line-accent"/>
+                            <rect x="84" y="96" width="16" height="2" rx="1" class="body-line-accent"/>
                             
-                            <!-- Код на мониторе -->
-                            <line x1="72" y1="68" x2="90" y2="68" class="body" stroke-width="1" opacity="0.3"/>
-                            <line x1="72" y1="72" x2="85" y2="72" class="body" stroke-width="1" opacity="0.3"/>
-                            <line x1="72" y1="76" x2="92" y2="76" class="body" stroke-width="1" opacity="0.3"/>
-                            <line x1="72" y1="80" x2="80" y2="80" class="body" stroke-width="1" opacity="0.3"/>
+                            <!-- Код на мониторе (мультяшные строки) -->
+                            <line x1="75" y1="66" x2="98" y2="66" class="body-line" stroke-width="1.5" opacity="0.3"/>
+                            <line x1="75" y1="72" x2="92" y2="72" class="body-line" stroke-width="1.5" opacity="0.3"/>
+                            <line x1="75" y1="78" x2="96" y2="78" class="body-line" stroke-width="1.5" opacity="0.3"/>
+                            <line x1="75" y1="84" x2="88" y2="84" class="body-line" stroke-width="1.5" opacity="0.3"/>
+                            
+                            <!-- Иконка "запуска" на мониторе -->
+                            <circle cx="106" cy="64" r="2" class="body-line" stroke-width="1" opacity="0.3"/>
                             
                             <!-- Клавиатура -->
-                            <rect x="68" y="94" width="30" height="8" rx="2" class="body-accent"/>
-                            
-                            <!-- Очки -->
-                            <circle cx="44" cy="40" r="4" class="body-accent" stroke-width="1.2"/>
-                            <circle cx="56" cy="40" r="4" class="body-accent" stroke-width="1.2"/>
-                            <line x1="48" y1="40" x2="52" y2="40" class="body-accent" stroke-width="1.2"/>
-                            
-                            <!-- Улыбка -->
-                            <path d="M46 46 C48 49, 52 49, 54 46" class="body-accent" stroke-width="1.2" stroke-linecap="round"/>
-                            
-                            <!-- Волосы -->
-                            <path d="M38 36 C38 28, 62 28, 62 36" class="body" stroke-width="1.2"/>
-                            <path d="M36 34 L38 28 M40 32 L40 26 M44 30 L44 24 M50 28 L50 22 M56 30 L56 24 M60 32 L60 26 M64 34 L62 28" class="body" stroke-width="1" opacity="0.4"/>
+                            <rect x="70" y="96" width="38" height="10" rx="3" class="body-line-accent"/>
+                            <!-- Клавиши -->
+                            <line x1="76" y1="99" x2="102" y2="99" class="body-line" stroke-width="0.8" opacity="0.2"/>
+                            <line x1="76" y1="102" x2="102" y2="102" class="body-line" stroke-width="0.8" opacity="0.2"/>
                             
                             <!-- Акцентные линии (архитектурный стиль) -->
-                            <path d="M10 10 L10 150 M110 10 L110 150" class="body" stroke-width="0.5" opacity="0.05"/>
-                            <path d="M10 10 L110 10 M10 150 L110 150" class="body" stroke-width="0.5" opacity="0.05"/>
+                            <rect x="10" y="10" width="110" height="150" rx="4" class="body-line" stroke-width="0.5" opacity="0.05"/>
+                            
+                            <!-- Маленькая звездочка-акцент -->
+                            <text x="115" y="22" font-size="8" fill="rgba(255,107,107,0.1)" font-family="Space Grotesk">✦</text>
+                            <text x="8" y="150" font-size="8" fill="rgba(255,107,107,0.05)" font-family="Space Grotesk">✦</text>
                         </svg>
                     </div>
                     
@@ -707,60 +778,42 @@
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
 
-            // ===== 1. ЦВЕТНАЯ СЕТКА =====
             function drawGrid() {
                 ctx.save();
-
-                // Горизонтальные линии с цветным градиентом
                 for (let y = 0; y <= height; y += 40) {
                     const progress = y / height;
                     const hue = 220 + progress * 120;
                     const alpha = 0.04 + progress * 0.04;
                     ctx.strokeStyle = `hsla(${hue}, 80%, 60%, ${alpha})`;
                     ctx.lineWidth = 0.5;
-
                     const offset = Math.sin(y * 0.01 + performance.now() * 0.0003) * 5;
                     ctx.beginPath();
                     ctx.moveTo(0, y + offset);
                     ctx.lineTo(width, y + offset);
                     ctx.stroke();
                 }
-
-                // Вертикальные линии
                 for (let x = 0; x <= width; x += 40) {
                     const progress = x / width;
                     const hue = 220 + progress * 120;
                     const alpha = 0.04 + progress * 0.04;
                     ctx.strokeStyle = `hsla(${hue}, 80%, 60%, ${alpha})`;
                     ctx.lineWidth = 0.5;
-
                     const offset = Math.cos(x * 0.01 + performance.now() * 0.0003) * 5;
                     ctx.beginPath();
                     ctx.moveTo(x + offset, 0);
                     ctx.lineTo(x + offset, height);
                     ctx.stroke();
                 }
-
                 ctx.restore();
             }
 
-            // ===== 2. АРХИТЕКТУРНЫЕ ЭЛЕМЕНТЫ С ЦВЕТНЫМИ АКЦЕНТАМИ =====
             const elements = [];
-
-            const types = [
-                'vibrant_line', 'vibrant_arc', 'vibrant_circle',
-                'vibrant_rect', 'vibrant_spiral', 'vibrant_triangle'
-            ];
-
+            const types = ['vibrant_line', 'vibrant_arc', 'vibrant_circle', 'vibrant_rect', 'vibrant_spiral', 'vibrant_triangle'];
             const colorPalette = [
-                { hue: 0, sat: 90, light: 65 },     // Красный
-                { hue: 45, sat: 95, light: 60 },    // Оранжевый
-                { hue: 55, sat: 95, light: 65 },    // Желтый
-                { hue: 200, sat: 90, light: 65 },   // Голубой
-                { hue: 260, sat: 85, light: 70 },   // Фиолетовый
-                { hue: 320, sat: 85, light: 65 },   // Розовый
-                { hue: 170, sat: 80, light: 55 },   // Бирюзовый
-                { hue: 30, sat: 90, light: 60 },    // Терракотовый
+                { hue: 0, sat: 90, light: 65 }, { hue: 45, sat: 95, light: 60 },
+                { hue: 55, sat: 95, light: 65 }, { hue: 200, sat: 90, light: 65 },
+                { hue: 260, sat: 85, light: 70 }, { hue: 320, sat: 85, light: 65 },
+                { hue: 170, sat: 80, light: 55 }, { hue: 30, sat: 90, light: 60 }
             ];
 
             for (let i = 0; i < 45; i++) {
@@ -772,42 +825,27 @@
                 const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
                 const phase = Math.random() * Math.PI * 2;
                 const speed = 0.05 + Math.random() * 0.15;
-
                 elements.push({
-                    type,
-                    x,
-                    y,
-                    size,
-                    rotation,
-                    color,
-                    phase,
-                    speed,
-                    originalX: x,
-                    originalY: y,
-                    alpha: 0.06 + Math.random() * 0.12
+                    type, x, y, size, rotation, color, phase, speed,
+                    originalX: x, originalY: y, alpha: 0.06 + Math.random() * 0.12
                 });
             }
 
-            // ===== 3. РИСОВАНИЕ ЦВЕТНЫХ ЭЛЕМЕНТОВ =====
             function drawVibrantElement(el) {
                 ctx.save();
                 ctx.translate(el.x, el.y);
                 ctx.rotate(el.rotation);
-
                 const { hue, sat, light } = el.color;
                 const alpha = el.alpha;
                 ctx.strokeStyle = `hsla(${hue}, ${sat}%, ${light}%, ${alpha})`;
                 ctx.lineWidth = 1.2 + Math.random() * 0.5;
-
                 const s = el.size;
-
                 switch (el.type) {
                     case 'vibrant_line':
                         ctx.beginPath();
                         ctx.moveTo(-s / 2, 0);
                         ctx.lineTo(s / 2, 0);
                         ctx.stroke();
-                        // Стрелки
                         ctx.beginPath();
                         ctx.moveTo(-s / 2, -4);
                         ctx.lineTo(-s / 2 + 8, 0);
@@ -819,23 +857,19 @@
                         ctx.lineTo(s / 2, 4);
                         ctx.stroke();
                         break;
-
                     case 'vibrant_arc':
                         ctx.beginPath();
                         ctx.arc(0, 0, s / 3, 0, Math.PI * 1.5);
                         ctx.stroke();
-                        // Радиус
                         ctx.beginPath();
                         ctx.moveTo(0, 0);
                         ctx.lineTo(s / 3, 0);
                         ctx.stroke();
                         break;
-
                     case 'vibrant_circle':
                         ctx.beginPath();
                         ctx.arc(0, 0, s / 4, 0, Math.PI * 2);
                         ctx.stroke();
-                        // Центровые линии
                         ctx.setLineDash([4, 6]);
                         ctx.beginPath();
                         ctx.moveTo(-s / 3, 0);
@@ -845,10 +879,8 @@
                         ctx.stroke();
                         ctx.setLineDash([]);
                         break;
-
                     case 'vibrant_rect':
                         ctx.strokeRect(-s / 3, -s / 4, s * 0.66, s * 0.5);
-                        // Диагонали
                         ctx.setLineDash([3, 5]);
                         ctx.beginPath();
                         ctx.moveTo(-s / 3, -s / 4);
@@ -858,7 +890,6 @@
                         ctx.stroke();
                         ctx.setLineDash([]);
                         break;
-
                     case 'vibrant_spiral':
                         ctx.beginPath();
                         for (let t = 0; t < Math.PI * 5; t += 0.05) {
@@ -870,7 +901,6 @@
                         }
                         ctx.stroke();
                         break;
-
                     case 'vibrant_triangle':
                         ctx.beginPath();
                         ctx.moveTo(0, -s / 2);
@@ -878,7 +908,6 @@
                         ctx.lineTo(s / 2, s / 2);
                         ctx.closePath();
                         ctx.stroke();
-                        // Внутренний треугольник
                         ctx.beginPath();
                         ctx.moveTo(0, -s / 3);
                         ctx.lineTo(-s / 3, s / 3);
@@ -887,11 +916,9 @@
                         ctx.stroke();
                         break;
                 }
-
                 ctx.restore();
             }
 
-            // ===== 4. ЦВЕТНЫЕ АКЦЕНТЫ (СЛУЧАЙНЫЕ ТОЧКИ И ПЯТНА) =====
             function drawColorAccents() {
                 const time = performance.now() * 0.0002;
                 for (let i = 0; i < 15; i++) {
@@ -899,11 +926,9 @@
                     const y = (Math.cos(time * 0.7 + i * 1.8) * 0.5 + 0.5) * height;
                     const radius = 30 + Math.sin(time + i) * 20 + 20;
                     const hue = (i * 45 + time * 20) % 360;
-
                     const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
                     gradient.addColorStop(0, `hsla(${hue}, 90%, 70%, 0.04)`);
                     gradient.addColorStop(1, `hsla(${hue}, 90%, 70%, 0)`);
-
                     ctx.fillStyle = gradient;
                     ctx.beginPath();
                     ctx.arc(x, y, radius, 0, Math.PI * 2);
@@ -911,69 +936,43 @@
                 }
             }
 
-            // ===== 5. АНИМАЦИЯ =====
             let time = 0;
 
             function animate() {
                 ctx.clearRect(0, 0, width, height);
-
-                // Цветные акценты
                 drawColorAccents();
-
-                // Сетка
                 drawGrid();
-
-                // Элементы
                 elements.forEach((el) => {
                     const floatX = Math.sin(time * el.speed + el.phase) * 25;
                     const floatY = Math.cos(time * el.speed * 0.7 + el.phase * 0.8) * 25;
-
                     el.x = el.originalX + floatX;
                     el.y = el.originalY + floatY;
-
                     drawVibrantElement(el);
                 });
-
-                // Декоративные рамки
                 ctx.save();
-
-                // Рамка с цветным градиентом
                 const grad = ctx.createLinearGradient(0, 0, width, height);
                 grad.addColorStop(0, 'rgba(255, 107, 107, 0.02)');
                 grad.addColorStop(0.3, 'rgba(255, 217, 61, 0.02)');
                 grad.addColorStop(0.6, 'rgba(107, 203, 255, 0.02)');
                 grad.addColorStop(1, 'rgba(166, 107, 255, 0.02)');
-
                 ctx.strokeStyle = grad;
                 ctx.lineWidth = 1;
                 ctx.strokeRect(25, 25, width - 50, height - 50);
-
-                // Угловые метки
                 const cornerSize = 25;
-                const corners = [
-                    [25, 25],
-                    [width - 25, 25],
-                    [25, height - 25],
-                    [width - 25, height - 25]
-                ];
-
+                const corners = [[25, 25], [width - 25, 25], [25, height - 25], [width - 25, height - 25]];
                 corners.forEach(([cx, cy], index) => {
                     const dirX = cx < width / 2 ? 1 : -1;
                     const dirY = cy < height / 2 ? 1 : -1;
-
                     const hue = index * 90 + 220;
                     ctx.strokeStyle = `hsla(${hue}, 80%, 65%, 0.1)`;
                     ctx.lineWidth = 1.5;
-
                     ctx.beginPath();
                     ctx.moveTo(cx + dirX * cornerSize, cy);
                     ctx.lineTo(cx, cy);
                     ctx.lineTo(cx, cy + dirY * cornerSize);
                     ctx.stroke();
                 });
-
                 ctx.restore();
-
                 time += 0.01;
                 requestAnimationFrame(animate);
             }
@@ -981,7 +980,6 @@
             function resizeCanvas() {
                 width = canvas.width = window.innerWidth;
                 height = canvas.height = window.innerHeight;
-
                 elements.forEach((el) => {
                     el.originalX = Math.random() * width;
                     el.originalY = Math.random() * height;
@@ -1037,21 +1035,15 @@
         function openModal(type) {
             const data = modalData[type];
             if (!data) return;
-
             modalTitle.textContent = data.title;
             modalSubtitle.textContent = data.subtitle;
-
             modalGrid.innerHTML = '';
             data.items.forEach(item => {
                 const div = document.createElement('div');
                 div.className = 'modal-item';
-                div.innerHTML = `
-                            <h5>${item.name}</h5>
-                            <p>${item.desc}</p>
-                        `;
+                div.innerHTML = `<h5>${item.name}</h5><p>${item.desc}</p>`;
                 modalGrid.appendChild(div);
             });
-
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1069,17 +1061,11 @@
         });
 
         modalClose.addEventListener('click', closeModal);
-
         overlay.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
+            if (e.target === this) closeModal();
         });
-
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+            if (e.key === 'Escape') closeModal();
         });
     </script>
 
